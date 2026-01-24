@@ -51,7 +51,7 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-widest">Navigation</h3>
                         <ul className="space-y-3">
-                            {['Home', 'Services', 'Pricing', 'Gallery', 'RESERVATION'].map((link) => (
+                            {['Home', 'Services', 'Pricing', 'Portfolio', 'RESERVATION'].map((link) => (
                                 <li key={link}>
                                     <Link href={link === 'Pricing' ? '/pricing' : `/#${link.toLowerCase().replace(' ', '-')}`} className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">
                                         {link}

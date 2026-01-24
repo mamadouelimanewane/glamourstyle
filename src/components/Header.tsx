@@ -46,28 +46,28 @@ const Header = () => {
                 {/* Desktop Navigation */}
                 <ul className="hidden lg:flex flex-row items-center space-x-8 xl:space-x-12">
                     <li>
-                        <button
-                            onClick={() => scrollToSection('accueil')}
+                        <Link
+                            href="/#accueil"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
                             Home
-                        </button>
+                        </Link>
                     </li>
                     <li>
-                        <button
-                            onClick={() => scrollToSection('services')}
+                        <Link
+                            href="/#services"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
                             Services
-                        </button>
+                        </Link>
                     </li>
                     <li>
-                        <button
-                            onClick={() => scrollToSection('portfolio')}
+                        <Link
+                            href="/#portfolio"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
-                            Gallery
-                        </button>
+                            Portfolio
+                        </Link>
                     </li>
                     <li>
                         <Link
@@ -78,31 +78,31 @@ const Header = () => {
                         </Link>
                     </li>
                     <li>
-                        <button
-                            onClick={() => scrollToSection('avis')}
+                        <Link
+                            href="/#avis"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
                             Reviews
-                        </button>
+                        </Link>
                     </li>
                     <li>
-                        <button
-                            onClick={() => scrollToSection('contact')}
+                        <Link
+                            href="/#contact"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
                             Contact
-                        </button>
+                        </Link>
                     </li>
                 </ul>
 
                 {/* CTA Button */}
                 <div className="hidden sm:block shrink-0">
-                    <button
-                        onClick={() => scrollToSection('reservation')}
+                    <Link
+                        href="/#reservation"
                         className="btn-primary py-2.5 px-6 text-sm"
                     >
                         Book Now
-                    </button>
+                    </Link>
                 </div>
 
 
@@ -142,60 +142,67 @@ const Header = () => {
                 <div className="md:hidden glass mt-4 mx-4 rounded-lg overflow-hidden animate-fadeIn">
                     <ul className="py-4">
                         <li>
-                            <button
-                                onClick={() => scrollToSection('accueil')}
+                            <Link
+                                href="/#accueil"
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
                                 Home
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                onClick={() => scrollToSection('services')}
+                            <Link
+                                href="/#services"
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
                                 Services
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                onClick={() => scrollToSection('portfolio')}
+                            <Link
+                                href="/#portfolio"
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
-                                Gallery
-                            </button>
+                                Portfolio
+                            </Link>
                         </li>
                         <li>
                             <Link
                                 href="/pricing"
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
                                 Pricing
                             </Link>
                         </li>
                         <li>
-                            <button
-                                onClick={() => scrollToSection('avis')}
+                            <Link
+                                href="/#avis"
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
                                 Reviews
-                            </button>
+                            </Link>
                         </li>
                         <li>
-                            <button
-                                onClick={() => scrollToSection('contact')}
+                            <Link
+                                href="/#contact"
+                                onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
                                 Contact
-                            </button>
+                            </Link>
                         </li>
                         <li className="px-6 py-3">
-                            <button
-                                onClick={() => scrollToSection('reservation')}
-                                className="btn-primary w-full"
+                            <Link
+                                href="/#reservation"
+                                onClick={() => setIsMobileMenuOpen(false)}
+                                className="btn-primary w-full text-center block"
                             >
                                 Book Now
-                            </button>
+                            </Link>
                         </li>
                     </ul>
                 </div>
