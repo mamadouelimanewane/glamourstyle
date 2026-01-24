@@ -13,7 +13,7 @@ const Services = () => {
     return (
         <section id="services" className="section bg-[#0D0D0D]">
             <div className="text-center mb-16 animate-fadeIn">
-                <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-semibold tracking-[4px]">Our Portfolio</span>
+                <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-semibold tracking-[4px]">Our Services</span>
                 <h2 className="mt-4 mb-6">The Art of <span className="gradient-text">Transformation</span></h2>
                 <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full" />
             </div>

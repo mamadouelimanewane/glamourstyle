@@ -17,7 +17,7 @@ const Hero = () => {
             <div className="absolute inset-0 z-0">
                 <Image
                     src="/images/hero.png"
-                    alt="Luxury Hair Salon"
+                    alt="Glamour Style Salon"
                     fill
                     className="object-cover"
                     priority
@@ -33,7 +33,7 @@ const Hero = () => {
                         <span className="gradient-text font-serif italic">Hair Artistry</span>
                     </h1>
                     <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-lg">
-                        Experience excellence in luxury hair styling. Our experts craft your unique style with passion and precision in a refined setting.
+                        Experience excellence in luxury hair styling.
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">

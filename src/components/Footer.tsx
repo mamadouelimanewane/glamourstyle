@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import { contactInfo, workingHours } from '@/data/services';
 
 const Footer = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
                             <div className="w-10 h-10 bg-gradient-to-br from-[#D4AF37] to-[#F4E4C1] rounded-full flex items-center justify-center">
                                 <span className="text-xl">💇</span>
                             </div>
-                            <h2 className="text-2xl font-heading gradient-text">Luxe Hair Salon</h2>
+                            <h2 className="text-2xl font-heading gradient-text">Glamour Style</h2>
                         </div>
                         <p className="text-gray-500 text-sm">
                             Excellence at the service of your beauty. We have been creating exceptional styles for over 10 years in the heart of the UK.
@@ -50,11 +51,11 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-widest">Navigation</h3>
                         <ul className="space-y-3">
-                            {['Home', 'Services', 'Portfolio', 'RESERVATION', 'Terms & Conditions', 'Privacy Policy'].map((link) => (
+                            {['Home', 'Services', 'Pricing', 'Gallery', 'RESERVATION'].map((link) => (
                                 <li key={link}>
-                                    <a href={`#${link.toLowerCase().replace(' ', '-')}`} className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">
+                                    <Link href={link === 'Pricing' ? '/pricing' : `/#${link.toLowerCase().replace(' ', '-')}`} className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">
                                         {link}
-                                    </a>
+                                    </Link>
                                 </li>
                             ))}
                         </ul>
@@ -86,10 +87,9 @@ const Footer = () => {
                     </div>
                 </div>
 
-                {/* Bottom Bar */}
                 <div className="pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-600 text-[10px] uppercase tracking-[2px]">
-                        &copy; {new Date().getFullYear()} LUXE HAIR SALON. ALL RIGHTS RESERVED.
+                        &copy; {new Date().getFullYear()} GLAMOUR STYLE. ALL RIGHTS RESERVED.
                     </p>
                     <p className="text-gray-600 text-[10px] uppercase tracking-[2px]">
                         DESIGNED BY <span className="text-gray-400">ANTIGRAVITY LUXE</span>

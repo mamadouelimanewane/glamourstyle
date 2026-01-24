@@ -285,7 +285,7 @@ export const workingHours = {
 
 export const contactInfo = {
     phone: '+44 20 7123 4567',
-    email: 'contact@luxehairartistry.co.uk',
+    email: 'contact@glamourstyle.co.uk',
     address: '68 High Street, Waltham Cross, UK',
     instagram: '@luxehair',
     facebook: 'luxehairartistry',

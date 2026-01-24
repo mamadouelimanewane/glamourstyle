@@ -37,7 +37,7 @@ const Header = () => {
                     </div>
                     <div className="flex flex-col">
                         <h1 className="font-heading text-xl md:text-2xl font-bold gradient-text leading-none">
-                            Luxe Hair
+                            Glamour Style
                         </h1>
                         <p className="text-[10px] text-gray-400 font-light tracking-widest hidden sm:block">Hair Artistry</p>
                     </div>
@@ -66,16 +66,16 @@ const Header = () => {
                             onClick={() => scrollToSection('portfolio')}
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
-                            Portfolio
+                            Gallery
                         </button>
                     </li>
                     <li>
-                        <button
-                            onClick={() => scrollToSection('tarifs')}
+                        <Link
+                            href="/pricing"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
                         >
                             Pricing
-                        </button>
+                        </Link>
                     </li>
                     <li>
                         <button
@@ -162,16 +162,16 @@ const Header = () => {
                                 onClick={() => scrollToSection('portfolio')}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
-                                Portfolio
+                                Gallery
                             </button>
                         </li>
                         <li>
-                            <button
-                                onClick={() => scrollToSection('tarifs')}
+                            <Link
+                                href="/pricing"
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
                                 Pricing
-                            </button>
+                            </Link>
                         </li>
                         <li>
                             <button

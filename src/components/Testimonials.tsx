@@ -13,7 +13,7 @@ const Testimonials = () => {
             <div className="text-center mb-16">
                 <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-semibold">Kind Words</span>
                 <h2 className="mt-4 mb-4">Appreciated <span className="gradient-text">Excellence</span></h2>
-                <p className="text-gray-400">Hear from our clients about their Luxe Hair experience</p>
+                <p className="text-gray-400">Hear from our clients about their Glamour Style experience</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
