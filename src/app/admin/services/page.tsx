@@ -11,13 +11,15 @@ const ServicesAdminPage = () => {
         : initialServices.filter(s => s.category === filter);
 
     return (
-        <div className="space-y-8">
-            <div className="flex justify-between items-end">
+        <div className="space-y-8 animate-fadeIn">
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-4xl font-heading mb-2">Service Portfolio</h1>
-                    <p className="text-gray-500">Add, edit, or remove services offered at Glamour Style.</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Service Menu</h1>
+                    <p className="text-gray-500 text-sm font-medium">Customize your salon's professional offerings.</p>
                 </div>
-                <button className="btn-primary py-2">+ Add New Service</button>
+                <button className="px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded-full hover:bg-gray-800 hover:shadow-lg transition-all">
+                    + Register New Service
+                </button>
             </div>
 
             <div className="flex flex-wrap gap-2">
@@ -25,9 +27,9 @@ const ServicesAdminPage = () => {
                     <button
                         key={cat.id}
                         onClick={() => setFilter(cat.value)}
-                        className={`px-4 py-2 rounded-xl text-[10px] uppercase tracking-widest font-bold transition-all border ${filter === cat.value
-                                ? 'bg-[#D4AF37] text-black border-[#D4AF37] shadow-glow'
-                                : 'bg-white/5 text-gray-400 border-white/5 hover:border-[#D4AF37]/30'
+                        className={`px-5 py-2 rounded-full text-[10px] uppercase tracking-widest font-extrabold transition-all border ${filter === cat.value
+                            ? 'bg-[#D4AF37] text-white border-[#D4AF37] shadow-md'
+                            : 'bg-white text-gray-400 border-gray-100 hover:border-[#D4AF37] hover:text-[#D4AF37]'
                             }`}
                     >
                         {cat.name}
@@ -37,26 +39,27 @@ const ServicesAdminPage = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                    <div key={service.id} className="glass p-6 rounded-2xl border border-white/5 relative group hover:border-[#D4AF37]/20 transition-all flex flex-col">
+                    <div key={service.id} className="bg-white p-6 rounded-2xl border border-gray-100 relative group hover:shadow-xl transition-all flex flex-col overflow-hidden">
+                        <div className="absolute top-0 right-0 w-24 h-24 bg-[#D4AF37]/5 rounded-bl-full -translate-y-8 translate-x-8 group-hover:bg-[#D4AF37]/10 transition-colors" />
+
                         <div className="flex justify-between items-start mb-4">
-                            <span className="text-[10px] uppercase font-bold text-[#D4AF37] tracking-widest">{service.category}</span>
-                            <div className="flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                <button className="text-gray-500 hover:text-white transition-colors">✏️</button>
-                                <button className="text-gray-500 hover:text-red-500 transition-colors">🗑️</button>
+                            <span className="text-[10px] uppercase font-bold text-[#D4AF37] tracking-[2px]">{service.category}</span>
+                            <div className="flex gap-2">
+                                <button className="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-xs opacity-0 group-hover:opacity-100 hover:bg-white border border-transparent hover:border-gray-100 transition-all">✏️</button>
                             </div>
                         </div>
 
-                        <h3 className="text-xl font-bold mb-2 group-hover:text-[#D4AF37] transition-colors">{service.name}</h3>
-                        <p className="text-gray-500 text-sm mb-6 flex-1 line-clamp-3">{service.description}</p>
+                        <h3 className="text-xl font-heading font-bold mb-2 text-gray-950 group-hover:text-[#D4AF37] transition-colors">{service.name}</h3>
+                        <p className="text-gray-500 text-xs font-medium mb-6 flex-1 line-clamp-2 leading-relaxed">{service.description}</p>
 
-                        <div className="flex items-center justify-between pt-6 border-t border-gray-900 mt-auto">
+                        <div className="flex items-center justify-between pt-6 border-t border-gray-50 mt-auto">
                             <div className="flex flex-col">
-                                <span className="text-[10px] text-gray-600 uppercase tracking-widest">Duration</span>
-                                <span className="text-white font-medium">{service.duration} min</span>
+                                <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Duration</span>
+                                <span className="text-gray-900 font-bold text-sm tracking-tight">{service.duration} MIN</span>
                             </div>
                             <div className="flex flex-col items-end">
-                                <span className="text-[10px] text-gray-600 uppercase tracking-widest">Price</span>
-                                <span className="text-2xl font-bold text-[#D4AF37]">£{service.price}</span>
+                                <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Price Point</span>
+                                <span className="text-2xl font-black text-gray-950">£{service.price}</span>
                             </div>
                         </div>
                     </div>
