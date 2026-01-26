@@ -106,7 +106,10 @@ const CustomersPage = () => {
                                         </span>
                                     </td>
                                     <td className="px-8 py-5 text-right">
-                                        <button className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-all hover:border-[#D4AF37] hover:shadow-sm">✏️</button>
+                                        <div className="flex justify-end gap-3">
+                                            <button className="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-[#25D366] opacity-0 group-hover:opacity-100 transition-all hover:border-[#25D366] hover:shadow-sm" title="Envoyer WhatsApp">💬</button>
+                                            <button className="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-all hover:border-[#D4AF37] hover:shadow-sm">✏️</button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 
 const DashboardPage = () => {
     const stats = [
@@ -133,21 +134,16 @@ const DashboardPage = () => {
                 </div>
 
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 relative overflow-hidden flex flex-col justify-center bg-gradient-to-br from-white to-gray-50">
-                    <div className="absolute top-0 right-0 p-8 text-6xl opacity-[0.03] select-none">📈</div>
+                    <div className="absolute top-0 right-0 p-8 text-6xl opacity-[0.03] select-none">📣</div>
                     <div className="relative z-10">
-                        <p className="text-gray-400 text-[10px] font-black uppercase tracking-[3px] mb-4">Recommandation Stratégique</p>
-                        <p className="text-lg font-medium text-gray-700 leading-relaxed italic border-l-4 border-[#D4AF37] pl-6 py-2">
-                            "Les réservations du <span className="text-gray-950 font-black">Vendredi au Samedi</span> augmentent de <span className="text-[#D4AF37] font-black">22%</span> ce mois-ci. Nous suggérons d'optimiser le planning des collaborateurs."
+                        <p className="text-gray-400 text-[10px] font-black uppercase tracking-[3px] mb-4">Marketing Automatisé</p>
+                        <p className="text-lg font-medium text-gray-700 leading-relaxed italic border-l-4 border-[#25D366] pl-6 py-2">
+                            "Vos rappels <span className="text-[#25D366] font-black">WhatsApp</span> ont réduit les absences de <span className="text-gray-950 font-black">15%</span> ce mois-ci. 42 nouveaux rendez-vous générés par SMS."
                         </p>
                         <div className="mt-8 flex items-center gap-4">
-                            <div className="px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">
-                                <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Taux de Rétention</p>
-                                <p className="text-xl font-black text-gray-950">84%</p>
-                            </div>
-                            <div className="px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">
-                                <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Satisfaction</p>
-                                <p className="text-xl font-black text-[#D4AF37]">4.9/5</p>
-                            </div>
+                            <Link href="/admin/marketing" className="px-6 py-2 bg-gray-950 text-white text-[10px] font-black uppercase tracking-widest rounded-lg shadow-lg hover:bg-gray-800 transition-all">
+                                Booster les Campagnes
+                            </Link>
                         </div>
                     </div>
                 </div>

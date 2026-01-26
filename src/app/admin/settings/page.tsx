@@ -8,6 +8,7 @@ const SettingsPage = () => {
     const tabs = [
         { id: 'general', label: 'Général', icon: '⚙️' },
         { id: 'hours', label: 'Horaires', icon: '🕐' },
+        { id: 'comm', label: 'Communications', icon: '📱' },
         { id: 'payments', label: 'Paiements', icon: '💳' },
         { id: 'notifications', label: 'Alertes', icon: '🔔' },
     ];
@@ -80,6 +81,64 @@ const SettingsPage = () => {
                                     </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+                )}
+
+                {activeTab === 'comm' && (
+                    <div className="space-y-8">
+                        <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm max-w-4xl">
+                            <h3 className="text-lg font-bold text-gray-950 mb-8 uppercase tracking-wider">Passerelles de Communication</h3>
+
+                            <div className="space-y-8">
+                                {/* WhatsApp API */}
+                                <div className="p-6 bg-[#25D366]/5 rounded-2xl border border-[#25D366]/20">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className="text-3xl">🧩</div>
+                                            <div>
+                                                <p className="text-base font-black text-gray-950">Intégration WhatsApp Business</p>
+                                                <p className="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">Status : Connecté via Twilio API</p>
+                                            </div>
+                                        </div>
+                                        <div className="w-12 h-6 bg-green-500 rounded-full relative">
+                                            <div className="absolute right-1 top-1 w-4 h-4 bg-white rounded-full shadow-sm" />
+                                        </div>
+                                    </div>
+                                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                                        <div className="space-y-1.5">
+                                            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">WhatsApp ID</label>
+                                            <input type="text" readOnly value="GS_PROD_1102938" className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-xs font-bold font-mono" />
+                                        </div>
+                                        <div className="space-y-1.5">
+                                            <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Phone Linked</label>
+                                            <input type="text" value="+44 7123 456789" className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-xs font-bold" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {/* SMS Gateway */}
+                                <div className="p-6 bg-blue-500/5 rounded-2xl border border-blue-500/20">
+                                    <div className="flex justify-between items-start mb-4">
+                                        <div className="flex items-center gap-4">
+                                            <div className="text-3xl">📡</div>
+                                            <div>
+                                                <p className="text-base font-black text-gray-950">SMS Gateway (Global)</p>
+                                                <p className="text-xs text-gray-500 font-bold uppercase tracking-widest mt-1">Credit restant : 452 SMS</p>
+                                            </div>
+                                        </div>
+                                        <button className="text-[10px] px-3 py-1 bg-white border border-blue-200 text-blue-600 font-black rounded-lg uppercase">Recharger</button>
+                                    </div>
+                                    <div className="space-y-1.5 mt-6">
+                                        <label className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Sender ID (Alpha-numeric)</label>
+                                        <input type="text" value="GLAMOURSTYL" className="w-full bg-white border border-gray-200 rounded-xl px-4 py-2.5 text-xs font-bold uppercase" />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div className="mt-8 flex justify-end">
+                                <button className="px-8 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-lg">Sauvegarder Configuration</button>
+                            </div>
                         </div>
                     </div>
                 )}
