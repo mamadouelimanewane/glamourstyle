@@ -55,9 +55,23 @@ const CalendarPage = () => {
                                                 className={`absolute inset-x-1 top-1 rounded-xl p-3 border shadow-sm z-10 ${appointment.color}`}
                                                 style={{ height: `${appointment.duration * 96 - 8}px` }}
                                             >
-                                                <p className="text-xs font-black uppercase tracking-tight truncate">{appointment.client}</p>
-                                                <p className="text-[10px] font-bold opacity-80 truncate">{appointment.service}</p>
-                                                <p className="text-[9px] font-black mt-2 bg-white/40 w-fit px-1.5 py-0.5 rounded uppercase">{appointment.time}</p>
+                                                <div className="flex justify-between items-start">
+                                                    <div>
+                                                        <p className="text-[11px] font-black uppercase tracking-tight truncate">{appointment.client}</p>
+                                                        <p className="text-[9px] font-bold opacity-80 truncate">{appointment.service}</p>
+                                                    </div>
+                                                    <button
+                                                        className="w-6 h-6 bg-white/40 hover:bg-white/60 rounded flex items-center justify-center text-[10px] transition-all"
+                                                        title="Prévenir en cas de retard (WhatsApp)"
+                                                        onClick={() => alert(`Envoi d'un message SMS/WhatsApp d'urgence à ${appointment.client} pour le prévenir d'un retard.`)}
+                                                    >
+                                                        📲
+                                                    </button>
+                                                </div>
+                                                <div className="mt-2 flex items-center justify-between">
+                                                    <p className="text-[8px] font-black bg-white/40 px-1.5 py-0.5 rounded uppercase">{appointment.time}</p>
+                                                    <span className="text-[7px] font-black uppercase tracking-widest opacity-60">En cours</span>
+                                                </div>
                                             </div>
                                         )}
                                     </div>
