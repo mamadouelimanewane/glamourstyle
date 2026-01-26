@@ -29,8 +29,8 @@ const Sidebar = ({ onClose }: SidebarProps) => {
                         <span>💇</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-sm font-black text-white tracking-widest">GLAMOUR STYLE</span>
-                        <span className="text-[10px] text-[#D4AF37] uppercase font-bold tracking-wider">Administration</span>
+                        <span className="text-base font-black text-white tracking-widest">GLAMOUR STYLE</span>
+                        <span className="text-xs text-[#D4AF37] uppercase font-bold tracking-wider">Administration</span>
                     </div>
                 </Link>
                 <button
@@ -58,7 +58,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
                                 }`}
                         >
                             <span className={`text-xl transition-all ${isActive ? 'scale-110' : 'opacity-70 group-hover:opacity-100'}`}>{item.icon}</span>
-                            <span className={`font-semibold text-sm tracking-wide ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                            <span className={`font-semibold text-base tracking-wide ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
                                 {item.name}
                             </span>
                             {isActive && (
@@ -76,8 +76,8 @@ const Sidebar = ({ onClose }: SidebarProps) => {
                         <span className="text-gray-950 text-sm font-black">AD</span>
                     </div>
                     <div className="flex flex-col overflow-hidden leading-tight">
-                        <span className="text-white font-bold text-xs truncate">Admin Manager</span>
-                        <span className="text-gray-500 text-[10px] truncate">LexPremium ERP System</span>
+                        <span className="text-white font-bold text-sm truncate">Admin Manager</span>
+                        <span className="text-gray-500 text-xs truncate">LexPremium ERP System</span>
                     </div>
                 </div>
             </div>

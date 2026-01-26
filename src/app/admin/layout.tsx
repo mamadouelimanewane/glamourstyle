@@ -42,11 +42,11 @@ export default function AdminLayout({
                             </button>
 
                             <div className="flex flex-col">
-                                <span className="text-[10px] uppercase tracking-[3px] font-black text-[#D4AF37]">Cabinet LexPremium ERP</span>
+                                <span className="text-xs uppercase tracking-[3px] font-black text-[#D4AF37]">Cabinet LexPremium ERP</span>
                                 <nav className="flex items-center gap-2 mt-0.5">
-                                    <Link href="/admin" className="text-xs font-bold text-gray-400 hover:text-gray-950 transition-colors">Espace Personnel</Link>
-                                    <span className="text-gray-200 text-xs">/</span>
-                                    <span className="text-xs font-bold text-gray-950">Gestion de Bord</span>
+                                    <Link href="/admin" className="text-sm font-bold text-gray-400 hover:text-gray-950 transition-colors">Espace Personnel</Link>
+                                    <span className="text-gray-200 text-sm">/</span>
+                                    <span className="text-sm font-bold text-gray-950">Gestion de Bord</span>
                                 </nav>
                             </div>
                         </div>
@@ -67,7 +67,7 @@ export default function AdminLayout({
                                     <span className="absolute top-2.5 right-2.5 w-2 h-2 bg-red-500 rounded-full border-2 border-white"></span>
                                 </button>
 
-                                <Link href="/" className="flex items-center gap-2 px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-[#D4AF37] bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-xl hover:bg-[#D4AF37] hover:text-white transition-all">
+                                <Link href="/" className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-[#D4AF37] bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-xl hover:bg-[#D4AF37] hover:text-white transition-all">
                                     <span>🌐</span>
                                     <span className="hidden sm:inline">Aperçu Site</span>
                                 </Link>

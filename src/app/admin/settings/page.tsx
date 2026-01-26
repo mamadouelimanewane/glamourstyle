@@ -16,8 +16,8 @@ const SettingsPage = () => {
         <div className="space-y-10 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h1 className="text-2xl font-heading font-bold text-gray-950">Configuration Système</h1>
-                    <p className="text-gray-500 text-sm font-medium mt-1 uppercase tracking-wide">Paramètres globaux du serveur LexPremium</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Configuration Système</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Paramètres globaux du serveur LexPremium</p>
                 </div>
             </div>
 
@@ -26,12 +26,12 @@ const SettingsPage = () => {
                     <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`flex items-center gap-2.5 px-5 py-2.5 rounded-lg text-[10px] font-black uppercase tracking-widest transition-all ${activeTab === tab.id
+                        className={`flex items-center gap-2.5 px-5 py-2.5 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${activeTab === tab.id
                             ? 'bg-white text-gray-950 shadow-md border border-gray-100'
                             : 'text-gray-500 hover:text-gray-900'
                             }`}
                     >
-                        <span className="text-sm">{tab.icon}</span>
+                        <span className="text-base">{tab.icon}</span>
                         {tab.label}
                     </button>
                 ))}
@@ -41,19 +41,19 @@ const SettingsPage = () => {
                 {activeTab === 'general' && (
                     <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm space-y-8">
                         <div>
-                            <h3 className="text-base font-bold text-gray-950 mb-6 uppercase tracking-wider">Identité de l'Héroïne</h3>
+                            <h3 className="text-lg font-bold text-gray-950 mb-6 uppercase tracking-wider">Identité de l'Héroïne</h3>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div className="space-y-2">
-                                    <label className="block text-[10px] text-gray-400 font-black uppercase tracking-widest">Enseigne Commerciale</label>
-                                    <input type="text" defaultValue="Glamour Style" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:border-[#D4AF37] outline-none transition-all" />
+                                    <label className="block text-xs text-gray-400 font-black uppercase tracking-widest">Enseigne Commerciale</label>
+                                    <input type="text" defaultValue="Glamour Style" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-base font-bold text-gray-900 focus:bg-white focus:border-[#D4AF37] outline-none transition-all" />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="block text-[10px] text-gray-400 font-black uppercase tracking-widest">Ligne Directe</label>
-                                    <input type="tel" defaultValue="+44 20 7123 4567" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:border-[#D4AF37] outline-none transition-all" />
+                                    <label className="block text-xs text-gray-400 font-black uppercase tracking-widest">Ligne Directe</label>
+                                    <input type="tel" defaultValue="+44 20 7123 4567" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-base font-bold text-gray-900 focus:bg-white focus:border-[#D4AF37] outline-none transition-all" />
                                 </div>
                                 <div className="md:col-span-2 space-y-2">
-                                    <label className="block text-[10px] text-gray-400 font-black uppercase tracking-widest">Email Professionnel</label>
-                                    <input type="email" defaultValue="contact@glamourstyle.co.uk" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:border-[#D4AF37] outline-none transition-all" />
+                                    <label className="block text-xs text-gray-400 font-black uppercase tracking-widest">Email Professionnel</label>
+                                    <input type="email" defaultValue="contact@glamourstyle.co.uk" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-3 text-base font-bold text-gray-900 focus:bg-white focus:border-[#D4AF37] outline-none transition-all" />
                                 </div>
                             </div>
                         </div>
@@ -66,12 +66,12 @@ const SettingsPage = () => {
 
                 {activeTab === 'hours' && (
                     <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm">
-                        <h3 className="text-base font-bold text-gray-950 mb-8 uppercase tracking-wider">Horaires Hebdomadaires</h3>
+                        <h3 className="text-lg font-bold text-gray-950 mb-8 uppercase tracking-wider">Horaires Hebdomadaires</h3>
                         <div className="space-y-3">
                             {['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'].map((day) => (
-                                <div key={day} className="flex items-center gap-6 p-4 rounded-xl bg-gray-50/50 border border-gray-100 group hover:bg-white hover:shadow-sm transition-all text-sm">
+                                <div key={day} className="flex items-center gap-6 p-4 rounded-xl bg-gray-50/50 border border-gray-100 group hover:bg-white hover:shadow-sm transition-all text-base">
                                     <div className="w-32">
-                                        <span className="font-bold text-gray-950 uppercase tracking-widest text-[11px]">{day}</span>
+                                        <span className="font-bold text-gray-950 uppercase tracking-widest text-xs">{day}</span>
                                     </div>
                                     <div className="flex items-center gap-4 ml-auto">
                                         <input type="time" defaultValue="09:00" className="bg-white border border-gray-200 rounded-lg p-2 font-bold text-gray-900 outline-none focus:border-[#D4AF37]" />

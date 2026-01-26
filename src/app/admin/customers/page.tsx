@@ -24,8 +24,8 @@ const CustomersPage = () => {
         <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-heading font-bold text-gray-950">Registre des Clients</h1>
-                    <p className="text-gray-500 text-sm font-medium mt-1 uppercase tracking-wide">Base de données CRM et fidélisation</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Registre des Clients</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Base de données CRM et fidélisation</p>
                 </div>
                 <button className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-lg shadow-black/10">
                     + Ajouter un client
@@ -45,8 +45,8 @@ const CustomersPage = () => {
                             {s.icon}
                         </div>
                         <div>
-                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">{s.label}</p>
-                            <p className={`text-xl font-black ${s.color || 'text-gray-950'}`}>{s.value}</p>
+                            <p className="text-xs text-gray-400 font-bold uppercase tracking-widest mb-1">{s.label}</p>
+                            <p className={`text-2xl font-black ${s.color || 'text-gray-950'}`}>{s.value}</p>
                         </div>
                     </div>
                 ))}
@@ -69,7 +69,7 @@ const CustomersPage = () => {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-xs font-bold uppercase tracking-widest">
                                 <th className="px-8 py-5">Identité</th>
                                 <th className="px-8 py-5 text-center">Sessions</th>
                                 <th className="px-8 py-5 text-right">CA Total</th>
@@ -87,18 +87,18 @@ const CustomersPage = () => {
                                                 {customer.name[0]}
                                             </div>
                                             <div className="flex flex-col">
-                                                <span className="font-bold text-gray-900 text-sm">{customer.name}</span>
-                                                <span className="text-[11px] text-gray-500 font-medium">{customer.email}</span>
+                                                <span className="font-bold text-gray-900 text-base">{customer.name}</span>
+                                                <span className="text-sm text-gray-500 font-medium">{customer.email}</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-center">
-                                        <span className="text-sm font-black text-gray-950">{customer.visits}</span>
+                                        <span className="text-base font-black text-gray-950">{customer.visits}</span>
                                     </td>
-                                    <td className="px-8 py-5 text-right font-black text-gray-950 text-sm">{customer.totalSpent}</td>
-                                    <td className="px-8 py-5 text-center text-xs text-gray-500 font-bold">{customer.lastVisit}</td>
+                                    <td className="px-8 py-5 text-right font-black text-gray-950 text-base">{customer.totalSpent}</td>
+                                    <td className="px-8 py-5 text-center text-sm text-gray-500 font-bold">{customer.lastVisit}</td>
                                     <td className="px-8 py-5 text-center">
-                                        <span className={`text-[10px] uppercase font-black px-3 py-1.5 rounded-full border ${customer.status === 'VIP' ? 'bg-amber-50 text-amber-600 border-amber-100 shadow-sm' :
+                                        <span className={`text-xs uppercase font-black px-3 py-1.5 rounded-full border ${customer.status === 'VIP' ? 'bg-amber-50 text-amber-600 border-amber-100 shadow-sm' :
                                             customer.status === 'Regular' ? 'bg-blue-50 text-blue-600 border-blue-100' :
                                                 'bg-green-50 text-green-600 border-green-100'
                                             }`}>

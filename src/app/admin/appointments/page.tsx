@@ -22,8 +22,8 @@ const AppointmentsPage = () => {
         <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-2xl font-heading font-bold text-gray-950">Gestion des Rendez-vous</h1>
-                    <p className="text-gray-500 text-sm font-medium mt-1 uppercase tracking-wide">Planification et suivi des sessions clients</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Gestion des Rendez-vous</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Planification et suivi des sessions clients</p>
                 </div>
                 <div className="flex bg-gray-200/50 p-1.5 rounded-xl border border-gray-200">
                     {['all', 'pending', 'confirmed', 'cancelled'].map((tab) => (
@@ -43,7 +43,7 @@ const AppointmentsPage = () => {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-xs font-bold uppercase tracking-widest">
                                 <th className="px-8 py-5">Identifiant</th>
                                 <th className="px-8 py-5">Client</th>
                                 <th className="px-8 py-5">Service & Horaire</th>
@@ -58,24 +58,24 @@ const AppointmentsPage = () => {
                                     <td className="px-8 py-5 font-mono text-[10px] text-gray-400">{app.id}</td>
                                     <td className="px-8 py-5">
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-gray-900 text-sm group-hover:text-[#D4AF37] transition-colors">{app.client}</span>
-                                            <span className="text-xs text-gray-500 font-medium">{app.email}</span>
+                                            <span className="font-bold text-gray-900 text-base group-hover:text-[#D4AF37] transition-colors">{app.client}</span>
+                                            <span className="text-sm text-gray-500 font-medium">{app.email}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5">
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-gray-700 text-sm">{app.service}</span>
-                                            <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">📅 {app.date} | {app.time}</span>
+                                            <span className="font-bold text-gray-700 text-base">{app.service}</span>
+                                            <span className="text-sm text-gray-400 font-bold uppercase tracking-widest mt-1">📅 {app.date} | {app.time}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-right">
                                         <div className="flex flex-col">
-                                            <span className="text-sm font-black text-gray-900">{app.amount}</span>
-                                            <span className="text-[10px] text-green-600 font-bold uppercase tracking-tight">Acompte: {app.deposit}</span>
+                                            <span className="text-base font-black text-gray-900">{app.amount}</span>
+                                            <span className="text-sm text-green-600 font-bold uppercase tracking-tight">Acompte: {app.deposit}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-center">
-                                        <span className={`text-[10px] uppercase font-black px-3 py-1.5 rounded-full border shadow-sm ${app.status === 'confirmed' ? 'bg-green-50 text-green-600 border-green-100' :
+                                        <span className={`text-xs uppercase font-black px-3 py-1.5 rounded-full border shadow-sm ${app.status === 'confirmed' ? 'bg-green-50 text-green-600 border-green-100' :
                                             app.status === 'pending' ? 'bg-amber-50 text-amber-600 border-amber-100' :
                                                 'bg-red-50 text-red-600 border-red-100'
                                             }`}>
