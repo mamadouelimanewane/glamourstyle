@@ -14,8 +14,8 @@ const ServicesAdminPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Service Menu</h1>
-                    <p className="text-gray-500 text-sm font-medium">Customize your salon's professional offerings.</p>
+                    <h1 className="text-xl font-heading font-bold text-gray-950">Service Menu</h1>
+                    <p className="text-gray-500 text-xs font-medium">Customize your salon's professional offerings.</p>
                 </div>
                 <button className="px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded-full hover:bg-gray-800 hover:shadow-lg transition-all">
                     + Register New Service
@@ -27,7 +27,7 @@ const ServicesAdminPage = () => {
                     <button
                         key={cat.id}
                         onClick={() => setFilter(cat.value)}
-                        className={`px-5 py-2 rounded-full text-[10px] uppercase tracking-widest font-extrabold transition-all border ${filter === cat.value
+                        className={`px-4 py-1.5 rounded-full text-[9px] uppercase tracking-widest font-extrabold transition-all border ${filter === cat.value
                             ? 'bg-[#D4AF37] text-white border-[#D4AF37] shadow-md'
                             : 'bg-white text-gray-400 border-gray-100 hover:border-[#D4AF37] hover:text-[#D4AF37]'
                             }`}
@@ -49,17 +49,17 @@ const ServicesAdminPage = () => {
                             </div>
                         </div>
 
-                        <h3 className="text-xl font-heading font-bold mb-2 text-gray-950 group-hover:text-[#D4AF37] transition-colors">{service.name}</h3>
+                        <h3 className="text-sm font-heading font-bold mb-1 text-gray-950 group-hover:text-[#D4AF37] transition-colors">{service.name}</h3>
                         <p className="text-gray-500 text-xs font-medium mb-6 flex-1 line-clamp-2 leading-relaxed">{service.description}</p>
 
                         <div className="flex items-center justify-between pt-6 border-t border-gray-50 mt-auto">
                             <div className="flex flex-col">
                                 <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Duration</span>
-                                <span className="text-gray-900 font-bold text-sm tracking-tight">{service.duration} MIN</span>
+                                <span className="text-gray-900 font-bold text-xs tracking-tight">{service.duration} MIN</span>
                             </div>
                             <div className="flex flex-col items-end">
                                 <span className="text-[10px] text-gray-400 uppercase font-bold tracking-widest">Price Point</span>
-                                <span className="text-2xl font-black text-gray-950">£{service.price}</span>
+                                <span className="text-xl font-black text-gray-950">£{service.price}</span>
                             </div>
                         </div>
                     </div>

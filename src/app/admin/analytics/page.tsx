@@ -26,14 +26,14 @@ const AnalyticsPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Analytics</h1>
-                    <p className="text-gray-500 text-sm font-medium">Business intelligence and performance data.</p>
+                    <h1 className="text-xl font-heading font-bold text-gray-950">Analytics</h1>
+                    <p className="text-gray-500 text-xs font-medium">Business intelligence and performance data.</p>
                 </div>
                 <div className="flex gap-3 w-full md:w-auto">
-                    <button className="flex-1 md:flex-none px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-full hover:shadow-md transition-all">
+                    <button className="flex-1 md:flex-none px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-full hover:shadow-md transition-all">
                         Export Report
                     </button>
-                    <select className="flex-1 md:flex-none px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-gray-900 bg-white border border-gray-200 rounded-full outline-none focus:ring-1 focus:ring-[#D4AF37] cursor-pointer">
+                    <select className="flex-1 md:flex-none px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-gray-900 bg-white border border-gray-200 rounded-full outline-none focus:ring-1 focus:ring-[#D4AF37] cursor-pointer">
                         <option>Last 6 Months</option>
                         <option>Last Year</option>
                         <option>All Time</option>
@@ -56,8 +56,8 @@ const AnalyticsPage = () => {
                             <span className={`text-[10px] font-bold px-2 py-1 rounded-full ${stat.positive ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>{stat.change}</span>
                         </div>
                         <h3 className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">{stat.label}</h3>
-                        <p className="text-3xl font-heading font-bold text-gray-950">{stat.value}</p>
-                        <p className="text-[10px] text-gray-400 mt-2 font-medium">{stat.sub}</p>
+                        <p className="text-xl font-heading font-bold text-gray-950">{stat.value}</p>
+                        <p className="text-[9px] text-gray-400 mt-2 font-medium">{stat.sub}</p>
                     </div>
                 ))}
             </div>
@@ -66,7 +66,7 @@ const AnalyticsPage = () => {
                 {/* Revenue Chart Placeholder */}
                 <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 gap-4">
-                        <h3 className="text-xl font-heading font-bold text-gray-950">Revenue Trajectory</h3>
+                        <h3 className="text-base font-heading font-bold text-gray-950">Revenue Trajectory</h3>
                         <div className="flex gap-4">
                             <div className="flex items-center gap-2">
                                 <div className="w-3 h-3 rounded-full bg-[#D4AF37]"></div>
@@ -102,7 +102,7 @@ const AnalyticsPage = () => {
 
                 {/* Top Services */}
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-                    <h3 className="text-xl font-heading font-bold text-gray-950 mb-8">Performance Mix</h3>
+                    <h3 className="text-base font-heading font-bold text-gray-950 mb-8">Performance Mix</h3>
                     <div className="space-y-4">
                         {topServices.map((service, index) => (
                             <div key={service.name} className="flex items-center gap-4 p-4 rounded-xl bg-gray-50 hover:bg-white border border-transparent hover:border-gray-100 transition-all group">
@@ -161,10 +161,10 @@ const AnalyticsPage = () => {
                 <div className="bg-white p-8 rounded-2xl border border-gray-100 shadow-sm flex flex-col items-center justify-center text-center">
                     <h4 className="text-[10px] font-bold mb-4 text-gray-400 uppercase tracking-widest">Client Loyalty Index</h4>
                     <div className="relative">
-                        <p className="text-6xl font-heading font-black text-gray-950 drop-shadow-sm">78%</p>
-                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-12 h-1 bg-[#D4AF37] rounded-full" />
+                        <p className="text-4xl font-heading font-black text-gray-950 drop-shadow-sm">78%</p>
+                        <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-8 h-1 bg-[#D4AF37] rounded-full" />
                     </div>
-                    <p className="text-[10px] text-gray-400 mt-6 font-bold uppercase tracking-widest">30-Day Return Cycle</p>
+                    <p className="text-[9px] text-gray-400 mt-6 font-bold uppercase tracking-widest">30-Day Return Cycle</p>
                 </div>
             </div>
         </div>

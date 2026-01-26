@@ -22,8 +22,8 @@ const DashboardPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h2 className="text-3xl font-heading font-bold text-gray-950 leading-tight">Overview</h2>
-                    <p className="text-gray-500 text-sm font-medium">Monitoring Glamour Style performance</p>
+                    <h2 className="text-xl font-heading font-bold text-gray-950 leading-tight">Overview</h2>
+                    <p className="text-gray-500 text-xs font-medium">Monitoring Glamour Style performance</p>
                 </div>
                 <div className="flex gap-3 w-full md:w-auto">
                     <button className="flex-1 md:flex-none px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-full hover:shadow-md transition-all">
@@ -49,7 +49,7 @@ const DashboardPage = () => {
                             </span>
                         </div>
                         <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-1">{stat.label}</p>
-                        <p className="text-3xl font-heading font-bold text-gray-950">{stat.value}</p>
+                        <p className="text-xl font-heading font-bold text-gray-950">{stat.value}</p>
                     </div>
                 ))}
             </div>
@@ -58,8 +58,8 @@ const DashboardPage = () => {
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="px-8 py-6 border-b border-gray-50 flex justify-between items-center bg-gray-50/50">
                     <div>
-                        <h3 className="text-lg font-heading font-bold text-gray-950">Recent Appointments</h3>
-                        <p className="text-xs text-gray-500 font-medium">Detailed list of upcoming sessions</p>
+                        <h3 className="text-sm font-heading font-bold text-gray-950">Recent Appointments</h3>
+                        <p className="text-[10px] text-gray-500 font-medium">Detailed list of upcoming sessions</p>
                     </div>
                     <button className="px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] hover:bg-[#D4AF37]/5 rounded-lg transition-all">Show All Records</button>
                 </div>
@@ -79,18 +79,18 @@ const DashboardPage = () => {
                                 <tr key={booking.id} className="hover:bg-gray-50/50 transition-colors group">
                                     <td className="px-8 py-4 whitespace-nowrap">
                                         <div className="flex items-center">
-                                            <div className="w-10 h-10 rounded-full bg-gray-950 flex items-center justify-center text-xs font-bold text-white shadow-lg border border-gray-800 group-hover:bg-[#D4AF37] transition-colors">
+                                            <div className="w-8 h-8 rounded-full bg-gray-950 flex items-center justify-center text-[10px] font-bold text-white shadow-lg border border-gray-800 group-hover:bg-[#D4AF37] transition-colors">
                                                 {booking.client[0]}
                                             </div>
-                                            <span className="ml-4 text-sm font-bold text-gray-950">{booking.client}</span>
+                                            <span className="ml-4 text-xs font-bold text-gray-950">{booking.client}</span>
                                         </div>
                                     </td>
-                                    <td className="px-8 py-4 whitespace-nowrap text-sm font-medium text-gray-600">{booking.service}</td>
+                                    <td className="px-8 py-4 whitespace-nowrap text-xs font-medium text-gray-600">{booking.service}</td>
                                     <td className="px-8 py-4 whitespace-nowrap">
-                                        <div className="text-sm text-gray-950 font-bold">{booking.date}</div>
-                                        <div className="text-[10px] text-gray-400 font-medium uppercase tracking-wider">at {booking.time}</div>
+                                        <div className="text-xs text-gray-950 font-bold">{booking.date}</div>
+                                        <div className="text-[9px] text-gray-400 font-medium uppercase tracking-wider">at {booking.time}</div>
                                     </td>
-                                    <td className="px-8 py-4 whitespace-nowrap text-sm font-black text-gray-900 text-right">{booking.amount}</td>
+                                    <td className="px-8 py-4 whitespace-nowrap text-xs font-black text-gray-900 text-right">{booking.amount}</td>
                                     <td className="px-8 py-4 whitespace-nowrap text-center">
                                         <span className={`px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full border shadow-sm ${booking.status === 'confirmed'
                                             ? 'bg-white text-green-600 border-green-100'
@@ -103,6 +103,58 @@ const DashboardPage = () => {
                             ))}
                         </tbody>
                     </table>
+                </div>
+            </div>
+
+            {/* Bottom Grid: Breakdown & Insights */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {/* Revenue Breakdown */}
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+                    <h3 className="text-sm font-heading font-bold text-gray-950 mb-6">Revenue Breakdown</h3>
+                    <div className="space-y-6">
+                        {[
+                            { category: 'Styling', percentage: 45, color: 'bg-gray-950' },
+                            { category: 'Coloration', percentage: 25, color: 'bg-[#D4AF37]' },
+                            { category: 'Extensions', percentage: 20, color: 'bg-gray-400' },
+                            { category: 'Products', percentage: 10, color: 'bg-gray-200' },
+                        ].map((item) => (
+                            <div key={item.category} className="space-y-2">
+                                <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-widest text-gray-500">
+                                    <span>{item.category}</span>
+                                    <span className="text-gray-950">{item.percentage}%</span>
+                                </div>
+                                <div className="h-1 w-full bg-gray-50 rounded-full overflow-hidden">
+                                    <div
+                                        className={`h-full ${item.color} rounded-full transition-all duration-1000`}
+                                        style={{ width: `${item.percentage}%` }}
+                                    />
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Peak Performance */}
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 relative overflow-hidden group">
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-bl-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-110" />
+                    <h3 className="text-sm font-heading font-bold text-gray-950 mb-6 relative z-10">Peak Performance</h3>
+                    <div className="space-y-6 relative z-10">
+                        <div className="p-4 rounded-xl bg-gray-50 border border-gray-100">
+                            <p className="text-xs font-medium text-gray-600 leading-relaxed italic">
+                                "Friday bookings are <span className="text-[#D4AF37] font-bold">20% higher</span> than average. Consider boosting staff presence on this day."
+                            </p>
+                        </div>
+                        <div className="grid grid-cols-2 gap-4">
+                            <div className="p-4 rounded-xl border border-gray-100 text-center">
+                                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Busy Mode</p>
+                                <p className="text-sm font-black text-gray-950">FRI - SAT</p>
+                            </div>
+                            <div className="p-4 rounded-xl border border-gray-100 text-center">
+                                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">Avg Rating</p>
+                                <p className="text-sm font-black text-[#D4AF37]">4.9 / 5.0</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

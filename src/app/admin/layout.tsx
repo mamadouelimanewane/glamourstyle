@@ -15,7 +15,7 @@ export default function AdminLayout({
                 <div className="bg-white/80 backdrop-blur-md border-b border-gray-200 px-8 py-4 sticky top-0 z-10 shadow-sm">
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-8">
-                            <h1 className="text-xl font-bold text-gray-900 border-r border-gray-200 pr-8">Control Panel</h1>
+                            <h1 className="text-base font-bold text-gray-900 border-r border-gray-200 pr-8">Control Panel</h1>
                             <div className="hidden md:flex items-center relative group">
                                 <span className="absolute left-3 text-gray-400 group-focus-within:text-[#D4AF37] transition-colors text-xs">🔍</span>
                                 <input

@@ -16,8 +16,8 @@ const SettingsPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">System Settings</h1>
-                    <p className="text-gray-500 text-sm font-medium">Fine-tune the salon's core configuration.</p>
+                    <h1 className="text-xl font-heading font-bold text-gray-950">System Settings</h1>
+                    <p className="text-gray-500 text-xs font-medium">Fine-tune the salon's core configuration.</p>
                 </div>
             </div>
 
@@ -26,7 +26,7 @@ const SettingsPage = () => {
                     <button
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id)}
-                        className={`flex items-center gap-3 px-8 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest transition-all ${activeTab === tab.id
+                        className={`flex items-center gap-2.5 px-6 py-2.5 rounded-full text-[9px] font-bold uppercase tracking-widest transition-all ${activeTab === tab.id
                             ? 'bg-white text-gray-950 shadow-md border border-gray-100'
                             : 'text-gray-500 hover:text-gray-900'
                             }`}
@@ -39,28 +39,28 @@ const SettingsPage = () => {
 
             {activeTab === 'general' && (
                 <div className="space-y-6">
-                    <div className="bg-white p-10 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
-                        <h3 className="text-2xl font-heading font-bold mb-8 text-gray-950">Salon Information</h3>
+                    <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
+                        <h3 className="text-base font-heading font-bold mb-6 text-gray-950">Salon Information</h3>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             <div className="space-y-2">
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Official Salon Name</label>
-                                <input type="text" defaultValue="Glamour Style" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
+                                <label className="block text-[9px] text-gray-400 font-bold uppercase tracking-widest">Official Salon Name</label>
+                                <input type="text" defaultValue="Glamour Style" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-xs font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
                             </div>
                             <div className="space-y-2">
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Business Contact</label>
-                                <input type="tel" defaultValue="+44 20 7123 4567" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
+                                <label className="block text-[9px] text-gray-400 font-bold uppercase tracking-widest">Business Contact</label>
+                                <input type="tel" defaultValue="+44 20 7123 4567" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-xs font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
                             </div>
                             <div className="md:col-span-2 space-y-2">
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Public Correspondence (Email)</label>
-                                <input type="email" defaultValue="contact@glamourstyle.co.uk" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
+                                <label className="block text-[9px] text-gray-400 font-bold uppercase tracking-widest">Public Correspondence (Email)</label>
+                                <input type="email" defaultValue="contact@glamourstyle.co.uk" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-xs font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
                             </div>
                             <div className="md:col-span-2 space-y-2">
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Physical Residency (Address)</label>
-                                <input type="text" defaultValue="68 High Street, Waltham Cross, UK" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3 text-sm font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
+                                <label className="block text-[9px] text-gray-400 font-bold uppercase tracking-widest">Physical Residency (Address)</label>
+                                <input type="text" defaultValue="68 High Street, Waltham Cross, UK" className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-xs font-bold text-gray-900 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
                             </div>
                             <div className="md:col-span-2 space-y-2">
-                                <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Brand Narrative</label>
-                                <textarea rows={4} defaultValue="Excellence at the service of your beauty. We have been creating exceptional styles for over 10 years in the heart of the UK." className="w-full bg-gray-50 border border-gray-100 rounded-xl px-5 py-3 text-sm font-medium text-gray-600 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
+                                <label className="block text-[9px] text-gray-400 font-bold uppercase tracking-widest">Brand Narrative</label>
+                                <textarea rows={4} defaultValue="Excellence at the service of your beauty. We have been creating exceptional styles for over 10 years in the heart of the UK." className="w-full bg-gray-50 border border-gray-100 rounded-xl px-4 py-2.5 text-xs font-medium text-gray-600 focus:bg-white focus:ring-1 focus:ring-[#D4AF37] outline-none transition-all" />
                             </div>
                         </div>
                         <div className="mt-10 flex justify-end">
@@ -72,8 +72,8 @@ const SettingsPage = () => {
 
             {activeTab === 'hours' && (
                 <div className="space-y-6">
-                    <div className="bg-white p-10 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
-                        <h3 className="text-2xl font-heading font-bold mb-8 text-gray-950">Operating Hours</h3>
+                    <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
+                        <h3 className="text-base font-heading font-bold mb-6 text-gray-950">Operating Hours</h3>
                         <div className="space-y-4">
                             {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'].map((day) => (
                                 <div key={day} className="flex items-center gap-6 p-5 rounded-2xl bg-gray-50/50 border border-gray-100 hover:bg-white transition-all group">
@@ -105,8 +105,8 @@ const SettingsPage = () => {
 
             {activeTab === 'payments' && (
                 <div className="space-y-6">
-                    <div className="bg-white p-10 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
-                        <h3 className="text-2xl font-heading font-bold mb-8 text-gray-950">Payment Integrity</h3>
+                    <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
+                        <h3 className="text-base font-heading font-bold mb-6 text-gray-950">Payment Integrity</h3>
                         <div className="space-y-8">
                             <div className="space-y-4 p-6 bg-gray-50 rounded-2xl border border-gray-100">
                                 <label className="block text-[10px] text-gray-400 font-bold uppercase tracking-widest">Commitment Deposit (%)</label>
@@ -149,8 +149,8 @@ const SettingsPage = () => {
 
             {activeTab === 'notifications' && (
                 <div className="space-y-6">
-                    <div className="bg-white p-10 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
-                        <h3 className="text-2xl font-heading font-bold mb-8 text-gray-950">Active Alerts</h3>
+                    <div className="bg-white p-8 rounded-3xl border border-gray-200 shadow-sm max-w-4xl">
+                        <h3 className="text-base font-heading font-bold mb-6 text-gray-950">Active Alerts</h3>
                         <div className="space-y-3">
                             {[
                                 { title: 'New Reservation', desc: 'Instant alert upon client booking completion.' },

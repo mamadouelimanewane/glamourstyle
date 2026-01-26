@@ -24,8 +24,8 @@ const CustomersPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Client Registry</h1>
-                    <p className="text-gray-500 text-sm font-medium">Manage your salon's most valuable relationships.</p>
+                    <h1 className="text-xl font-heading font-bold text-gray-950">Client Registry</h1>
+                    <p className="text-gray-500 text-xs font-medium">Manage your salon's most valuable relationships.</p>
                 </div>
                 <button className="px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded-full hover:bg-gray-800 hover:shadow-lg transition-all">
                     + Register New Client
@@ -46,7 +46,7 @@ const CustomersPage = () => {
                         </div>
                         <div>
                             <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-0.5">{s.label}</p>
-                            <p className={`text-2xl font-black ${s.color || 'text-gray-950'}`}>{s.value}</p>
+                            <p className={`text-xl font-black ${s.color || 'text-gray-950'}`}>{s.value}</p>
                         </div>
                     </div>
                 ))}
@@ -60,7 +60,7 @@ const CustomersPage = () => {
                     placeholder="Search by client identifier, email, or contact number..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="flex-1 bg-transparent py-3 pr-6 text-sm font-bold text-gray-900 placeholder-gray-400 outline-none"
+                    className="flex-1 bg-transparent py-3 pr-6 text-xs font-bold text-gray-900 placeholder-gray-400 outline-none"
                 />
             </div>
 
@@ -69,7 +69,7 @@ const CustomersPage = () => {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-gray-50 border-b border-gray-100 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                            <tr className="bg-gray-50 border-b border-gray-100 text-gray-400 text-[9px] font-bold uppercase tracking-widest">
                                 <th className="px-8 py-5">Client ID</th>
                                 <th className="px-8 py-5">Identity & Contact</th>
                                 <th className="px-8 py-5 text-center">Sessions</th>
@@ -89,19 +89,19 @@ const CustomersPage = () => {
                                                 {customer.name[0]}
                                             </div>
                                             <div className="flex flex-col">
-                                                <span className="font-bold text-gray-950">{customer.name}</span>
-                                                <span className="text-[11px] text-gray-400 font-medium">{customer.email}</span>
-                                                <span className="text-[11px] text-gray-300">{customer.phone}</span>
+                                                <span className="font-bold text-gray-950 text-xs">{customer.name}</span>
+                                                <span className="text-[10px] text-gray-400 font-medium">{customer.email}</span>
+                                                <span className="text-[10px] text-gray-300">{customer.phone}</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-center">
-                                        <span className="text-xl font-black text-gray-950">{customer.visits}</span>
+                                        <span className="text-sm font-black text-gray-950">{customer.visits}</span>
                                     </td>
-                                    <td className="px-8 py-5 text-right font-black text-gray-950">{customer.totalSpent}</td>
-                                    <td className="px-8 py-5 text-xs text-gray-500 font-bold">{customer.lastVisit}</td>
+                                    <td className="px-8 py-5 text-right font-black text-gray-950 text-xs">{customer.totalSpent}</td>
+                                    <td className="px-8 py-5 text-[10px] text-gray-500 font-bold">{customer.lastVisit}</td>
                                     <td className="px-8 py-5 text-center">
-                                        <span className={`text-[9px] uppercase font-bold px-3 py-1.5 rounded-full border shadow-sm ${customer.status === 'VIP' ? 'bg-white text-[#D4AF37] border-[#D4AF37]/30 shadow-[#D4AF37]/10' :
+                                        <span className={`text-[8px] uppercase font-bold px-3 py-1.5 rounded-full border shadow-sm ${customer.status === 'VIP' ? 'bg-white text-[#D4AF37] border-[#D4AF37]/30 shadow-[#D4AF37]/10' :
                                             customer.status === 'Regular' ? 'bg-white text-blue-600 border-blue-100' :
                                                 'bg-white text-green-600 border-green-100'
                                             }`}>

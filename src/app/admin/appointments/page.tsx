@@ -22,15 +22,15 @@ const AppointmentsPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Bookings</h1>
-                    <p className="text-gray-500 text-sm font-medium">Manage all incoming salon appointments & schedules.</p>
+                    <h1 className="text-xl font-heading font-bold text-gray-950">Bookings</h1>
+                    <p className="text-gray-500 text-xs font-medium">Manage all incoming salon appointments & schedules.</p>
                 </div>
                 <div className="flex bg-gray-200/50 p-1 rounded-full border border-gray-200">
                     {['all', 'pending', 'confirmed', 'cancelled'].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setFilter(tab)}
-                            className={`px-5 py-2 rounded-full text-[10px] uppercase tracking-widest font-bold transition-all ${filter === tab ? 'bg-gray-950 text-white shadow-md' : 'text-gray-500 hover:text-gray-900'
+                            className={`px-4 py-1.5 rounded-full text-[9px] uppercase tracking-widest font-bold transition-all ${filter === tab ? 'bg-gray-950 text-white shadow-md' : 'text-gray-500 hover:text-gray-900'
                                 }`}
                         >
                             {tab}
@@ -43,7 +43,7 @@ const AppointmentsPage = () => {
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-gray-50 border-b border-gray-100 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                            <tr className="bg-gray-50 border-b border-gray-100 text-gray-400 text-[9px] font-bold uppercase tracking-widest">
                                 <th className="px-8 py-5">ID</th>
                                 <th className="px-8 py-5">Client Info</th>
                                 <th className="px-8 py-5">Service Session</th>
@@ -58,28 +58,28 @@ const AppointmentsPage = () => {
                                     <td className="px-8 py-5 font-mono text-xs text-[#D4AF37] font-bold">{app.id}</td>
                                     <td className="px-8 py-5">
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-gray-950">{app.client}</span>
-                                            <span className="text-[11px] text-gray-500 font-medium">{app.email}</span>
-                                            <span className="text-[11px] text-gray-400">{app.phone}</span>
+                                            <span className="font-bold text-gray-950 text-xs">{app.client}</span>
+                                            <span className="text-[10px] text-gray-500 font-medium">{app.email}</span>
+                                            <span className="text-[10px] text-gray-400">{app.phone}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5">
-                                        <div className="flex flex-col text-sm">
+                                        <div className="flex flex-col text-xs">
                                             <span className="font-bold text-gray-700">{app.service}</span>
-                                            <div className="flex items-center gap-2 mt-1">
-                                                <span className="text-[10px] font-bold text-[#D4AF37] uppercase tracking-wider">📅 {app.date}</span>
-                                                <span className="text-[10px] text-gray-400">at {app.time}</span>
+                                            <div className="flex items-center gap-2 mt-0.5">
+                                                <span className="text-[9px] font-bold text-[#D4AF37] uppercase tracking-wider">📅 {app.date}</span>
+                                                <span className="text-[9px] text-gray-400">at {app.time}</span>
                                             </div>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-right">
                                         <div className="flex flex-col">
-                                            <span className="text-sm font-black text-gray-950">{app.amount}</span>
-                                            <span className="text-[9px] text-green-600 uppercase font-black tracking-tighter">Dep: {app.deposit}</span>
+                                            <span className="text-xs font-black text-gray-950">{app.amount}</span>
+                                            <span className="text-[8px] text-green-600 uppercase font-black tracking-tighter">Dep: {app.deposit}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-center">
-                                        <span className={`text-[9px] uppercase font-bold px-3 py-1.5 rounded-full border shadow-sm ${app.status === 'confirmed' ? 'bg-white text-green-600 border-green-100' :
+                                        <span className={`text-[8px] uppercase font-bold px-3 py-1.5 rounded-full border shadow-sm ${app.status === 'confirmed' ? 'bg-white text-green-600 border-green-100' :
                                             app.status === 'pending' ? 'bg-white text-amber-500 border-amber-100' :
                                                 'bg-white text-red-500 border-red-100'
                                             }`}>

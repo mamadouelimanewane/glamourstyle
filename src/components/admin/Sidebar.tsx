@@ -25,8 +25,8 @@ const Sidebar = () => {
                         <span className="text-xl">💇</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="font-heading text-lg font-bold text-white tracking-wide">GLAMOUR <span className="text-[#D4AF37]">STYLE</span></span>
-                        <span className="text-[10px] text-gray-500 uppercase tracking-[2px] font-medium">Administration</span>
+                        <span className="font-heading text-sm font-bold text-white tracking-wide">GLAMOUR <span className="text-[#D4AF37]">STYLE</span></span>
+                        <span className="text-[9px] text-gray-500 uppercase tracking-[2px] font-medium">Administration</span>
                     </div>
                 </Link>
             </div>
@@ -39,16 +39,16 @@ const Sidebar = () => {
                         <Link
                             key={item.name}
                             href={item.path}
-                            className={`flex items-center space-x-3 px-4 py-3 rounded-lg transition-all duration-200 relative group ${isActive
+                            className={`flex items-center space-x-3 px-4 py-2.5 rounded-lg transition-all duration-200 relative group ${isActive
                                 ? 'bg-gray-800/60 text-white'
                                 : 'text-gray-400 hover:bg-gray-900 hover:text-white'
                                 }`}
                         >
                             {isActive && (
-                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 bg-[#D4AF37] rounded-r-full" />
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-5 w-1 bg-[#D4AF37] rounded-r-full" />
                             )}
-                            <span className={`text-xl transition-transform duration-200 group-hover:scale-110 ${isActive ? 'opacity-100' : 'opacity-70 group-hover:opacity-100'}`}>{item.icon}</span>
-                            <span className="font-medium text-sm tracking-wide">{item.name}</span>
+                            <span className={`text-lg transition-transform duration-200 group-hover:scale-110 ${isActive ? 'opacity-100' : 'opacity-70 group-hover:opacity-100'}`}>{item.icon}</span>
+                            <span className="font-medium text-xs tracking-wide">{item.name}</span>
                         </Link>
                     );
                 })}
@@ -57,12 +57,12 @@ const Sidebar = () => {
             {/* User Section */}
             <div className="p-4 border-t border-gray-800 bg-gray-950/50">
                 <div className="flex items-center space-x-3 p-3 rounded-xl bg-gray-900 border border-gray-800">
-                    <div className="w-9 h-9 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B7355] flex items-center justify-center shadow-lg">
-                        <span className="text-gray-950 text-sm font-bold">A</span>
+                    <div className="w-8 h-8 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B7355] flex items-center justify-center shadow-lg">
+                        <span className="text-gray-950 text-xs font-bold">A</span>
                     </div>
-                    <div className="flex flex-col overflow-hidden text-sm">
+                    <div className="flex flex-col overflow-hidden text-xs">
                         <span className="text-white font-medium truncate">Admin User</span>
-                        <span className="text-gray-500 text-xs truncate">Operations Manager</span>
+                        <span className="text-gray-500 text-[9px] truncate">Ops Manager</span>
                     </div>
                 </div>
             </div>
