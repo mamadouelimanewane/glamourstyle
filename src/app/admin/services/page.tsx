@@ -14,8 +14,8 @@ const ServicesAdminPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-xl font-heading font-bold text-gray-950">Service Menu</h1>
-                    <p className="text-gray-500 text-xs font-medium">Customize your salon's professional offerings.</p>
+                    <h1 className="text-lg font-heading font-bold text-gray-950">Service Menu</h1>
+                    <p className="text-gray-500 text-[10px] font-medium">Customize your salon's professional offerings.</p>
                 </div>
                 <button className="px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded-full hover:bg-gray-800 hover:shadow-lg transition-all">
                     + Register New Service

@@ -11,19 +11,19 @@ const DashboardPage = () => {
     ];
 
     const recentBookings = [
-        { id: '1', client: 'Zainab A.', service: 'Luxury Braids', date: 'Today', time: '14:30', amount: '£220', status: 'confirmed' },
-        { id: '2', client: 'Aminata K.', service: 'Silk Press', date: 'Today', time: '16:00', amount: '£180', status: 'pending' },
-        { id: '3', client: 'Binta D.', service: 'Bridal Updo', date: 'Tomorrow', time: '10:00', amount: '£280', status: 'confirmed' },
-        { id: '4', client: 'Yasmine B.', service: 'Keratin Care', date: 'Tomorrow', time: '13:00', amount: '£350', status: 'pending' },
-        { id: '5', client: 'Fatou S.', service: 'Full Color', date: 'Jan 28', time: '11:00', amount: '£150', status: 'confirmed' },
+        { id: '1', client: 'Zainab A.', service: 'Luxury Braids', date: 'Today', time: '14:30', amount: '£220', status: 'Confirmed' },
+        { id: '2', client: 'Aminata K.', service: 'Silk Press', date: 'Today', time: '16:00', amount: '£180', status: 'Pending' },
+        { id: '3', client: 'Binta D.', service: 'Bridal Updo', date: 'Tomorrow', time: '10:00', amount: '£280', status: 'Confirmed' },
+        { id: '4', client: 'Yasmine B.', service: 'Keratin Care', date: 'Tomorrow', time: '13:00', amount: '£350', status: 'Awaiting Payment' },
+        { id: '5', client: 'Fatou S.', service: 'Full Color', date: 'Jan 28', time: '11:00', amount: '£150', status: 'Confirmed' },
     ];
 
     return (
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h2 className="text-xl font-heading font-bold text-gray-950 leading-tight">Overview</h2>
-                    <p className="text-gray-500 text-xs font-medium">Monitoring Glamour Style performance</p>
+                    <h2 className="text-lg font-heading font-bold text-gray-950 leading-tight">Dashboard Overlook</h2>
+                    <p className="text-gray-500 text-[10px] font-medium">Welcome back, manager. Here's what's happening today.</p>
                 </div>
                 <div className="flex gap-3 w-full md:w-auto">
                     <button className="flex-1 md:flex-none px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-full hover:shadow-md transition-all">
@@ -49,7 +49,7 @@ const DashboardPage = () => {
                             </span>
                         </div>
                         <p className="text-[10px] uppercase tracking-widest font-bold text-gray-400 mb-1">{stat.label}</p>
-                        <p className="text-xl font-heading font-bold text-gray-950">{stat.value}</p>
+                        <p className="text-lg font-heading font-bold text-gray-950">{stat.value}</p>
                     </div>
                 ))}
             </div>
@@ -58,8 +58,8 @@ const DashboardPage = () => {
             <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
                 <div className="px-8 py-6 border-b border-gray-50 flex justify-between items-center bg-gray-50/50">
                     <div>
-                        <h3 className="text-sm font-heading font-bold text-gray-950">Recent Appointments</h3>
-                        <p className="text-[10px] text-gray-500 font-medium">Detailed list of upcoming sessions</p>
+                        <h3 className="text-xs font-heading font-bold text-gray-950">Recent Appointments</h3>
+                        <p className="text-[9px] text-gray-500 font-medium">Detailed list of upcoming sessions</p>
                     </div>
                     <button className="px-4 py-2 text-[10px] font-bold uppercase tracking-widest text-[#D4AF37] hover:bg-[#D4AF37]/5 rounded-lg transition-all">Show All Records</button>
                 </div>
@@ -92,9 +92,11 @@ const DashboardPage = () => {
                                     </td>
                                     <td className="px-8 py-4 whitespace-nowrap text-xs font-black text-gray-900 text-right">{booking.amount}</td>
                                     <td className="px-8 py-4 whitespace-nowrap text-center">
-                                        <span className={`px-4 py-1.5 text-[10px] font-bold uppercase tracking-widest rounded-full border shadow-sm ${booking.status === 'confirmed'
+                                        <span className={`px-4 py-1.5 text-[8px] font-bold uppercase tracking-widest rounded-full border shadow-sm ${booking.status === 'Confirmed'
                                             ? 'bg-white text-green-600 border-green-100'
-                                            : 'bg-white text-amber-500 border-amber-100'
+                                            : booking.status === 'Pending'
+                                                ? 'bg-white text-amber-500 border-amber-100'
+                                                : 'bg-white text-blue-600 border-blue-100'
                                             }`}>
                                             {booking.status}
                                         </span>
@@ -109,8 +111,8 @@ const DashboardPage = () => {
             {/* Bottom Grid: Breakdown & Insights */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 {/* Revenue Breakdown */}
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-                    <h3 className="text-sm font-heading font-bold text-gray-950 mb-6">Revenue Breakdown</h3>
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
+                    <h3 className="text-xs font-heading font-bold text-gray-950 mb-6">Revenue Breakdown</h3>
                     <div className="space-y-6">
                         {[
                             { category: 'Styling', percentage: 45, color: 'bg-gray-950' },
@@ -135,9 +137,9 @@ const DashboardPage = () => {
                 </div>
 
                 {/* Peak Performance */}
-                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 relative overflow-hidden group">
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 relative overflow-hidden group">
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gray-50 rounded-bl-full -translate-y-8 translate-x-8 transition-transform group-hover:scale-110" />
-                    <h3 className="text-sm font-heading font-bold text-gray-950 mb-6 relative z-10">Peak Performance</h3>
+                    <h3 className="text-xs font-heading font-bold text-gray-950 mb-6 relative z-10">Peak Performance</h3>
                     <div className="space-y-6 relative z-10">
                         <div className="p-4 rounded-xl bg-gray-50 border border-gray-100">
                             <p className="text-xs font-medium text-gray-600 leading-relaxed italic">
