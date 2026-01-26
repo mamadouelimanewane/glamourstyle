@@ -13,9 +13,12 @@ const Sidebar = ({ onClose }: SidebarProps) => {
 
     const menuItems = [
         { name: 'Tableau de bord', icon: '📊', path: '/admin' },
+        { name: 'Calendrier', icon: '🗓️', path: '/admin/calendar' },
         { name: 'Rendez-vous', icon: '📅', path: '/admin/appointments' },
         { name: 'Services', icon: '✂️', path: '/admin/services' },
         { name: 'Clients', icon: '👥', path: '/admin/customers' },
+        { name: 'Finances', icon: '💰', path: '/admin/finances' },
+        { name: 'Utilisateurs', icon: '🔑', path: '/admin/users' },
         { name: 'Statistiques', icon: '📈', path: '/admin/analytics' },
         { name: 'Paramètres', icon: '⚙️', path: '/admin/settings' },
     ];
