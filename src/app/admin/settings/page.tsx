@@ -16,8 +16,8 @@ const SettingsPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-lg font-heading font-bold text-gray-950">System Settings</h1>
-                    <p className="text-gray-500 text-[10px] font-medium">Fine-tune the salon's core configuration.</p>
+                    <h1 className="text-base font-heading font-bold text-gray-950">System Settings</h1>
+                    <p className="text-gray-500 text-[9px] font-medium">Fine-tune the salon's core configuration.</p>
                 </div>
             </div>
 

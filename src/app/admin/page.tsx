@@ -22,15 +22,15 @@ const DashboardPage = () => {
         <div className="space-y-8 animate-fadeIn">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h2 className="text-lg font-heading font-bold text-gray-950 leading-tight">Dashboard Overlook</h2>
-                    <p className="text-gray-500 text-[10px] font-medium">Welcome back, manager. Here's what's happening today.</p>
+                    <h2 className="text-base font-heading font-bold text-gray-950 leading-tight tracking-wide">Dashboard Overlook</h2>
+                    <p className="text-gray-500 text-[9px] font-medium">Welcome back, manager. Here's what's happening today.</p>
                 </div>
-                <div className="flex gap-3 w-full md:w-auto">
-                    <button className="flex-1 md:flex-none px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-full hover:shadow-md transition-all">
-                        Download Data
+                <div className="flex gap-2 w-full md:w-auto">
+                    <button className="flex-1 md:flex-none px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-[#D4AF37] bg-white border border-[#D4AF37]/20 rounded-lg hover:shadow-sm transition-all">
+                        Generate Report
                     </button>
-                    <button className="flex-1 md:flex-none px-6 py-2.5 text-[10px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded-full hover:bg-gray-800 hover:shadow-lg transition-all">
-                        + New Appointment
+                    <button className="flex-1 md:flex-none px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded-lg hover:bg-gray-800 hover:shadow-md transition-all">
+                        + Add Booking
                     </button>
                 </div>
             </div>
