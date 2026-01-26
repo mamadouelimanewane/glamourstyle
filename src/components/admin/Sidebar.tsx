@@ -18,6 +18,8 @@ const Sidebar = ({ onClose }: SidebarProps) => {
         { name: 'Services', icon: '✂️', path: '/admin/services' },
         { name: 'Clients', icon: '👥', path: '/admin/customers' },
         { name: 'Finances', icon: '💰', path: '/admin/finances' },
+        { name: 'Fidélité VIP', icon: '🏆', path: '/admin/vip' },
+        { name: 'Stocks', icon: '📦', path: '/admin/stock' },
         { name: 'Marketing', icon: '📣', path: '/admin/marketing' },
         { name: 'Utilisateurs', icon: '🔑', path: '/admin/users' },
         { name: 'Statistiques', icon: '📈', path: '/admin/analytics' },
