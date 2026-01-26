@@ -21,30 +21,30 @@ const Sidebar = ({ onClose }: SidebarProps) => {
     ];
 
     return (
-        <aside className="w-56 bg-white h-screen flex flex-col border-r border-gray-200 shadow-sm">
-            {/* Logo Section - Clean & Small */}
-            <div className="p-4 border-b border-gray-100 flex justify-between items-center">
-                <Link href="/" className="flex items-center space-x-2 group">
-                    <div className="w-7 h-7 bg-gray-950 rounded flex items-center justify-center text-sm shadow-sm transition-transform group-hover:scale-105">
+        <aside className="w-64 bg-gray-950 h-screen flex flex-col border-r border-gray-800 shadow-xl">
+            {/* Logo Section - Elegant & Professional */}
+            <div className="p-6 border-b border-gray-800/50 flex justify-between items-center bg-black/20">
+                <Link href="/" className="flex items-center space-x-3 group">
+                    <div className="w-9 h-9 bg-[#D4AF37] rounded-lg flex items-center justify-center text-xl shadow-lg shadow-[#D4AF37]/10 transition-transform group-hover:scale-105">
                         <span>💇</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-[11px] font-black text-gray-900 tracking-wider">GLAMOUR STYLE</span>
-                        <span className="text-[8px] text-gray-400 uppercase font-medium">ERP v2.0</span>
+                        <span className="text-sm font-black text-white tracking-widest">GLAMOUR STYLE</span>
+                        <span className="text-[10px] text-[#D4AF37] uppercase font-bold tracking-wider">Administration</span>
                     </div>
                 </Link>
                 <button
                     onClick={onClose}
-                    className="lg:hidden text-gray-400 hover:text-gray-900 p-1"
+                    className="lg:hidden text-gray-500 hover:text-white p-1"
                 >
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                     </svg>
                 </button>
             </div>
 
-            {/* Navigation - Very Compact */}
-            <nav className="flex-1 px-3 py-4 space-y-0.5 overflow-y-auto">
+            {/* Navigation - Ergonomic Spacing */}
+            <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto custom-scrollbar">
                 {menuItems.map((item) => {
                     const isActive = pathname === item.path;
                     return (
@@ -52,30 +52,32 @@ const Sidebar = ({ onClose }: SidebarProps) => {
                             key={item.name}
                             href={item.path}
                             onClick={onClose}
-                            className={`flex items-center space-x-2.5 px-3 py-2 rounded-md transition-all duration-150 relative group ${isActive
-                                ? 'bg-[#f1f5f9] text-[#D4AF37]'
-                                : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
+                            className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 relative group ${isActive
+                                ? 'bg-white/10 text-white border border-white/10 shadow-lg'
+                                : 'text-gray-400 hover:bg-white/5 hover:text-white border border-transparent'
                                 }`}
                         >
-                            <span className={`text-base ${isActive ? 'opacity-100' : 'opacity-70 group-hover:opacity-100'}`}>{item.icon}</span>
-                            <span className="font-bold text-[10px] uppercase tracking-wide">{item.name}</span>
+                            <span className={`text-xl transition-all ${isActive ? 'scale-110' : 'opacity-70 group-hover:opacity-100'}`}>{item.icon}</span>
+                            <span className={`font-semibold text-sm tracking-wide ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                                {item.name}
+                            </span>
                             {isActive && (
-                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-4 w-0.5 bg-[#D4AF37] rounded-r-full" />
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 bg-[#D4AF37] rounded-r-full shadow-[0_0_10px_#D4AF37]" />
                             )}
                         </Link>
                     );
                 })}
             </nav>
 
-            {/* User Section - Minimalist */}
-            <div className="p-3 border-t border-gray-100 bg-gray-50/50">
-                <div className="flex items-center space-x-2.5 p-2 rounded-lg border border-gray-200 bg-white">
-                    <div className="w-7 h-7 rounded bg-gray-100 flex items-center justify-center border border-gray-200">
-                        <span className="text-gray-600 text-[10px] font-black">AD</span>
+            {/* User Section - Premium Feel */}
+            <div className="p-4 border-t border-gray-800/50 bg-black/40">
+                <div className="flex items-center space-x-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800">
+                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B7355] flex items-center justify-center border-2 border-gray-800 shadow-xl">
+                        <span className="text-gray-950 text-sm font-black">AD</span>
                     </div>
                     <div className="flex flex-col overflow-hidden leading-tight">
-                        <span className="text-gray-900 font-bold text-[10px] truncate">Admin Manager</span>
-                        <span className="text-gray-400 text-[8px] truncate">LexPremium Role</span>
+                        <span className="text-white font-bold text-xs truncate">Admin Manager</span>
+                        <span className="text-gray-500 text-[10px] truncate">LexPremium ERP System</span>
                     </div>
                 </div>
             </div>

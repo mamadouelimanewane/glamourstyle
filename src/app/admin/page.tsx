@@ -4,92 +4,99 @@ import React from 'react';
 
 const DashboardPage = () => {
     const stats = [
-        { label: 'Total Revenue', value: '£12,450', change: '+12.5%', positive: true, icon: '💰' },
-        { label: 'Appointments', value: '48', change: '+4.2%', positive: true, icon: '📅' },
-        { label: 'New Customers', value: '12', change: '+18%', positive: true, icon: '👥' },
-        { label: 'Completion Rate', value: '94%', change: '+0.5%', positive: true, icon: '✅' },
+        { label: 'Revenu Mensuel', value: '£12,450', change: '+12.5%', positive: true, icon: '💰' },
+        { label: 'Rendez-vous', value: '48', change: '+4.2%', positive: true, icon: '📅' },
+        { label: 'Nouveaux Clients', value: '12', change: '+18%', positive: true, icon: '👥' },
+        { label: 'Taux Complétion', value: '94%', change: '+0.5%', positive: true, icon: '✅' },
     ];
 
     const recentBookings = [
-        { id: '1', client: 'Zainab A.', service: 'Luxury Braids', date: 'Today', time: '14:30', amount: '£220', status: 'Confirmed' },
-        { id: '2', client: 'Aminata K.', service: 'Silk Press', date: 'Today', time: '16:00', amount: '£180', status: 'Pending' },
-        { id: '3', client: 'Binta D.', service: 'Bridal Updo', date: 'Tomorrow', time: '10:00', amount: '£280', status: 'Confirmed' },
-        { id: '4', client: 'Yasmine B.', service: 'Keratin Care', date: 'Tomorrow', time: '13:00', amount: '£350', status: 'Awaiting Payment' },
-        { id: '5', client: 'Fatou S.', service: 'Full Color', date: 'Jan 28', time: '11:00', amount: '£150', status: 'Confirmed' },
+        { id: '1', client: 'Zainab A.', service: 'Luxury Braids', date: 'Aujourd\'hui', time: '14:30', amount: '£220', status: 'Confirmé' },
+        { id: '2', client: 'Aminata K.', service: 'Silk Press', date: 'Aujourd\'hui', time: '16:00', amount: '£180', status: 'En attente' },
+        { id: '3', client: 'Binta D.', service: 'Bridal Updo', date: 'Demain', time: '10:00', amount: '£280', status: 'Confirmé' },
+        { id: '4', client: 'Yasmine B.', service: 'Keratin Care', date: 'Demain', time: '13:00', amount: '£350', status: 'Paiement en attente' },
+        { id: '5', client: 'Fatou S.', service: 'Full Color', date: '28 Janv', time: '11:00', amount: '£150', status: 'Confirmé' },
     ];
 
     return (
-        <div className="space-y-6 animate-fadeIn pb-10">
-            {/* Header section with very small fonts */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+        <div className="space-y-10 animate-fadeIn">
+            {/* Header section */}
+            <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Tableau de Bord</h1>
-                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Espace Personnel / Collaborateurs</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Tableau de Bord</h1>
+                    <p className="text-gray-500 text-sm font-medium mt-1">Surveillez les performances et la croissance du salon.</p>
                 </div>
-                <div className="flex gap-2 w-full md:w-auto">
-                    <button className="flex-1 md:flex-none px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded hover:bg-gray-50 transition-all">
-                        Imprimer Rapport
+                <div className="flex gap-3 w-full md:w-auto">
+                    <button className="flex-1 md:flex-none px-6 py-3 text-xs font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-all">
+                        Rapport Global
                     </button>
-                    <button className="flex-1 md:flex-none px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded hover:bg-gray-800 transition-all">
-                        + Nouveau RDV
+                    <button className="flex-1 md:flex-none px-6 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 hover:shadow-xl transition-all shadow-lg shadow-black/10">
+                        + Nouvelle Réservation
                     </button>
                 </div>
             </div>
 
-            {/* Stats Grid - Smaller Cards */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {/* Stats Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {stats.map((stat) => (
-                    <div key={stat.label} className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm relative overflow-hidden group">
-                        <div className="flex justify-between items-start mb-2">
-                            <span className="text-sm">{stat.icon}</span>
-                            <span className={`text-[8px] font-black px-1.5 py-0.5 rounded ${stat.positive ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
+                    <div key={stat.label} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all">
+                        <div className="flex justify-between items-start mb-4">
+                            <div className="w-10 h-10 bg-gray-50 rounded-xl flex items-center justify-center text-xl">
+                                {stat.icon}
+                            </div>
+                            <span className={`text-xs font-bold px-2 py-1 rounded-lg ${stat.positive ? 'bg-green-50 text-green-600' : 'bg-red-50 text-red-600'}`}>
                                 {stat.change}
                             </span>
                         </div>
-                        <p className="text-[8px] uppercase tracking-wider font-bold text-gray-400 mb-0.5">{stat.label}</p>
-                        <p className="text-base font-black text-gray-950">{stat.value}</p>
+                        <p className="text-xs uppercase tracking-[1px] font-bold text-gray-400 mb-1">{stat.label}</p>
+                        <p className="text-3xl font-heading font-bold text-gray-950">{stat.value}</p>
                     </div>
                 ))}
             </div>
 
-            {/* Table Section - Ultra Small & Clean */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                <div className="px-6 py-4 border-b border-gray-100 flex justify-between items-center bg-gray-50/30">
-                    <h3 className="text-[10px] font-bold text-gray-900 uppercase tracking-widest">Dernières Activités</h3>
-                    <button className="text-[9px] font-bold text-gray-400 uppercase tracking-widest hover:text-gray-950">Voir tout</button>
+            {/* Main Content Table */}
+            <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+                <div className="px-8 py-6 border-b border-gray-50 flex justify-between items-center bg-gray-50/30">
+                    <div>
+                        <h3 className="text-base font-bold text-gray-950">Rendez-vous Récents</h3>
+                        <p className="text-xs text-gray-500 font-medium">Suivi détaillé des dernières sessions programmées</p>
+                    </div>
+                    <button className="px-4 py-2 text-xs font-bold uppercase tracking-widest text-[#D4AF37] hover:bg-[#D4AF37]/5 rounded-lg transition-all">
+                        Historique Complet
+                    </button>
                 </div>
                 <div className="overflow-x-auto">
-                    <table className="w-full">
+                    <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-white border-b border-gray-100">
-                                <th className="px-6 py-3 text-left text-[9px] font-bold text-gray-400 uppercase tracking-widest">Client</th>
-                                <th className="px-6 py-3 text-left text-[9px] font-bold text-gray-400 uppercase tracking-widest">Service</th>
-                                <th className="px-6 py-3 text-left text-[9px] font-bold text-gray-400 uppercase tracking-widest">Date / Heure</th>
-                                <th className="px-6 py-3 text-right text-[9px] font-bold text-gray-400 uppercase tracking-widest">Montant</th>
-                                <th className="px-6 py-3 text-center text-[9px] font-bold text-gray-400 uppercase tracking-widest">Statut</th>
+                            <tr className="bg-white border-b border-gray-50">
+                                <th className="px-8 py-4 text-[11px] font-black text-gray-400 uppercase tracking-widest">Client</th>
+                                <th className="px-8 py-4 text-[11px] font-black text-gray-400 uppercase tracking-widest">Service</th>
+                                <th className="px-8 py-4 text-[11px] font-black text-gray-400 uppercase tracking-widest">Planification</th>
+                                <th className="px-8 py-4 text-right text-[11px] font-black text-gray-400 uppercase tracking-widest">Vente</th>
+                                <th className="px-8 py-4 text-center text-[11px] font-black text-gray-400 uppercase tracking-widest">Statut</th>
                             </tr>
                         </thead>
-                        <tbody className="divide-y divide-gray-50">
+                        <tbody className="divide-y divide-gray-50/50">
                             {recentBookings.map((booking) => (
-                                <tr key={booking.id} className="hover:bg-gray-50/50 transition-colors">
-                                    <td className="px-6 py-3 whitespace-nowrap">
-                                        <div className="flex items-center gap-2.5">
-                                            <div className="w-6 h-6 rounded bg-gray-100 flex items-center justify-center text-[9px] font-bold text-gray-600">
+                                <tr key={booking.id} className="hover:bg-gray-50/50 transition-colors group">
+                                    <td className="px-8 py-5 whitespace-nowrap">
+                                        <div className="flex items-center gap-3">
+                                            <div className="w-8 h-8 rounded-full bg-gray-950 flex items-center justify-center text-xs font-bold text-white uppercase shadow-sm">
                                                 {booking.client[0]}
                                             </div>
-                                            <span className="text-[11px] font-bold text-gray-900">{booking.client}</span>
+                                            <span className="font-bold text-gray-900 text-sm">{booking.client}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-3 whitespace-nowrap text-[10px] font-medium text-gray-500">{booking.service}</td>
-                                    <td className="px-6 py-3 whitespace-nowrap">
-                                        <div className="text-[10px] text-gray-900 font-bold">{booking.date}</div>
-                                        <div className="text-[8px] text-gray-400 font-medium uppercase tracking-tight">{booking.time}</div>
+                                    <td className="px-8 py-5 whitespace-nowrap text-sm font-medium text-gray-600">{booking.service}</td>
+                                    <td className="px-8 py-5 whitespace-nowrap">
+                                        <div className="text-sm text-gray-950 font-bold">{booking.date}</div>
+                                        <div className="text-xs text-gray-400 font-medium">{booking.time}</div>
                                     </td>
-                                    <td className="px-6 py-3 whitespace-nowrap text-[10px] font-black text-gray-950 text-right">{booking.amount}</td>
-                                    <td className="px-6 py-3 whitespace-nowrap text-center">
-                                        <span className={`px-2 py-0.5 text-[8px] font-bold uppercase rounded ${booking.status === 'Confirmed'
-                                            ? 'bg-green-50 text-green-600'
-                                            : 'bg-amber-50 text-amber-600'
+                                    <td className="px-8 py-5 whitespace-nowrap text-sm font-black text-gray-950 text-right">{booking.amount}</td>
+                                    <td className="px-8 py-5 whitespace-nowrap text-center">
+                                        <span className={`px-4 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-full border shadow-sm ${booking.status === 'Confirmé'
+                                            ? 'bg-green-50 text-green-600 border-green-100'
+                                            : 'bg-amber-50 text-amber-500 border-amber-100'
                                             }`}>
                                             {booking.status}
                                         </span>
@@ -101,39 +108,46 @@ const DashboardPage = () => {
                 </div>
             </div>
 
-            {/* Bottom Grid: Low profile charts */}
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                    <h3 className="text-[10px] font-bold text-gray-900 uppercase tracking-widest mb-6">Répartition Mensuelle</h3>
-                    <div className="space-y-4">
+            {/* Insights Section */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
+                    <h3 className="text-base font-bold text-gray-950 mb-8 border-b border-gray-50 pb-4">Performance par Catégorie</h3>
+                    <div className="space-y-6">
                         {[
-                            { category: 'Styling', percentage: 45, color: 'bg-gray-950' },
-                            { category: 'Coloration', percentage: 25, color: 'bg-[#D4AF37]' },
-                            { category: 'Extensions', percentage: 20, color: 'bg-gray-400' },
-                            { category: 'Produits', percentage: 10, color: 'bg-gray-200' },
+                            { category: 'Coiffure & Styling', percentage: 45, color: 'bg-gray-950' },
+                            { category: 'Coloration Experte', percentage: 25, color: 'bg-[#D4AF37]' },
+                            { category: 'Extensions & Tissages', percentage: 20, color: 'bg-gray-400' },
+                            { category: 'Soin & Boutique', percentage: 10, color: 'bg-gray-200' },
                         ].map((item) => (
-                            <div key={item.category} className="space-y-1.5">
-                                <div className="flex justify-between items-center text-[9px] font-bold uppercase text-gray-400">
+                            <div key={item.category} className="space-y-2">
+                                <div className="flex justify-between items-center text-[10px] font-black uppercase tracking-wider text-gray-500">
                                     <span>{item.category}</span>
-                                    <span className="text-gray-900">{item.percentage}%</span>
+                                    <span className="text-gray-950">{item.percentage}%</span>
                                 </div>
-                                <div className="h-1 w-full bg-gray-50 rounded-full overflow-hidden">
-                                    <div className={`h-full ${item.color}`} style={{ width: `${item.percentage}%` }} />
+                                <div className="h-1.5 w-full bg-gray-50 rounded-full overflow-hidden">
+                                    <div className={`h-full ${item.color} rounded-full`} style={{ width: `${item.percentage}%` }} />
                                 </div>
                             </div>
                         ))}
                     </div>
                 </div>
 
-                <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
-                    <h3 className="text-[10px] font-bold text-gray-900 uppercase tracking-widest mb-6">Notes de Service</h3>
-                    <div className="bg-gray-50 p-4 rounded-lg border border-gray-100 flex flex-col justify-between h-32">
-                        <p className="text-[11px] text-gray-600 italic leading-relaxed">
-                            Les réservations du vendredi sont <span className="text-gray-950 font-black">20% plus élevées</span>. Prévoir une équipe renforcée.
+                <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 relative overflow-hidden flex flex-col justify-center bg-gradient-to-br from-white to-gray-50">
+                    <div className="absolute top-0 right-0 p-8 text-6xl opacity-[0.03] select-none">📈</div>
+                    <div className="relative z-10">
+                        <p className="text-gray-400 text-[10px] font-black uppercase tracking-[3px] mb-4">Recommandation Stratégique</p>
+                        <p className="text-lg font-medium text-gray-700 leading-relaxed italic border-l-4 border-[#D4AF37] pl-6 py-2">
+                            "Les réservations du <span className="text-gray-950 font-black">Vendredi au Samedi</span> augmentent de <span className="text-[#D4AF37] font-black">22%</span> ce mois-ci. Nous suggérons d'optimiser le planning des collaborateurs."
                         </p>
-                        <div className="flex justify-between items-end border-t border-gray-200 pt-3">
-                            <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest">Espace Personnel</span>
-                            <span className="text-[10px] font-black text-gray-950">LexPremium ERP</span>
+                        <div className="mt-8 flex items-center gap-4">
+                            <div className="px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">
+                                <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Taux de Rétention</p>
+                                <p className="text-xl font-black text-gray-950">84%</p>
+                            </div>
+                            <div className="px-4 py-2 bg-white border border-gray-200 rounded-lg shadow-sm">
+                                <p className="text-[9px] text-gray-400 font-bold uppercase tracking-widest">Satisfaction</p>
+                                <p className="text-xl font-black text-[#D4AF37]">4.9/5</p>
+                            </div>
                         </div>
                     </div>
                 </div>
