@@ -44,11 +44,11 @@ const Header = () => {
                 </Link>
 
                 {/* Desktop Navigation */}
-                <ul className="hidden lg:flex flex-row items-center space-x-8 xl:space-x-12">
+                <ul className="hidden md:flex flex-row items-center space-x-6 lg:space-x-8 xl:space-x-12">
                     <li>
                         <Link
                             href="/#accueil"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
+                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
                             Home
                         </Link>
@@ -56,7 +56,7 @@ const Header = () => {
                     <li>
                         <Link
                             href="/#services"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
+                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
                             Services
                         </Link>
@@ -64,7 +64,7 @@ const Header = () => {
                     <li>
                         <Link
                             href="/#portfolio"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
+                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
                             Portfolio
                         </Link>
@@ -72,7 +72,7 @@ const Header = () => {
                     <li>
                         <Link
                             href="/pricing"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
+                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
                             Pricing
                         </Link>
@@ -80,7 +80,7 @@ const Header = () => {
                     <li>
                         <Link
                             href="/#avis"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
+                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
                             Reviews
                         </Link>
@@ -88,7 +88,7 @@ const Header = () => {
                     <li>
                         <Link
                             href="/#contact"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-sm xl:text-base uppercase tracking-wider"
+                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
                             Contact
                         </Link>
@@ -96,7 +96,7 @@ const Header = () => {
                 </ul>
 
                 {/* CTA Button */}
-                <div className="hidden sm:block shrink-0">
+                <div className="hidden lg:block shrink-0">
                     <Link
                         href="/#reservation"
                         className="btn-primary py-2.5 px-6 text-sm"
@@ -108,7 +108,7 @@ const Header = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white"
+                    className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     aria-label="Toggle menu"
                 >

@@ -4,7 +4,11 @@ import React from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
-const Sidebar = () => {
+interface SidebarProps {
+    onClose?: () => void;
+}
+
+const Sidebar = ({ onClose }: SidebarProps) => {
     const pathname = usePathname();
 
     const menuItems = [
@@ -17,9 +21,9 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className="w-64 bg-gray-950 h-screen sticky top-0 flex flex-col border-r border-gray-800">
+        <aside className="w-64 bg-gray-950 h-screen flex flex-col border-r border-gray-800">
             {/* Logo Section */}
-            <div className="p-6 border-b border-gray-800">
+            <div className="p-6 border-b border-gray-800 flex justify-between items-center">
                 <Link href="/" className="flex items-center space-x-3 group">
                     <div className="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-[0_0_15px_rgba(255,255,255,0.1)]">
                         <span className="text-xl">💇</span>
@@ -29,6 +33,15 @@ const Sidebar = () => {
                         <span className="text-[9px] text-gray-500 uppercase tracking-[2px] font-medium">Administration</span>
                     </div>
                 </Link>
+                {/* Close button for mobile */}
+                <button
+                    onClick={onClose}
+                    className="lg:hidden text-gray-400 hover:text-white p-1"
+                >
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
             </div>
 
             {/* Navigation */}
@@ -39,6 +52,7 @@ const Sidebar = () => {
                         <Link
                             key={item.name}
                             href={item.path}
+                            onClick={onClose}
                             className={`flex items-center space-x-3 px-4 py-2.5 rounded-lg transition-all duration-200 relative group ${isActive
                                 ? 'bg-gray-800/60 text-white'
                                 : 'text-gray-400 hover:bg-gray-900 hover:text-white'
