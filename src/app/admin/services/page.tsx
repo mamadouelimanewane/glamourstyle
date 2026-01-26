@@ -14,8 +14,8 @@ const ServicesAdminPage = () => {
         <div className="space-y-6 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-sm font-bold text-gray-900 uppercase tracking-widest">Menu des Services</h1>
-                    <p className="text-gray-400 text-[9px] font-medium uppercase tracking-wider mt-0.5">Configuration des Offres Professionnelles</p>
+                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Menu des Services</h1>
+                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Configuration des Offres Professionnelles</p>
                 </div>
                 <button className="px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded hover:bg-gray-800 transition-all">
                     + Nouvelle Prestation

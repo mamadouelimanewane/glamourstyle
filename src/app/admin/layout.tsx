@@ -20,7 +20,7 @@ export default function AdminLayout({
 
             {/* Backdrop for mobile */}
             {isSidebarOpen && (
-                <div 
+                <div
                     className="fixed inset-0 bg-black/20 z-40 lg:hidden backdrop-blur-sm"
                     onClick={() => setIsSidebarOpen(false)}
                 />
@@ -32,7 +32,7 @@ export default function AdminLayout({
                     <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                             {/* Mobile Hamburger */}
-                            <button 
+                            <button
                                 onClick={() => setIsSidebarOpen(true)}
                                 className="lg:hidden p-1.5 hover:bg-gray-100 rounded text-gray-500 transition-colors"
                             >
@@ -44,7 +44,7 @@ export default function AdminLayout({
                             <div className="flex flex-col">
                                 <span className="text-[8px] uppercase tracking-[2px] font-black text-gray-400">Cabinet LexPremium ERP</span>
                                 <nav className="flex items-center gap-2 mt-0">
-                                    <Link href="/admin" className="text-[10px] font-bold text-gray-500 hover:text-gray-900 transition-colors">Espace Personnel</cite></Link>
+                                    <Link href="/admin" className="text-[10px] font-bold text-gray-500 hover:text-gray-900 transition-colors">Espace Personnel</Link>
                                     <span className="text-gray-200 text-[8px]">/</span>
                                     <span className="text-[10px] font-bold text-gray-900">Gestion de Bord</span>
                                 </nav>
@@ -54,13 +54,13 @@ export default function AdminLayout({
                         <div className="flex items-center gap-4">
                             <div className="hidden md:flex items-center relative group">
                                 <span className="absolute left-3 text-gray-400 text-[10px]">🔍</span>
-                                <input 
-                                    type="text" 
-                                    placeholder="Recherche rapide..." 
+                                <input
+                                    type="text"
+                                    placeholder="Recherche rapide..."
                                     className="bg-gray-50 border border-gray-200 rounded-lg py-1.5 pl-8 pr-4 text-[10px] w-48 focus:bg-white focus:border-[#D4AF37] transition-all outline-none"
                                 />
                             </div>
-                            
+
                             <div className="h-6 w-px bg-gray-200 hidden sm:block mx-1"></div>
 
                             <button className="relative w-8 h-8 flex items-center justify-center text-gray-500 hover:text-gray-900 transition-colors">
@@ -80,7 +80,7 @@ export default function AdminLayout({
                     <div className="max-w-7xl mx-auto">
                         {children}
                     </div>
-                    
+
                     {/* Compact Admin Footer */}
                     <div className="mt-12 py-6 border-t border-gray-100 flex flex-col sm:flex-row justify-between items-center gap-4">
                         <p className="text-[9px] text-gray-400 font-bold uppercase tracking-[2px]">© 2026 GLAMOUR STYLE • Propulsé par LexPremium</p>

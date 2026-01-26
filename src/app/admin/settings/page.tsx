@@ -16,8 +16,8 @@ const SettingsPage = () => {
         <div className="space-y-6 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-sm font-bold text-gray-900 uppercase tracking-widest">Configuration Système</h1>
-                    <p className="text-gray-400 text-[9px] font-medium uppercase tracking-wider mt-0.5">Paramètres du Serveur LexPremium</p>
+                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Configuration Système</h1>
+                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Paramètres du Serveur LexPremium</p>
                 </div>
             </div>
 

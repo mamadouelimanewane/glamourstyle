@@ -8,7 +8,7 @@ import Link from 'next/link';
 
 const PricingPage = () => {
     return (
-        <main className="min-h-screen bg-[#0A0A0A]">
+        <main className="min-h-screen bg-[#0A0A0A] text-white">
             <Header />
 
             <section className="pt-32 pb-20 relative overflow-hidden">

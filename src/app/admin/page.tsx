@@ -23,8 +23,8 @@ const DashboardPage = () => {
             {/* Header section with very small fonts */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h2 className="text-sm font-bold text-gray-900 uppercase tracking-widest">Tableau de Bord</h2>
-                    <p className="text-gray-400 text-[9px] font-medium uppercase tracking-wider mt-0.5">Espace Personnel / Gestion Manager</p>
+                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Tableau de Bord</h1>
+                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Espace Personnel / Collaborateurs</p>
                 </div>
                 <div className="flex gap-2 w-full md:w-auto">
                     <button className="flex-1 md:flex-none px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded hover:bg-gray-50 transition-all">
@@ -46,8 +46,8 @@ const DashboardPage = () => {
                                 {stat.change}
                             </span>
                         </div>
-                        <p className="text-[9px] uppercase tracking-wider font-bold text-gray-400 mb-0.5">{stat.label}</p>
-                        <p className="text-lg font-black text-gray-950">{stat.value}</p>
+                        <p className="text-[8px] uppercase tracking-wider font-bold text-gray-400 mb-0.5">{stat.label}</p>
+                        <p className="text-base font-black text-gray-950">{stat.value}</p>
                     </div>
                 ))}
             </div>

@@ -22,8 +22,8 @@ const AppointmentsPage = () => {
         <div className="space-y-6 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-sm font-bold text-gray-900 uppercase tracking-widest">Registre des Rendez-vous</h1>
-                    <p className="text-gray-400 text-[9px] font-medium uppercase tracking-wider mt-0.5">Planification & Suivi des Sessions</p>
+                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Registre des Rendez-vous</h1>
+                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Planification & Suivi des Sessions</p>
                 </div>
                 <div className="flex bg-gray-200/50 p-1 rounded-lg border border-gray-200">
                     {['all', 'pending', 'confirmed', 'cancelled'].map((tab) => (

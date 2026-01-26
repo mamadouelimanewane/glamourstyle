@@ -26,8 +26,8 @@ const AnalyticsPage = () => {
         <div className="space-y-6 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-sm font-bold text-gray-900 uppercase tracking-widest">Analyses & Business Intelligence</h1>
-                    <p className="text-gray-400 text-[9px] font-medium uppercase tracking-wider mt-0.5">Données de Performance Globales</p>
+                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Analyses & Business Intelligence</h1>
+                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Données de Performance Globales</p>
                 </div>
                 <div className="flex gap-2 w-full md:w-auto">
                     <button className="flex-1 md:flex-none px-3 py-1.5 text-[8px] font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded hover:bg-gray-50 transition-all">
