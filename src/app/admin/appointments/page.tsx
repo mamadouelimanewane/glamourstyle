@@ -19,73 +19,73 @@ const AppointmentsPage = () => {
         : appointments.filter(app => app.status === filter);
 
     return (
-        <div className="space-y-6 animate-fadeIn pb-10">
+        <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Registre des Rendez-vous</h1>
-                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Planification & Suivi des Sessions</p>
+                    <h1 className="text-2xl font-heading font-bold text-gray-950">Gestion des Rendez-vous</h1>
+                    <p className="text-gray-500 text-sm font-medium mt-1 uppercase tracking-wide">Planification et suivi des sessions clients</p>
                 </div>
-                <div className="flex bg-gray-200/50 p-1 rounded-lg border border-gray-200">
+                <div className="flex bg-gray-200/50 p-1.5 rounded-xl border border-gray-200">
                     {['all', 'pending', 'confirmed', 'cancelled'].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setFilter(tab)}
-                            className={`px-3 py-1.5 rounded text-[8px] uppercase tracking-widest font-black transition-all ${filter === tab ? 'bg-white text-gray-950 shadow-sm border border-gray-200' : 'text-gray-500 hover:text-gray-900'
+                            className={`px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-black transition-all ${filter === tab ? 'bg-white text-gray-950 shadow-sm' : 'text-gray-500 hover:text-gray-900'
                                 }`}
                         >
-                            {tab}
+                            {tab === 'all' ? 'Tous' : tab === 'pending' ? 'En attente' : tab === 'confirmed' ? 'Confirmé' : 'Annulé'}
                         </button>
                     ))}
                 </div>
             </div>
 
-            <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[9px] font-bold uppercase tracking-widest">
-                                <th className="px-6 py-4">Ref. ID</th>
-                                <th className="px-6 py-4">Information Client</th>
-                                <th className="px-6 py-4">Service & Session</th>
-                                <th className="px-6 py-4 text-right">Paiement</th>
-                                <th className="px-6 py-4 text-center">Statut</th>
-                                <th className="px-6 py-4 text-right">Options</th>
+                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                                <th className="px-8 py-5">Identifiant</th>
+                                <th className="px-8 py-5">Client</th>
+                                <th className="px-8 py-5">Service & Horaire</th>
+                                <th className="px-8 py-5 text-right">Montant</th>
+                                <th className="px-8 py-5 text-center">Statut</th>
+                                <th className="px-8 py-5 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">
                             {filteredAppointments.map((app) => (
                                 <tr key={app.id} className="hover:bg-gray-50/30 transition-colors group">
-                                    <td className="px-6 py-4 font-mono text-[9px] text-gray-400">{app.id}</td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-8 py-5 font-mono text-[10px] text-gray-400">{app.id}</td>
+                                    <td className="px-8 py-5">
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-gray-900 text-[11px] group-hover:text-[#D4AF37] transition-colors">{app.client}</span>
-                                            <span className="text-[9px] text-gray-400 font-medium">{app.email}</span>
+                                            <span className="font-bold text-gray-900 text-sm group-hover:text-[#D4AF37] transition-colors">{app.client}</span>
+                                            <span className="text-xs text-gray-500 font-medium">{app.email}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-8 py-5">
                                         <div className="flex flex-col">
-                                            <span className="font-bold text-gray-700 text-[10px]">{app.service}</span>
-                                            <span className="text-[8px] text-gray-400 font-bold uppercase tracking-widest mt-0.5">📅 {app.date} à {app.time}</span>
+                                            <span className="font-bold text-gray-700 text-sm">{app.service}</span>
+                                            <span className="text-xs text-gray-400 font-bold uppercase tracking-widest mt-1">📅 {app.date} | {app.time}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 text-right">
+                                    <td className="px-8 py-5 text-right">
                                         <div className="flex flex-col">
-                                            <span className="text-[10px] font-black text-gray-900">{app.amount}</span>
-                                            <span className="text-[7px] text-green-600 uppercase font-black tracking-tighter">Acompte: {app.deposit}</span>
+                                            <span className="text-sm font-black text-gray-900">{app.amount}</span>
+                                            <span className="text-[10px] text-green-600 font-bold uppercase tracking-tight">Acompte: {app.deposit}</span>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-4 text-center">
-                                        <span className={`text-[8px] uppercase font-bold px-2 py-0.5 rounded border ${app.status === 'confirmed' ? 'bg-green-50 text-green-600 border-green-100' :
+                                    <td className="px-8 py-5 text-center">
+                                        <span className={`text-[10px] uppercase font-black px-3 py-1.5 rounded-full border shadow-sm ${app.status === 'confirmed' ? 'bg-green-50 text-green-600 border-green-100' :
                                             app.status === 'pending' ? 'bg-amber-50 text-amber-600 border-amber-100' :
                                                 'bg-red-50 text-red-600 border-red-100'
                                             }`}>
-                                            {app.status}
+                                            {app.status === 'confirmed' ? 'Confirmé' : app.status === 'pending' ? 'En attente' : 'Annulé'}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-4 text-right">
-                                        <div className="flex justify-end gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <button className="w-6 h-6 rounded bg-white flex items-center justify-center border border-gray-200 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all">✏️</button>
-                                            <button className="w-6 h-6 rounded bg-white flex items-center justify-center border border-gray-200 hover:border-red-500 hover:text-red-500 transition-all">🗑️</button>
+                                    <td className="px-8 py-5 text-right">
+                                        <div className="flex justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <button className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-gray-200 hover:border-[#D4AF37] hover:text-[#D4AF37] transition-all shadow-sm">✏️</button>
+                                            <button className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-gray-200 hover:border-red-500 hover:text-red-500 transition-all shadow-sm">🗑️</button>
                                         </div>
                                     </td>
                                 </tr>
@@ -94,12 +94,6 @@ const AppointmentsPage = () => {
                     </table>
                 </div>
             </div>
-
-            {filteredAppointments.length === 0 && (
-                <div className="text-center py-12 bg-white rounded-xl border border-dashed border-gray-200">
-                    <p className="text-gray-400 text-[10px] font-bold uppercase tracking-widest italic">Aucun enregistrement trouvé.</p>
-                </div>
-            )}
         </div>
     );
 };

@@ -21,96 +21,92 @@ const CustomersPage = () => {
     );
 
     return (
-        <div className="space-y-6 animate-fadeIn pb-10">
+        <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-sm font-bold text-gray-900 uppercase tracking-widest">Registre des Clients</h1>
-                    <p className="text-gray-400 text-[9px] font-medium uppercase tracking-wider mt-0.5">Base de données CRM • LexPremium</p>
+                    <h1 className="text-2xl font-heading font-bold text-gray-950">Registre des Clients</h1>
+                    <p className="text-gray-500 text-sm font-medium mt-1 uppercase tracking-wide">Base de données CRM et fidélisation</p>
                 </div>
-                <button className="px-3 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded hover:bg-gray-800 transition-all">
-                    + Ajouter Client
+                <button className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-lg shadow-black/10">
+                    + Ajouter un client
                 </button>
             </div>
 
-            {/* Stats Cards - Low Profile */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {/* Key Metrics */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                     { label: 'Clients Totaux', value: customers.length, icon: '👥' },
                     { label: 'Statut VIP', value: customers.filter(c => c.status === 'VIP').length, icon: '⭐', color: 'text-[#D4AF37]' },
                     { label: 'Nouveautés', value: customers.filter(c => c.status === 'New').length, icon: '🆕', color: 'text-green-500' },
-                    { label: 'CAB Moyen', value: '£1,527', icon: '💰' },
+                    { label: 'CA Moyen', value: '£1,527', icon: '💰' },
                 ].map((s) => (
-                    <div key={s.label} className="bg-white p-4 rounded-xl border border-gray-100 shadow-sm flex items-center gap-3">
-                        <div className="w-8 h-8 bg-gray-50 rounded flex items-center justify-center text-sm">
+                    <div key={s.label} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
+                        <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-xl">
                             {s.icon}
                         </div>
                         <div>
-                            <p className="text-[8px] text-gray-400 font-bold uppercase tracking-widest leading-none mb-1">{s.label}</p>
-                            <p className={`text-sm font-black ${s.color || 'text-gray-950'}`}>{s.value}</p>
+                            <p className="text-[10px] text-gray-400 font-bold uppercase tracking-widest mb-1">{s.label}</p>
+                            <p className={`text-xl font-black ${s.color || 'text-gray-950'}`}>{s.value}</p>
                         </div>
                     </div>
                 ))}
             </div>
 
-            {/* Search Bar - Compact */}
-            <div className="bg-white p-1.5 rounded-lg border border-gray-200 shadow-sm flex items-center">
-                <div className="pl-4 pr-3 text-gray-400 text-xs">🔍</div>
+            {/* Search Bar */}
+            <div className="bg-white p-2 rounded-2xl border border-gray-200 shadow-sm flex items-center">
+                <div className="pl-5 pr-3 text-gray-400 text-lg">🔍</div>
                 <input
                     type="text"
-                    placeholder="Chercher par nom, email ou identifiant..."
+                    placeholder="Chercher par nom, email ou numéro..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="flex-1 bg-transparent py-1.5 pr-4 text-[10px] font-bold text-gray-900 placeholder-gray-400 outline-none"
+                    className="flex-1 bg-transparent py-3 pr-6 text-sm font-medium text-gray-900 placeholder-gray-400 outline-none"
                 />
             </div>
 
-            {/* Customers Table - Ultra Clean */}
-            <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+            {/* Customers Table */}
+            <div className="bg-white rounded-2xl border border-gray-200 shadow-sm overflow-hidden">
                 <div className="overflow-x-auto">
                     <table className="w-full text-left">
                         <thead>
-                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[8px] font-bold uppercase tracking-widest">
-                                <th className="px-6 py-3">ID</th>
-                                <th className="px-6 py-3">Identité & Contact</th>
-                                <th className="px-6 py-3 text-center">Sessions</th>
-                                <th className="px-6 py-3 text-right">CA Total</th>
-                                <th className="px-6 py-3 text-center">Score</th>
-                                <th className="px-6 py-3 text-center">Rang</th>
-                                <th className="px-6 py-3 text-right">Actions</th>
+                            <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+                                <th className="px-8 py-5">Identité</th>
+                                <th className="px-8 py-5 text-center">Sessions</th>
+                                <th className="px-8 py-5 text-right">CA Total</th>
+                                <th className="px-8 py-5 text-center">Dernière Visite</th>
+                                <th className="px-8 py-5 text-center">Rang</th>
+                                <th className="px-8 py-5 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">
                             {filteredCustomers.map((customer) => (
                                 <tr key={customer.id} className="hover:bg-gray-50/30 transition-colors group">
-                                    <td className="px-6 py-3 font-mono text-[8px] text-gray-400">{customer.id}</td>
-                                    <td className="px-6 py-3">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-7 h-7 rounded bg-gray-950 flex items-center justify-center font-bold text-white text-[10px] uppercase">
+                                    <td className="px-8 py-5">
+                                        <div className="flex items-center gap-4">
+                                            <div className="w-10 h-10 rounded-full bg-gray-950 flex items-center justify-center font-black text-white text-xs">
                                                 {customer.name[0]}
                                             </div>
                                             <div className="flex flex-col">
-                                                <span className="font-bold text-gray-900 text-[10px]">{customer.name}</span>
-                                                <span className="text-[8px] text-gray-400 font-medium">{customer.email}</span>
+                                                <span className="font-bold text-gray-900 text-sm">{customer.name}</span>
+                                                <span className="text-[11px] text-gray-500 font-medium">{customer.email}</span>
                                             </div>
                                         </div>
                                     </td>
-                                    <td className="px-6 py-3 text-center">
-                                        <span className="text-[10px] font-black text-gray-950">{customer.visits}</span>
+                                    <td className="px-8 py-5 text-center">
+                                        <span className="text-sm font-black text-gray-950">{customer.visits}</span>
                                     </td>
-                                    <td className="px-6 py-3 text-right font-black text-gray-950 text-[10px]">{customer.totalSpent}</td>
-                                    <td className="px-6 py-3 text-center text-[9px] text-gray-500 font-bold">{customer.lastVisit}</td>
-                                    <td className="px-6 py-3 text-center">
-                                        <span className={`text-[8px] uppercase font-bold px-2 py-0.5 rounded border ${customer.status === 'VIP' ? 'bg-amber-50 text-amber-600 border-amber-100' :
+                                    <td className="px-8 py-5 text-right font-black text-gray-950 text-sm">{customer.totalSpent}</td>
+                                    <td className="px-8 py-5 text-center text-xs text-gray-500 font-bold">{customer.lastVisit}</td>
+                                    <td className="px-8 py-5 text-center">
+                                        <span className={`text-[10px] uppercase font-black px-3 py-1.5 rounded-full border ${customer.status === 'VIP' ? 'bg-amber-50 text-amber-600 border-amber-100 shadow-sm' :
                                             customer.status === 'Regular' ? 'bg-blue-50 text-blue-600 border-blue-100' :
                                                 'bg-green-50 text-green-600 border-green-100'
                                             }`}>
                                             {customer.status}
                                         </span>
                                     </td>
-                                    <td className="px-6 py-3 text-right">
-                                        <div className="flex justify-end gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-                                            <button className="w-5 h-5 rounded bg-white flex items-center justify-center border border-gray-200 text-[9px] hover:border-[#D4AF37] transition-all">✏️</button>
-                                        </div>
+                                    <td className="px-8 py-5 text-right">
+                                        <button className="w-8 h-8 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-all hover:border-[#D4AF37] hover:shadow-sm">✏️</button>
                                     </td>
                                 </tr>
                             ))}

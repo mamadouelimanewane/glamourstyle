@@ -3,6 +3,14 @@
 import React, { useState } from 'react';
 import { services as initialServices, categories } from '@/data/services';
 
+const categoryColors: Record<string, string> = {
+    'hair-styling': 'bg-blue-50 border-blue-100 text-blue-700',
+    'coloration': 'bg-amber-50 border-amber-100 text-amber-700',
+    'soin': 'bg-emerald-50 border-emerald-100 text-emerald-700',
+    'coiffure-evenement': 'bg-rose-50 border-rose-100 text-rose-700',
+    'extension': 'bg-purple-50 border-purple-100 text-purple-700',
+};
+
 const ServicesAdminPage = () => {
     const [filter, setFilter] = useState('all');
 
@@ -11,25 +19,26 @@ const ServicesAdminPage = () => {
         : initialServices.filter(s => s.category === filter);
 
     return (
-        <div className="space-y-6 animate-fadeIn pb-10">
+        <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-[11px] font-black text-gray-900 uppercase tracking-widest leading-none">Menu des Services</h1>
-                    <p className="text-gray-400 text-[8px] font-bold uppercase tracking-wider mt-1">Configuration des Offres Professionnelles</p>
+                    <h1 className="text-2xl font-heading font-bold text-gray-950">Menu des Services</h1>
+                    <p className="text-gray-500 text-sm font-medium mt-1 uppercase tracking-wide">Gestion de l'offre et des tarifs prestations</p>
                 </div>
-                <button className="px-4 py-1.5 text-[9px] font-bold uppercase tracking-widest text-white bg-gray-950 rounded hover:bg-gray-800 transition-all">
-                    + Nouvelle Prestation
+                <button className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-lg shadow-black/10">
+                    + Ajouter une prestation
                 </button>
             </div>
 
-            <div className="flex flex-wrap gap-2">
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap gap-2 pb-2">
                 {categories.map((cat) => (
                     <button
                         key={cat.id}
                         onClick={() => setFilter(cat.value)}
-                        className={`px-3 py-1.5 rounded text-[8px] uppercase tracking-widest font-black transition-all border ${filter === cat.value
-                            ? 'bg-[#D4AF37] text-white border-[#D4AF37] shadow-sm'
-                            : 'bg-white text-gray-400 border-gray-100 hover:border-[#D4AF37] hover:text-[#D4AF37]'
+                        className={`px-5 py-2.5 rounded-xl text-[10px] uppercase tracking-widest font-black transition-all border ${filter === cat.value
+                            ? 'bg-[#D4AF37] text-white border-[#D4AF37] shadow-md shadow-[#D4AF37]/20'
+                            : 'bg-white text-gray-500 border-gray-100 hover:border-gray-300'
                             }`}
                     >
                         {cat.name}
@@ -37,30 +46,55 @@ const ServicesAdminPage = () => {
                 ))}
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* Services Grid as Business Cards */}
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
                 {filteredServices.map((service) => (
-                    <div key={service.id} className="bg-white p-4 rounded-xl border border-gray-200 relative group hover:shadow-md transition-all flex flex-col">
-                        <div className="flex justify-between items-start mb-3">
-                            <span className="text-[8px] uppercase font-bold text-[#D4AF37] tracking-wider">{service.category}</span>
-                            <button className="w-5 h-5 rounded bg-gray-50 flex items-center justify-center text-[10px] opacity-0 group-hover:opacity-100 transition-opacity">✏️</button>
+                    <div
+                        key={service.id}
+                        className={`p-6 rounded-2xl border transition-all hover:scale-[1.02] hover:shadow-xl flex flex-col min-h-[220px] relative overflow-hidden group ${categoryColors[service.category] || 'bg-white border-gray-100'}`}
+                    >
+                        {/* Decorative watermark icon */}
+                        <div className="absolute -bottom-4 -right-4 text-8xl opacity-[0.05] rotate-12 group-hover:rotate-0 transition-transform">
+                            {service.category === 'coloration' ? '🎨' :
+                                service.category === 'soin' ? '🌿' :
+                                    service.category === 'extension' ? '💎' : '✂️'}
                         </div>
 
-                        <h3 className="text-[11px] font-black mb-1 text-gray-950 group-hover:text-[#D4AF37] transition-colors uppercase tracking-tight leading-tight">{service.name}</h3>
-                        <p className="text-gray-400 text-[9px] font-medium mb-4 flex-1 line-clamp-2 leading-relaxed">{service.description}</p>
-
-                        <div className="flex items-center justify-between pt-3 border-t border-gray-50 mt-auto">
+                        <div className="flex justify-between items-start relative z-10 mb-4">
                             <div className="flex flex-col">
-                                <span className="text-[7px] text-gray-400 uppercase font-black tracking-widest">Temps</span>
-                                <span className="text-gray-900 font-bold text-[10px]">{service.duration} MIN</span>
+                                <span className="text-[10px] font-black uppercase tracking-widest opacity-60 mb-1">{service.category}</span>
+                                <h3 className="text-lg font-heading font-bold leading-tight text-gray-950 group-hover:text-black transition-colors">{service.name}</h3>
+                            </div>
+                            <button className="w-8 h-8 rounded-lg bg-white/50 backdrop-blur-sm border border-white/80 flex items-center justify-center text-sm shadow-sm hover:bg-white transition-all">✏️</button>
+                        </div>
+
+                        <p className="text-gray-600/80 text-xs font-medium mb-6 flex-1 relative z-10 leading-relaxed max-w-[90%]">
+                            {service.description}
+                        </p>
+
+                        <div className="flex items-center justify-between pt-4 border-t border-black/5 relative z-10 mt-auto">
+                            <div className="flex flex-col">
+                                <span className="text-[8px] uppercase font-black tracking-widest opacity-40">Durée Session</span>
+                                <div className="flex items-center gap-1.5 mt-1">
+                                    <span className="text-xs">⏱️</span>
+                                    <span className="text-gray-900 font-bold text-xs uppercase">{service.duration} MIN</span>
+                                </div>
                             </div>
                             <div className="flex flex-col items-end">
-                                <span className="text-[7px] text-gray-400 uppercase font-black tracking-widest">Tarif Base</span>
-                                <span className="text-base font-black text-gray-950">£{service.price}</span>
+                                <span className="text-[8px] uppercase font-black tracking-widest opacity-40">Tarif Prestation</span>
+                                <span className="text-2xl font-black text-gray-950">£{service.price}</span>
                             </div>
                         </div>
                     </div>
                 ))}
             </div>
+
+            {filteredServices.length === 0 && (
+                <div className="py-20 text-center bg-white rounded-2xl border border-dashed border-gray-200">
+                    <span className="text-3xl block mb-4">🔎</span>
+                    <p className="text-gray-400 text-xs font-bold uppercase tracking-widest">Aucun service trouvé dans cette catégorie</p>
+                </div>
+            )}
         </div>
     );
 };
