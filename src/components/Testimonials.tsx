@@ -5,40 +5,40 @@ import { testimonials } from '@/data/services';
 
 const Testimonials = () => {
     return (
-        <section id="avis" className="section bg-[#0A0A0A] relative overflow-hidden">
+        <section id="avis" className="section bg-background relative overflow-hidden">
             {/* Decorative Elements */}
-            <div className="absolute -top-24 -left-24 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl" />
-            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-[#D4AF37]/5 rounded-full blur-3xl" />
+            <div className="absolute -top-24 -left-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl opacity-50" />
+            <div className="absolute -bottom-24 -right-24 w-64 h-64 bg-secondary/10 rounded-full blur-3xl opacity-50" />
 
-            <div className="text-center mb-16">
-                <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-semibold">Kind Words</span>
-                <h2 className="mt-4 mb-4">Appreciated <span className="gradient-text">Excellence</span></h2>
-                <p className="text-gray-400">Hear from our clients about their Glamour Style experience</p>
+            <div className="text-center mb-16 animate-fadeInUp">
+                <span className="text-secondary text-sm uppercase tracking-widest font-bold tracking-[4px]">Kind Words</span>
+                <h2 className="mt-4 mb-4 font-heading text-primary">Appreciated <span className="gradient-text">Excellence</span></h2>
+                <p className="text-muted-foreground font-body">Hear from our clients about their Glamour Style experience</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                 {testimonials.map((testi) => (
-                    <div key={testi.id} className="glass p-8 rounded-2xl relative">
-                        <div className="absolute top-6 right-8 text-6xl text-[#D4AF37]/10 font-serif">“</div>
+                    <div key={testi.id} className="card p-8 rounded-2xl relative bg-muted/20 border-border">
+                        <div className="absolute top-6 right-8 text-6xl text-secondary/10 font-serif">“</div>
                         <div className="flex items-center mb-6">
                             {[1, 2, 3, 4, 5].map((star) => (
-                                <span key={star} className="text-[#D4AF37] text-lg">★</span>
+                                <span key={star} className="text-secondary text-lg">★</span>
                             ))}
                         </div>
-                        <p className="text-gray-300 italic mb-8 relative z-10 text-lg">
+                        <p className="text-primary/80 italic mb-8 relative z-10 text-lg font-body leading-relaxed">
                             "{testi.comment}"
                         </p>
                         <div className="flex justify-between items-center">
                             <div className="flex items-center gap-4">
-                                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B7355] flex items-center justify-center font-bold text-black uppercase">
+                                <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center font-bold text-primary-foreground uppercase font-heading">
                                     {testi.name[0]}
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white uppercase tracking-wider">{testi.name}</h4>
-                                    <p className="text-xs text-[#D4AF37]">{testi.service}</p>
+                                    <h4 className="font-bold text-primary font-heading uppercase tracking-widest text-xs">{testi.name}</h4>
+                                    <p className="text-[10px] text-secondary font-bold uppercase tracking-tighter">{testi.service}</p>
                                 </div>
                             </div>
-                            <span className="text-xs text-gray-600 font-mono">{testi.date}</span>
+                            <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest">{testi.date}</span>
                         </div>
                     </div>
                 ))}
@@ -46,11 +46,11 @@ const Testimonials = () => {
 
             <div className="mt-16 text-center">
                 <div className="flex flex-col items-center">
-                    <p className="text-gray-500 text-sm mb-4">Recommended on</p>
-                    <div className="flex gap-8 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500">
-                        <span className="font-bold text-2xl">Google</span>
-                        <span className="font-bold text-2xl">Trustpilot</span>
-                        <span className="font-bold text-2xl">Yelp</span>
+                    <p className="text-[10px] font-bold text-muted-foreground mb-6 uppercase tracking-widest">Recommended on</p>
+                    <div className="flex gap-8 opacity-40 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-500 items-baseline">
+                        <span className="font-heading font-black text-2xl text-primary/80">Google</span>
+                        <span className="font-heading font-black text-2xl text-primary/80">Trustpilot</span>
+                        <span className="font-heading font-black text-2xl text-primary/80">Yelp</span>
                     </div>
                 </div>
             </div>

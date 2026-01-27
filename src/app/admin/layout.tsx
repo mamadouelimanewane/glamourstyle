@@ -42,11 +42,11 @@ export default function AdminLayout({
                             </button>
 
                             <div className="flex flex-col">
-                                <span className="text-xs uppercase tracking-[3px] font-black text-[#D4AF37]">Cabinet LexPremium ERP</span>
+                                <span className="text-xs uppercase tracking-[3px] font-black text-[#D4AF37]">LexPremium Cabinet ERP</span>
                                 <nav className="flex items-center gap-2 mt-0.5">
-                                    <Link href="/admin" className="text-sm font-bold text-gray-400 hover:text-gray-950 transition-colors">Espace Personnel</Link>
+                                    <Link href="/admin" className="text-sm font-bold text-gray-400 hover:text-gray-950 transition-colors">Staff Space</Link>
                                     <span className="text-gray-200 text-sm">/</span>
-                                    <span className="text-sm font-bold text-gray-950">Gestion de Bord</span>
+                                    <span className="text-sm font-bold text-gray-950">Management Board</span>
                                 </nav>
                             </div>
                         </div>
@@ -69,7 +69,7 @@ export default function AdminLayout({
 
                                 <Link href="/" className="flex items-center gap-2 px-5 py-2.5 text-sm font-bold uppercase tracking-widest text-[#D4AF37] bg-[#D4AF37]/5 border border-[#D4AF37]/20 rounded-xl hover:bg-[#D4AF37] hover:text-white transition-all">
                                     <span>🌐</span>
-                                    <span className="hidden sm:inline">Aperçu Site</span>
+                                    <span className="hidden sm:inline">Preview Site</span>
                                 </Link>
                             </div>
                         </div>

@@ -12,18 +12,18 @@ const Sidebar = ({ onClose }: SidebarProps) => {
     const pathname = usePathname();
 
     const menuItems = [
-        { name: 'Tableau de bord', icon: '📊', path: '/admin' },
-        { name: 'Calendrier', icon: '🗓️', path: '/admin/calendar' },
-        { name: 'Rendez-vous', icon: '📅', path: '/admin/appointments' },
+        { name: 'Dashboard', icon: '📊', path: '/admin' },
+        { name: 'Calendar', icon: '🗓️', path: '/admin/calendar' },
+        { name: 'Appointments', icon: '📅', path: '/admin/appointments' },
         { name: 'Services', icon: '✂️', path: '/admin/services' },
-        { name: 'Clients', icon: '👥', path: '/admin/customers' },
+        { name: 'Customers', icon: '👥', path: '/admin/customers' },
         { name: 'Finances', icon: '💰', path: '/admin/finances' },
-        { name: 'Fidélité VIP', icon: '🏆', path: '/admin/vip' },
-        { name: 'Stocks', icon: '📦', path: '/admin/stock' },
+        { name: 'VIP Loyalty', icon: '🏆', path: '/admin/vip' },
+        { name: 'Stock', icon: '📦', path: '/admin/stock' },
         { name: 'Marketing', icon: '📣', path: '/admin/marketing' },
-        { name: 'Utilisateurs', icon: '🔑', path: '/admin/users' },
-        { name: 'Statistiques', icon: '📈', path: '/admin/analytics' },
-        { name: 'Paramètres', icon: '⚙️', path: '/admin/settings' },
+        { name: 'Users', icon: '🔑', path: '/admin/users' },
+        { name: 'Analytics', icon: '📈', path: '/admin/analytics' },
+        { name: 'Settings', icon: '⚙️', path: '/admin/settings' },
     ];
 
     return (

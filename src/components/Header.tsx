@@ -9,204 +9,89 @@ const Header = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            setIsScrolled(window.scrollY > 50);
+            setIsScrolled(window.scrollY > 20);
         };
-
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const scrollToSection = (sectionId: string) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-            setIsMobileMenuOpen(false);
-        }
-    };
+    const navLinks = [
+        { name: 'Home', href: '/' },
+        { name: 'Services', href: '/#services' },
+        { name: 'Lookbook', href: '/lookbook' },
+        { name: 'Pricing', href: '/pricing' },
+        { name: 'Experience', href: '/#experience' },
+    ];
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'glass shadow-lg py-3' : 'bg-transparent py-5'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-black/80 backdrop-blur-lg py-4 border-b border-white/5 shadow-2xl' : 'bg-transparent py-8'
                 }`}
         >
-            <nav className="max-w-7xl mx-auto px-6 flex flex-row items-center justify-between">
-                {/* Logo */}
-                <Link href="/" className="flex flex-row items-center space-x-3 group shrink-0">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-[#D4AF37] to-[#F4E4C1] rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
-                        <span className="text-xl md:text-2xl">💇</span>
+            <div className="section flex items-center justify-between">
+                <Link href="/" className="group flex items-center gap-3">
+                    <div className="w-10 h-10 bg-[#D4AF37] rounded-full flex items-center justify-center text-xl shadow-lg shadow-[#D4AF37]/20 group-hover:scale-110 transition-transform">
+                        💇
                     </div>
                     <div className="flex flex-col">
-                        <h1 className="font-heading text-xl md:text-2xl font-bold gradient-text leading-none">
-                            Glamour Style
-                        </h1>
-                        <p className="text-[10px] text-gray-400 font-light tracking-widest hidden sm:block">Hair Artistry</p>
+                        <span className="text-white font-black text-xl tracking-[4px] leading-none mb-1">GLAMOUR STYLE</span>
+                        <span className="text-[#D4AF37] text-[10px] font-bold uppercase tracking-[3px]">Luxury Hair Studio</span>
                     </div>
                 </Link>
 
-                {/* Desktop Navigation */}
-                <ul className="hidden md:flex flex-row items-center space-x-6 lg:space-x-8 xl:space-x-12">
-                    <li>
+                {/* Desktop Nav */}
+                <nav className="hidden lg:flex items-center gap-10">
+                    {navLinks.map((link) => (
                         <Link
-                            href="/#accueil"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
+                            key={link.name}
+                            href={link.href}
+                            className="text-xs font-black uppercase tracking-[2px] text-gray-300 hover:text-[#D4AF37] transition-colors relative group"
                         >
-                            Home
+                            {link.name}
+                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#D4AF37] transition-all group-hover:w-full"></span>
                         </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#services"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
-                        >
-                            Services
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#portfolio"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
-                        >
-                            Portfolio
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/pricing"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
-                        >
-                            Pricing
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#avis"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
-                        >
-                            Reviews
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            href="/#contact"
-                            className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
-                        >
-                            Contact
-                        </Link>
-                    </li>
-                </ul>
-
-                {/* CTA Button */}
-                <div className="hidden lg:block shrink-0">
+                    ))}
                     <Link
-                        href="/#reservation"
-                        className="btn-primary py-2.5 px-6 text-sm"
+                        href="/#booking"
+                        className="px-8 py-3 bg-[#D4AF37] text-black font-black text-[10px] uppercase tracking-[3px] rounded-full hover:bg-white transition-all shadow-lg shadow-[#D4AF37]/20 active:scale-95"
+                    >
+                        Book Now
+                    </Link>
+                </nav>
+
+                {/* Mobile Toggle */}
+                <button
+                    className="lg:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                >
+                    <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
+                    <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                    <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                </button>
+            </div>
+
+            {/* Mobile Menu */}
+            <div className={`lg:hidden fixed inset-0 bg-black/95 backdrop-blur-2xl transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                <div className="flex flex-col items-center justify-center h-full gap-8">
+                    {navLinks.map((link) => (
+                        <Link
+                            key={link.name}
+                            href={link.href}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="text-2xl font-heading font-bold text-white hover:text-[#D4AF37] transition-colors"
+                        >
+                            {link.name}
+                        </Link>
+                    ))}
+                    <Link
+                        href="/#booking"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="px-10 py-4 bg-[#D4AF37] text-black font-black text-xs uppercase tracking-[3px] rounded-full mt-4"
                     >
                         Book Now
                     </Link>
                 </div>
-
-
-                {/* Mobile Menu Button */}
-                <button
-                    className="md:hidden text-white p-2 hover:bg-white/10 rounded-lg transition-colors"
-                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    <svg
-                        className="w-6 h-6"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                    >
-                        {isMobileMenuOpen ? (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M6 18L18 6M6 6l12 12"
-                            />
-                        ) : (
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth={2}
-                                d="M4 6h16M4 12h16M4 18h16"
-                            />
-                        )}
-                    </svg>
-                </button>
-            </nav>
-
-            {/* Mobile Menu */}
-            {isMobileMenuOpen && (
-                <div className="md:hidden glass mt-4 mx-4 rounded-lg overflow-hidden animate-fadeIn">
-                    <ul className="py-4">
-                        <li>
-                            <Link
-                                href="/#accueil"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
-                            >
-                                Home
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/#services"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
-                            >
-                                Services
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/#portfolio"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
-                            >
-                                Portfolio
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/pricing"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
-                            >
-                                Pricing
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/#avis"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
-                            >
-                                Reviews
-                            </Link>
-                        </li>
-                        <li>
-                            <Link
-                                href="/#contact"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
-                            >
-                                Contact
-                            </Link>
-                        </li>
-                        <li className="px-6 py-3">
-                            <Link
-                                href="/#reservation"
-                                onClick={() => setIsMobileMenuOpen(false)}
-                                className="btn-primary w-full text-center block"
-                            >
-                                Book Now
-                            </Link>
-                        </li>
-                    </ul>
-                </div>
-            )}
+            </div>
         </header>
     );
 };

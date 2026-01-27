@@ -1,98 +1,55 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
+import Link from 'next/link';
 
 const Hero = () => {
-    const scrollToReservation = () => {
-        const element = document.getElementById('reservation');
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
-        <section id="accueil" className="relative h-screen w-full flex items-center overflow-hidden">
-            {/* Background Image with Overlay */}
-            <div className="absolute inset-0 z-0">
-                <Image
-                    src="/images/hero.png"
-                    alt="Glamour Style Salon"
-                    fill
-                    className="object-cover"
-                    priority
-                />
-                <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-transparent" />
-            </div>
+        <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-20">
+            {/* Background with luxury gradient and subtle noise */}
+            <div className="absolute inset-0 bg-[#0A0A0A] -z-20" />
+            <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 via-transparent to-black -z-10" />
+            <div className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
 
-            {/* Content */}
-            <div className="relative z-10 max-w-7xl mx-auto px-6 w-full">
-                <div className="max-w-2xl animate-fadeInUp">
-                    <h1 className="mb-6 leading-tight">
-                        Modern <br />
-                        <span className="gradient-text font-serif italic">Hair Artistry</span>
+            {/* Decorative elements */}
+            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full" />
+            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-white/5 blur-[120px] rounded-full" />
+
+            <div className="section text-center relative z-10">
+                <div className="animate-reveal">
+                    <span className="inline-block text-[#D4AF37] font-black text-xs md:text-sm uppercase tracking-[8px] mb-6 border-b-2 border-[#D4AF37]/30 pb-2">
+                        London's Finest African Hair Studio
+                    </span>
+                    <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] font-heading">
+                        Excellence <br />
+                        <span className="gradient-text italic font-serif">& Beauty</span>
                     </h1>
-                    <p className="text-gray-300 text-lg md:text-xl mb-10 max-w-lg">
-                        Experience excellence in luxury hair styling.
+                    <p className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium px-4">
+                        Discover a premium experience where traditional artistry meets contemporary luxury. Tailored high-end braiding and hair care for the modern African woman.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-4">
-                        <button
-                            onClick={scrollToReservation}
-                            className="btn-primary flex items-center justify-center group"
+                    <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                        <Link
+                            href="#booking"
+                            className="w-full sm:w-auto px-10 py-5 bg-[#D4AF37] text-black font-black text-xs uppercase tracking-[4px] rounded-full hover:bg-white transition-all duration-500 shadow-2xl shadow-[#D4AF37]/20 hover:-translate-y-1"
                         >
-                            Book Appointment
-                            <svg
-                                className="w-5 h-5 ml-2 transform transition-transform group-hover:translate-x-1"
-                                fill="none"
-                                stroke="currentColor"
-                                viewBox="0 0 24 24"
-                            >
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                            </svg>
-                        </button>
-                        <button
-                            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                            className="btn-secondary"
+                            Secure Your Session
+                        </Link>
+                        <Link
+                            href="/lookbook"
+                            className="w-full sm:w-auto px-10 py-5 bg-white/5 text-white border border-white/10 font-black text-xs uppercase tracking-[4px] rounded-full hover:bg-white/10 transition-all duration-500 backdrop-blur-md"
                         >
-                            Explore Services
-                        </button>
-                    </div>
-
-                    <div className="mt-12 flex items-center space-x-8 text-sm text-gray-400">
-                        <div className="flex flex-col">
-                            <span className="text-[#D4AF37] font-bold text-xl">10+</span>
-                            <span>Years of Excellence</span>
-                        </div>
-                        <div className="w-px h-10 bg-gray-700" />
-                        <div className="flex flex-col">
-                            <span className="text-[#D4AF37] font-bold text-xl">5000+</span>
-                            <span>Happy Clients</span>
-                        </div>
-                        <div className="w-px h-10 bg-gray-700" />
-                        <div className="flex flex-col">
-                            <span className="text-[#D4AF37] font-bold text-xl">4.9/5</span>
-                            <span>Top Rated</span>
-                        </div>
+                            Explore Lookbook
+                        </Link>
                     </div>
                 </div>
-            </div>
 
-            {/* Scroll Indicator */}
-            <button
-                onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
-                className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group hover:scale-110 transition-transform"
-                aria-label="Scroll to services"
-            >
-                <svg
-                    className="w-6 h-6 text-[#D4AF37] group-hover:text-white transition-colors"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-            </button>
+                {/* Scroll indicator */}
+                <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
+                    <span className="text-[10px] font-black uppercase tracking-[4px] rotate-90 origin-left mt-10">Scroll</span>
+                    <div className="w-[1px] h-20 bg-gradient-to-b from-[#D4AF37] to-transparent" />
+                </div>
+            </div>
         </section>
     );
 };

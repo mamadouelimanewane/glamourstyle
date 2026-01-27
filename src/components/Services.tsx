@@ -1,88 +1,72 @@
 'use client';
 
-import React, { useState } from 'react';
-import { services, categories } from '@/data/services';
+import React from 'react';
+
+const homeServices = [
+    {
+        title: 'Luxury Box Braids',
+        description: 'Impeccable craftsmanship and protective styling using premium extensions. Tailored length and thickness.',
+        price: 'From £180',
+        icon: '✨'
+    },
+    {
+        title: 'Silk Press & Treatment',
+        description: 'The ultimate hydration and thermal smoothing for a bouncing, natural shine without chemical damage.',
+        price: 'From £95',
+        icon: '💎'
+    },
+    {
+        title: 'Expert Coloration',
+        description: 'Custom creative coloring that respects the delicate structure of textured hair.',
+        price: 'From £120',
+        icon: '🎨'
+    },
+    {
+        title: 'Bridal & Special Events',
+        description: 'Exclusive hair styling service for your most precious moments. Trial sessions included.',
+        price: 'Custom Quote',
+        icon: '👑'
+    }
+];
 
 const Services = () => {
-    const [activeCategory, setActiveCategory] = useState('all');
-
-    const filteredServices = activeCategory === 'all'
-        ? services
-        : services.filter(service => service.category === activeCategory);
-
     return (
-        <section id="services" className="section bg-[#0D0D0D]">
-            <div className="text-center mb-16 animate-fadeIn">
-                <span className="text-[#D4AF37] text-sm uppercase tracking-widest font-semibold tracking-[4px]">Our Services</span>
-                <h2 className="mt-4 mb-6">The Art of <span className="gradient-text">Transformation</span></h2>
-                <div className="w-24 h-1 bg-[#D4AF37] mx-auto rounded-full" />
-            </div>
+        <section id="services" className="py-32 bg-[#0A0A0A] relative overflow-hidden">
+            <div className="section">
+                <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-20 px-4">
+                    <div className="max-w-2xl">
+                        <span className="text-[#D4AF37] font-black text-xs uppercase tracking-[6px] mb-4 block">Our Expertise</span>
+                        <h2 className="text-4xl md:text-6xl font-heading mb-6 leading-tight">Elite Styling <br /> <span className="gradient-text italic">Services</span></h2>
+                    </div>
+                    <p className="text-gray-400 max-w-sm mb-4">
+                        Every service is a unique ritual designed to enhance your natural beauty while ensuring the health of your hair.
+                    </p>
+                </div>
 
-            {/* Category Filter */}
-            <div className="flex flex-wrap justify-center gap-4 mb-16">
-                {categories.map((category) => (
-                    <button
-                        key={category.id}
-                        onClick={() => setActiveCategory(category.value)}
-                        className={`px-6 py-2 rounded-full border transition-all duration-300 font-medium ${activeCategory === category.value
-                            ? 'bg-[#D4AF37] text-black border-[#D4AF37] shadow-glow'
-                            : 'border-gray-700 text-gray-400 hover:border-[#D4AF37] hover:text-[#D4AF37]'
-                            }`}
-                    >
-                        {category.name}
-                    </button>
-                ))}
-            </div>
-
-            {/* Services Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredServices.map((service) => (
-                    <div key={service.id} className="card group relative overflow-hidden">
-                        {service.popular && (
-                            <div className="absolute top-4 right-4 bg-[#D4AF37] text-black text-[10px] font-bold px-2 py-1 rounded uppercase tracking-tighter z-10">
-                                Popular
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-4">
+                    {homeServices.map((service, index) => (
+                        <div
+                            key={service.title}
+                            className="group p-10 bg-white/5 border border-white/5 rounded-[40px] hover:bg-white/10 hover:border-[#D4AF37]/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+                        >
+                            <div className="text-4xl mb-8 group-hover:scale-110 transition-transform inline-block opacity-80 group-hover:opacity-100">
+                                {service.icon}
                             </div>
-                        )}
-
-                        <div className="flex flex-col h-full">
-                            <h3 className="text-xl mb-3 group-hover:text-[#D4AF37] transition-colors">
-                                {service.name}
+                            <h3 className="text-2xl font-heading font-bold mb-4 text-white group-hover:text-[#D4AF37] transition-colors">
+                                {service.title}
                             </h3>
-                            <p className="text-gray-400 text-sm mb-6 flex-grow">
+                            <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-1">
                                 {service.description}
                             </p>
-
-                            <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-800">
-                                <div className="flex flex-col">
-                                    <span className="text-xs text-gray-500 uppercase tracking-widest">Duration</span>
-                                    <span className="text-white font-medium">{service.duration} min</span>
-                                </div>
-                                <div className="flex flex-col items-end">
-                                    <span className="text-xs text-gray-500 uppercase tracking-widest">Investment</span>
-                                    <span className="text-[#D4AF37] font-bold text-2xl">£{service.price}</span>
-                                </div>
+                            <div className="pt-6 border-t border-white/5">
+                                <span className="text-white font-black text-xs uppercase tracking-widest">{service.price}</span>
                             </div>
 
-                            <button
-                                onClick={() => {
-                                    const element = document.getElementById('reservation');
-                                    element?.scrollIntoView({ behavior: 'smooth' });
-                                }}
-                                className="mt-6 w-full py-3 bg-transparent border border-gray-700 text-white rounded-md hover:bg-[#D4AF37] hover:text-black hover:border-[#D4AF37] transition-all duration-300 font-semibold"
-                            >
-                                Book this service
-                            </button>
+                            {/* Decorative circle */}
+                            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#D4AF37]/5 rounded-full blur-2xl group-hover:bg-[#D4AF37]/10 transition-all" />
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            <div className="mt-20 glass p-8 rounded-xl text-center border-dashed border-2 border-[#D4AF37]/30">
-                <h3 className="text-2xl mb-4">Need personalized advice?</h3>
-                <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-                    Our expert stylists are available for a free consultation to define the style that will enhance your beauty best.
-                </p>
-                <button className="btn-secondary">Book a Consultation</button>
+                    ))}
+                </div>
             </div>
         </section>
     );
