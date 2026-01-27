@@ -4,32 +4,32 @@ import React from 'react';
 
 const FinancesPage = () => {
     const revenueData = [
-        { label: 'Chiffre d\'Affaires Brut', value: '£12,450', change: '+12.5%', icon: '📈' },
-        { label: 'Acomptes Reçus', value: '£1,245', change: '+8.2%', icon: '🛡️' },
-        { label: 'Dépenses Produits', value: '£2,100', change: '-4.1%', icon: '📉', negative: true },
-        { label: 'Marge Nette Est.', value: '£9,105', change: '+15.2%', icon: '💎' },
+        { label: 'Gross Revenue', value: '£12,450', change: '+12.5%', icon: '📈' },
+        { label: 'Deposits Received', value: '£1,245', change: '+8.2%', icon: '🛡️' },
+        { label: 'Product Expenses', value: '£2,100', change: '-4.1%', icon: '📉', negative: true },
+        { label: 'Est. Net Margin', value: '£9,105', change: '+15.2%', icon: '💎' },
     ];
 
     const transactions = [
-        { id: 'TR-101', date: '26 Jan 2026', client: 'Zainab A.', type: 'Service', amount: '£220', method: 'Stripe', status: 'Réglé' },
-        { id: 'TR-102', date: '26 Jan 2026', client: 'Aminata K.', type: 'Acompte', amount: '£18', method: 'Stripe', status: 'Réglé' },
-        { id: 'TR-103', date: '25 Jan 2026', client: 'Binta D.', type: 'Service', amount: '£280', method: 'Espèces', status: 'Réglé' },
-        { id: 'TR-104', date: '25 Jan 2026', client: 'Yasmine B.', type: 'Service', amount: '£350', method: 'Klarna', status: 'En attente' },
+        { id: 'TR-101', date: '26 Jan 2026', client: 'Zainab A.', type: 'Service', amount: '£220', method: 'Stripe', status: 'Paid' },
+        { id: 'TR-102', date: '26 Jan 2026', client: 'Aminata K.', type: 'Deposit', amount: '£18', method: 'Stripe', status: 'Paid' },
+        { id: 'TR-103', date: '25 Jan 2026', client: 'Binta D.', type: 'Service', amount: '£280', method: 'Cash', status: 'Paid' },
+        { id: 'TR-104', date: '25 Jan 2026', client: 'Yasmine B.', type: 'Service', amount: '£350', method: 'Klarna', status: 'Pending' },
     ];
 
     return (
         <div className="space-y-10 animate-fadeIn min-h-screen pb-20">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h1 className="text-4xl font-heading font-bold text-gray-950">Gestion Financière</h1>
-                    <p className="text-gray-500 text-base font-medium mt-1">Pilotage de la rentabilité et suivi des transactions en temps réel.</p>
+                    <h1 className="text-4xl font-heading font-bold text-gray-950">Financial Management</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1">Monitor profitability and track transactions in real-time.</p>
                 </div>
                 <div className="flex gap-3">
                     <button className="px-6 py-3 text-sm font-bold uppercase tracking-widest text-[#D4AF37] bg-white border border-[#D4AF37]/20 rounded-xl hover:bg-[#D4AF37] hover:text-white transition-all shadow-sm">
-                        Exporter Comptabilité
+                        Export for Accountant
                     </button>
                     <button className="px-6 py-3 text-sm font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-xl">
-                        + Ajouter Dépense
+                        + Add Expense
                     </button>
                 </div>
             </div>
@@ -56,8 +56,8 @@ const FinancesPage = () => {
                 {/* Detailed Ledger Table */}
                 <div className="lg:col-span-2 bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
                     <div className="px-8 py-6 border-b border-gray-50 flex justify-between items-center bg-gray-50/20">
-                        <h3 className="text-lg font-bold text-gray-950 uppercase tracking-widest">Grand Livre Digital</h3>
-                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">Janvier 2026</span>
+                        <h3 className="text-lg font-bold text-gray-950 uppercase tracking-widest">Digital Ledger</h3>
+                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">January 2026</span>
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-left">
@@ -65,8 +65,8 @@ const FinancesPage = () => {
                                 <tr className="border-b border-gray-50 text-gray-400 text-xs font-black uppercase tracking-widest">
                                     <th className="px-8 py-5">Date</th>
                                     <th className="px-8 py-5">Description / Client</th>
-                                    <th className="px-8 py-5">Mode</th>
-                                    <th className="px-8 py-5 text-right">Montant</th>
+                                    <th className="px-8 py-5">Method</th>
+                                    <th className="px-8 py-5 text-right">Amount</th>
                                     <th className="px-8 py-5 text-center">Status</th>
                                 </tr>
                             </thead>
@@ -85,7 +85,7 @@ const FinancesPage = () => {
                                         </td>
                                         <td className="px-8 py-5 whitespace-nowrap text-right text-base font-black text-gray-950">{tr.amount}</td>
                                         <td className="px-8 py-5 whitespace-nowrap text-center">
-                                            <span className={`px-3 py-1 text-[10px] font-black uppercase tracking-[1px] rounded-full ${tr.status === 'Réglé' ? 'bg-green-50 text-green-600' : 'bg-amber-50 text-amber-600'} border border-current opacity-70`}>
+                                            <span className={`px-3 py-1 text-[10px] font-black uppercase tracking-[1px] rounded-full ${tr.status === 'Paid' ? 'bg-green-50 text-green-600' : 'bg-amber-50 text-amber-600'} border border-current opacity-70`}>
                                                 {tr.status}
                                             </span>
                                         </td>
@@ -124,11 +124,11 @@ const FinancesPage = () => {
                         </div>
                         <div className="flex items-center gap-4 mb-4">
                             <div className="flex-1 h-3 bg-amber-500 rounded-full" style={{ width: '25%' }} />
-                            <span className="text-xs font-black text-gray-950">Espèces 25%</span>
+                            <span className="text-xs font-black text-gray-950">Cash 25%</span>
                         </div>
                         <div className="flex items-center gap-4">
                             <div className="flex-1 h-3 bg-purple-500 rounded-full" style={{ width: '10%' }} />
-                            <span className="text-xs font-black text-gray-950">Autres 10%</span>
+                            <span className="text-xs font-black text-gray-950">Others 10%</span>
                         </div>
                     </div>
                 </div>

@@ -24,21 +24,21 @@ const CustomersPage = () => {
         <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Registre des Clients</h1>
-                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Base de données CRM et fidélisation</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Customer Registry</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">CRM Database and Customer Loyalty</p>
                 </div>
-                <button className="px-6 py-3 text-xs font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-lg shadow-black/10">
-                    + Ajouter un client
+                <button className="px-6 py-3 text-sm font-bold uppercase tracking-widest text-white bg-gray-950 rounded-xl hover:bg-gray-800 transition-all shadow-lg shadow-black/10">
+                    + Add New Customer
                 </button>
             </div>
 
             {/* Key Metrics */}
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                    { label: 'Clients Totaux', value: customers.length, icon: '👥' },
-                    { label: 'Statut VIP', value: customers.filter(c => c.status === 'VIP').length, icon: '⭐', color: 'text-[#D4AF37]' },
-                    { label: 'Nouveautés', value: customers.filter(c => c.status === 'New').length, icon: '🆕', color: 'text-green-500' },
-                    { label: 'CA Moyen', value: '£1,527', icon: '💰' },
+                    { label: 'Total Customers', value: customers.length, icon: '👥' },
+                    { label: 'VIP Status', value: customers.filter(c => c.status === 'VIP').length, icon: '⭐', color: 'text-[#D4AF37]' },
+                    { label: 'New Entries', value: customers.filter(c => c.status === 'New').length, icon: '🆕', color: 'text-green-500' },
+                    { label: 'Avg Basket', value: '£1,527', icon: '💰' },
                 ].map((s) => (
                     <div key={s.label} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm flex items-center gap-4">
                         <div className="w-12 h-12 bg-gray-50 rounded-xl flex items-center justify-center text-xl">
@@ -57,7 +57,7 @@ const CustomersPage = () => {
                 <div className="pl-5 pr-3 text-gray-400 text-lg">🔍</div>
                 <input
                     type="text"
-                    placeholder="Chercher par nom, email ou numéro..."
+                    placeholder="Search by name, email, or number..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     className="flex-1 bg-transparent py-3 pr-6 text-sm font-medium text-gray-900 placeholder-gray-400 outline-none"
@@ -70,11 +70,11 @@ const CustomersPage = () => {
                     <table className="w-full text-left">
                         <thead>
                             <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-xs font-bold uppercase tracking-widest">
-                                <th className="px-8 py-5">Identité</th>
+                                <th className="px-8 py-5">Identity</th>
                                 <th className="px-8 py-5 text-center">Sessions</th>
-                                <th className="px-8 py-5 text-right">CA Total</th>
-                                <th className="px-8 py-5 text-center">Dernière Visite</th>
-                                <th className="px-8 py-5 text-center">Rang</th>
+                                <th className="px-8 py-5 text-right">Total Revenue</th>
+                                <th className="px-8 py-5 text-center">Last Visit</th>
+                                <th className="px-8 py-5 text-center">Rank</th>
                                 <th className="px-8 py-5 text-right">Actions</th>
                             </tr>
                         </thead>
@@ -107,7 +107,7 @@ const CustomersPage = () => {
                                     </td>
                                     <td className="px-8 py-5 text-right">
                                         <div className="flex justify-end gap-3">
-                                            <button className="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-[#25D366] opacity-0 group-hover:opacity-100 transition-all hover:border-[#25D366] hover:shadow-sm" title="Envoyer WhatsApp">💬</button>
+                                            <button className="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-[#25D366] opacity-0 group-hover:opacity-100 transition-all hover:border-[#25D366] hover:shadow-sm" title="Send WhatsApp">💬</button>
                                             <button className="w-10 h-10 rounded-lg bg-white flex items-center justify-center border border-gray-200 text-sm opacity-0 group-hover:opacity-100 transition-all hover:border-[#D4AF37] hover:shadow-sm">✏️</button>
                                         </div>
                                     </td>

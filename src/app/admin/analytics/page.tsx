@@ -26,16 +26,16 @@ const AnalyticsPage = () => {
         <div className="space-y-10 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Analyses de Performance</h1>
-                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Suivi du chiffre d'affaires et des ventes</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Performance Analytics</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Track revenue and sales trends</p>
                 </div>
                 <div className="flex gap-3 w-full md:w-auto">
                     <button className="flex-1 md:flex-none px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-gray-600 bg-white border border-gray-200 rounded-xl hover:shadow-md transition-all">
-                        Exporter PDF
+                        Export PDF
                     </button>
                     <select className="flex-1 md:flex-none px-5 py-2.5 text-xs font-bold uppercase tracking-widest text-gray-950 bg-white border border-gray-200 rounded-xl outline-none focus:ring-4 focus:ring-[#D4AF37]/5 cursor-pointer">
-                        <option>6 Derniers Mois</option>
-                        <option>Année 2026</option>
+                        <option>Last 6 Months</option>
+                        <option>Year 2026</option>
                     </select>
                 </div>
             </div>
@@ -43,10 +43,10 @@ const AnalyticsPage = () => {
             {/* Key Stats Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                    { label: 'Revenue Global', value: '£91,050', change: '+15.2%', positive: true, icon: '💰' },
-                    { label: 'Actions Complétées', value: '339', change: '+8.4%', positive: true, icon: '📅' },
-                    { label: 'Panier Moyen', value: '£268', change: '+2.1%', positive: true, icon: '💵' },
-                    { label: 'Taux Fidélité', value: '78%', change: '+4.5%', positive: true, icon: '🔄' },
+                    { label: 'Global Revenue', value: '£91,050', change: '+15.2%', positive: true, icon: '💰' },
+                    { label: 'Completed Actions', value: '339', change: '+8.4%', positive: true, icon: '📅' },
+                    { label: 'Avg Basket', value: '£268', change: '+2.1%', positive: true, icon: '💵' },
+                    { label: 'Loyalty Rate', value: '78%', change: '+4.5%', positive: true, icon: '🔄' },
                 ].map((stat) => (
                     <div key={stat.label} className="bg-white p-6 rounded-2xl border border-gray-100 shadow-sm relative overflow-hidden group">
                         <div className="flex justify-between items-start mb-4">
@@ -67,10 +67,10 @@ const AnalyticsPage = () => {
                 {/* Revenue Evolution Chart */}
                 <div className="lg:col-span-2 bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
                     <div className="flex justify-between items-center mb-8">
-                        <h3 className="text-lg font-bold text-gray-950 uppercase tracking-widest">Trajectoire du C.A.</h3>
+                        <h3 className="text-lg font-bold text-gray-950 uppercase tracking-widest">Revenue Trajectory</h3>
                         <div className="flex items-center gap-2 text-xs font-black text-gray-400 uppercase">
                             <div className="w-2.5 h-2.5 rounded-full bg-[#D4AF37]"></div>
-                            <span>Profit Réel</span>
+                            <span>Real Profit</span>
                         </div>
                     </div>
 
@@ -81,7 +81,7 @@ const AnalyticsPage = () => {
                                     <span className="text-base font-bold text-gray-500">{data.month}</span>
                                     <div className="flex items-center gap-4">
                                         <span className="text-base font-black text-gray-950">£{data.revenue.toLocaleString()}</span>
-                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{data.bookings} RDV</span>
+                                        <span className="text-xs font-bold text-gray-400 uppercase tracking-widest">{data.bookings} APPT</span>
                                     </div>
                                 </div>
                                 <div className="h-2 w-full bg-gray-50 rounded-full overflow-hidden">
@@ -97,7 +97,7 @@ const AnalyticsPage = () => {
 
                 {/* Top Services Ranking */}
                 <div className="bg-white rounded-2xl border border-gray-100 shadow-sm p-8">
-                    <h3 className="text-lg font-bold text-gray-950 uppercase tracking-widest mb-8">Top Prestations</h3>
+                    <h3 className="text-lg font-bold text-gray-950 uppercase tracking-widest mb-8">Top Services</h3>
                     <div className="space-y-4">
                         {topServices.map((service, index) => (
                             <div key={service.name} className="flex items-center gap-4 p-4 rounded-xl bg-gray-50/50 border border-gray-100 group hover:bg-white hover:shadow-md transition-all">
@@ -106,7 +106,7 @@ const AnalyticsPage = () => {
                                 </div>
                                 <div className="flex-1 overflow-hidden">
                                     <p className="text-base font-bold text-gray-900 truncate">{service.name}</p>
-                                    <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">{service.bookings} VENTES</p>
+                                    <p className="text-xs text-gray-400 font-bold uppercase tracking-widest">{service.bookings} SALES</p>
                                 </div>
                                 <span className="text-base font-black text-gray-950">{service.revenue}</span>
                             </div>

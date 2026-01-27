@@ -22,18 +22,18 @@ const AppointmentsPage = () => {
         <div className="space-y-8 animate-fadeIn pb-10">
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
                 <div>
-                    <h1 className="text-3xl font-heading font-bold text-gray-950">Gestion des Rendez-vous</h1>
-                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Planification et suivi des sessions clients</p>
+                    <h1 className="text-3xl font-heading font-bold text-gray-950">Appointment Management</h1>
+                    <p className="text-gray-500 text-base font-medium mt-1 uppercase tracking-wide">Scheduling and monitoring of client sessions</p>
                 </div>
                 <div className="flex bg-gray-200/50 p-1.5 rounded-xl border border-gray-200">
                     {['all', 'pending', 'confirmed', 'cancelled'].map((tab) => (
                         <button
                             key={tab}
                             onClick={() => setFilter(tab)}
-                            className={`px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-black transition-all ${filter === tab ? 'bg-white text-gray-950 shadow-sm' : 'text-gray-500 hover:text-gray-900'
+                            className={`px-4 py-2 rounded-lg text-xs font-black uppercase tracking-widest transition-all ${filter === tab ? 'bg-white text-gray-950 shadow-sm' : 'text-gray-500 hover:text-gray-900'
                                 }`}
                         >
-                            {tab === 'all' ? 'Tous' : tab === 'pending' ? 'En attente' : tab === 'confirmed' ? 'Confirmé' : 'Annulé'}
+                            {tab === 'all' ? 'All' : tab === 'pending' ? 'Pending' : tab === 'confirmed' ? 'Confirmed' : 'Cancelled'}
                         </button>
                     ))}
                 </div>
@@ -44,18 +44,18 @@ const AppointmentsPage = () => {
                     <table className="w-full text-left">
                         <thead>
                             <tr className="bg-gray-50/50 border-b border-gray-100 text-gray-400 text-xs font-bold uppercase tracking-widest">
-                                <th className="px-8 py-5">Identifiant</th>
+                                <th className="px-8 py-5">Identifier</th>
                                 <th className="px-8 py-5">Client</th>
-                                <th className="px-8 py-5">Service & Horaire</th>
-                                <th className="px-8 py-5 text-right">Montant</th>
-                                <th className="px-8 py-5 text-center">Statut</th>
+                                <th className="px-8 py-5">Service & Schedule</th>
+                                <th className="px-8 py-5 text-right">Amount</th>
+                                <th className="px-8 py-5 text-center">Status</th>
                                 <th className="px-8 py-5 text-right">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-50">
                             {filteredAppointments.map((app) => (
                                 <tr key={app.id} className="hover:bg-gray-50/30 transition-colors group">
-                                    <td className="px-8 py-5 font-mono text-[10px] text-gray-400">{app.id}</td>
+                                    <td className="px-8 py-5 font-mono text-xs text-gray-400">{app.id}</td>
                                     <td className="px-8 py-5">
                                         <div className="flex flex-col">
                                             <span className="font-bold text-gray-900 text-base group-hover:text-[#D4AF37] transition-colors">{app.client}</span>
@@ -71,7 +71,7 @@ const AppointmentsPage = () => {
                                     <td className="px-8 py-5 text-right">
                                         <div className="flex flex-col">
                                             <span className="text-base font-black text-gray-900">{app.amount}</span>
-                                            <span className="text-sm text-green-600 font-bold uppercase tracking-tight">Acompte: {app.deposit}</span>
+                                            <span className="text-xs text-green-600 font-bold uppercase tracking-tight">Deposit: {app.deposit}</span>
                                         </div>
                                     </td>
                                     <td className="px-8 py-5 text-center">
@@ -79,7 +79,7 @@ const AppointmentsPage = () => {
                                             app.status === 'pending' ? 'bg-amber-50 text-amber-600 border-amber-100' :
                                                 'bg-red-50 text-red-600 border-red-100'
                                             }`}>
-                                            {app.status === 'confirmed' ? 'Confirmé' : app.status === 'pending' ? 'En attente' : 'Annulé'}
+                                            {app.status === 'confirmed' ? 'Confirmed' : app.status === 'pending' ? 'Pending' : 'Cancelled'}
                                         </span>
                                     </td>
                                     <td className="px-8 py-5 text-right">
