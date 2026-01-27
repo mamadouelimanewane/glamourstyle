@@ -2,18 +2,26 @@
 
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Hero = () => {
     return (
         <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden pt-20">
-            {/* Background with luxury gradient and subtle noise */}
-            <div className="absolute inset-0 bg-[#0A0A0A] -z-20" />
-            <div className="absolute inset-0 bg-gradient-to-br from-[#D4AF37]/10 via-transparent to-black -z-10" />
-            <div className="absolute inset-0 opacity-[0.03] pointer-events-none -z-10 bg-[url('https://www.transparenttextures.com/patterns/asfalt-dark.png')]" />
+            {/* Background Image with Premium Overlay */}
+            <div className="absolute inset-0 z-0">
+                <Image
+                    src="/images/hero-luxury.png"
+                    alt="Luxury African Hair Salon"
+                    fill
+                    className="object-cover"
+                    priority
+                />
+                <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/60 to-black/90 z-10" />
+            </div>
 
-            {/* Decorative elements */}
-            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full" />
-            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-white/5 blur-[120px] rounded-full" />
+            {/* Decorative elements - kept for depth */}
+            <div className="absolute top-1/4 -left-20 w-96 h-96 bg-[#D4AF37]/5 blur-[120px] rounded-full z-10" />
+            <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-white/5 blur-[120px] rounded-full z-10" />
 
             <div className="section text-center relative z-10">
                 <div className="animate-reveal">
