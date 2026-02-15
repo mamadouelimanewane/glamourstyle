@@ -37,9 +37,9 @@ const Header = () => {
                     </div>
                     <div className="flex flex-col">
                         <h1 className="font-heading text-xl md:text-2xl font-bold gradient-text leading-none">
-                            STYLE GLAMOUR
+                            GLAMOUR STYLE
                         </h1>
-                        <p className="text-[10px] text-gray-400 font-light tracking-widest hidden sm:block">Salon de coiffure de luxe</p>
+                        <p className="text-[10px] text-gray-400 font-light tracking-widest hidden sm:block">Luxury Hair Studio</p>
                     </div>
                 </Link>
 
@@ -50,7 +50,7 @@ const Header = () => {
                             href="/#accueil"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
-                            Maison
+                            Home
                         </Link>
                     </li>
                     <li>
@@ -74,7 +74,7 @@ const Header = () => {
                             href="/pricing"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
-                            Tarification
+                            Pricing
                         </Link>
                     </li>
                     <li>
@@ -82,7 +82,7 @@ const Header = () => {
                             href="/#avis"
                             className="text-white hover:text-[#D4AF37] transition-colors font-medium text-[10px] lg:text-sm xl:text-base uppercase tracking-wider"
                         >
-                            Expérience
+                            Reviews
                         </Link>
                     </li>
                 </ul>
@@ -93,7 +93,7 @@ const Header = () => {
                         href="/#reservation"
                         className="btn-primary py-2.5 px-6 text-sm"
                     >
-                        Réservez maintenant
+                        Book Now
                     </Link>
                 </div>
 
@@ -139,7 +139,7 @@ const Header = () => {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
-                                Maison
+                                Home
                             </Link>
                         </li>
                         <li>
@@ -166,7 +166,7 @@ const Header = () => {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
-                                Tarification
+                                Pricing
                             </Link>
                         </li>
                         <li>
@@ -175,7 +175,7 @@ const Header = () => {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="block w-full text-left px-6 py-3 text-white hover:bg-[#D4AF37] hover:text-black transition-colors"
                             >
-                                Expérience
+                                Reviews
                             </Link>
                         </li>
                         <li className="px-6 py-3">
@@ -184,7 +184,7 @@ const Header = () => {
                                 onClick={() => setIsMobileMenuOpen(false)}
                                 className="btn-primary w-full text-center block"
                             >
-                                Réservez maintenant
+                                Book Now
                             </Link>
                         </li>
                     </ul>

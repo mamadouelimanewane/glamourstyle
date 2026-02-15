@@ -4,7 +4,7 @@ import React from 'react';
 
 const Booking = () => {
     return (
-        <section id="booking" className="py-20 relative overflow-hidden bg-black">
+        <section id="reservation" className="py-20 relative overflow-hidden bg-black">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-[500px] bg-[#D4AF37]/5 blur-[120px] rounded-full -z-10" />
 
             <div className="section">
