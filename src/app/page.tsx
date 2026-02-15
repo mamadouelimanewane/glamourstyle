@@ -8,27 +8,27 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground">
+    <main className="min-h-screen bg-[#FAF9F6] text-[#2D2D2D]">
       <Header />
       <Hero />
 
       {/* Introduction Section */}
-      <section className="section py-32 text-center animate-fadeInUp">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-secondary text-sm uppercase tracking-[6px] font-bold mb-8 block">Heritage & Passion</span>
-          <h2 className="mb-8 leading-tight font-heading">
+      <section id="experience" className="section py-40 text-center animate-fadeInUp bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <span className="text-[#C5A06B] text-xs uppercase tracking-[8px] font-bold mb-10 block">Heritage & Passion</span>
+          <h2 className="text-4xl md:text-6xl mb-10 leading-tight font-heading font-light text-[#2D2D2D]">
             An Unforgettable <br />
-            <span className="gradient-text italic">Experience</span>
+            <span className="italic font-serif text-[#C5A06B]">Experience</span>
           </h2>
-          <p className="text-muted-foreground text-xl font-light leading-relaxed">
-            Located in the heart of the capital, our salon is a sanctuary dedicated to women's hair artistry.
-            Blending traditional techniques with cutting-edge innovations, we offer every client
-            personalized care within an exclusive and refined environment.
+          <p className="text-[#6B6B6B] text-xl font-light leading-relaxed max-w-3xl mx-auto">
+            Located in the heart of Waltham Cross, our studio is a sanctuary dedicated to the artistry of hair.
+            By blending ancestral techniques with contemporary innovation, we offer every guest
+            a bespoke journey in an atmosphere of serene luxury.
           </p>
-          <div className="mt-12 flex justify-center items-center gap-12 opacity-50">
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-2xl border border-secondary/20">🏆</div>
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-2xl border border-secondary/20">✨</div>
-            <div className="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center text-2xl border border-secondary/20">💎</div>
+          <div className="mt-20 flex justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="w-20 h-20 bg-[#FAF9F6] rounded-full flex items-center justify-center text-3xl border border-black/5 shadow-sm">🏆</div>
+            <div className="w-20 h-20 bg-[#FAF9F6] rounded-full flex items-center justify-center text-3xl border border-black/5 shadow-sm">✨</div>
+            <div className="w-20 h-20 bg-[#FAF9F6] rounded-full flex items-center justify-center text-3xl border border-black/5 shadow-sm">💎</div>
           </div>
         </div>
       </section>
@@ -38,44 +38,44 @@ export default function Home() {
       <Booking />
 
       {/* Loyalty Program Highlight */}
-      <section className="bg-muted py-24">
+      <section className="bg-white py-32 px-6">
         <div className="section">
-          <div className="card p-12 relative overflow-hidden group">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-secondary/5 blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-secondary/10 transition-all duration-700" />
+          <div className="bg-[#FAF9F6] p-10 md:p-20 rounded-[80px] border border-black/5 relative overflow-hidden group shadow-2xl shadow-black/5">
+            <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-[#C5A06B]/5 blur-[120px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[#C5A06B]/10 transition-all duration-1000" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
               <div>
-                <span className="text-secondary font-bold uppercase tracking-widest text-sm mb-4 block">The Private Circle</span>
-                <h2 className="text-4xl mb-6 font-heading">Join Our Exclusive <span className="gradient-text">Loyalty Program</span></h2>
-                <p className="text-muted-foreground text-lg mb-8">
-                  Because your loyalty deserves to be celebrated, we've created an exclusive rewards program.
-                  Enjoy a 10% discount from your 5th visit and receive priority invites to our private events.
+                <span className="text-[#C5A06B] font-bold uppercase tracking-[6px] text-xs mb-6 block">The Private Collection</span>
+                <h2 className="text-4xl md:text-5xl mb-8 font-heading font-light text-[#2D2D2D]">Join Our Exclusive <br /><span className="italic font-serif text-[#C5A06B]">Loyalty Circle</span></h2>
+                <p className="text-[#6B6B6B] text-lg mb-10 font-light leading-relaxed">
+                  Because your loyalty is a testament to our craft, we invite you to our rewards circle.
+                  Enjoy bespoke privileges, from curated discounts to private session invitations.
                 </p>
-                <div className="flex gap-4">
-                  <button className="btn-primary">Become a Member</button>
-                  <button className="btn-secondary">Learn More</button>
+                <div className="flex flex-col sm:flex-row gap-6">
+                  <button className="px-10 py-5 bg-[#2D2D2D] text-white font-bold text-xs uppercase tracking-[3px] rounded-full hover:bg-[#C5A06B] transition-all shadow-xl active:scale-95">Become a Member</button>
+                  <button className="px-10 py-5 bg-transparent border border-[#2D2D2D]/10 text-[#2D2D2D] font-bold text-xs uppercase tracking-[3px] rounded-full hover:bg-white transition-all">Learn More</button>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-background p-6 rounded-2xl border border-border text-center shadow-sm">
-                  <div className="text-3xl mb-2">🎁</div>
-                  <h4 className="font-bold text-secondary">-10%</h4>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-tighter">OFF ALL SERVICES</p>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500">
+                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">🎁</div>
+                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">-10%</h4>
+                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">OFF SESSIONS</p>
                 </div>
-                <div className="bg-background p-6 rounded-2xl border border-border text-center shadow-sm">
-                  <div className="text-3xl mb-2">🥂</div>
-                  <h4 className="font-bold text-secondary">PRIORITY</h4>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-tighter">EXCLUSIVE PRE-SALES</p>
+                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500 delay-75">
+                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">🥂</div>
+                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">PRIORITY</h4>
+                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">PRE-BOOKING</p>
                 </div>
-                <div className="bg-background p-6 rounded-2xl border border-border text-center shadow-sm">
-                  <div className="text-3xl mb-2">💅</div>
-                  <h4 className="font-bold text-secondary">CARE</h4>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-tighter">COMPLIMENTARY SAMPLES</p>
+                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500 delay-150">
+                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">💅</div>
+                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">ELITE</h4>
+                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">GIFT CARE</p>
                 </div>
-                <div className="bg-background p-6 rounded-2xl border border-border text-center shadow-sm">
-                  <div className="text-3xl mb-2">🎈</div>
-                  <h4 className="font-bold text-secondary">B-DAY</h4>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-tighter">ANNIVERSARY GIFT</p>
+                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500 delay-225">
+                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">🎈</div>
+                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">FÊTE</h4>
+                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">B-DAY SURPRISE</p>
                 </div>
               </div>
             </div>
@@ -86,22 +86,22 @@ export default function Home() {
       <Testimonials />
 
       {/* BNPL Section (Buy Now, Pay Later) */}
-      <section className="section py-24 border-y border-border">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-          <div className="max-w-xl">
-            <h2 className="text-3xl md:text-4xl mb-6 font-heading">Payment <span className="gradient-text">Flexibility</span></h2>
-            <p className="text-muted-foreground text-lg">
-              We want our exceptional services to be accessible to all. We offer staggered payment solutions.
-              "Buy now, pay later" easily through our trusted partners.
+      <section className="section py-40 border-t border-black/5 bg-white">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-20 px-6 font-light">
+          <div className="max-w-2xl text-center lg:text-left">
+            <h2 className="text-4xl md:text-5xl mb-8 font-heading text-[#2D2D2D]">Artistry Made <br /><span className="italic font-serif text-[#C5A06B]">Accessible</span></h2>
+            <p className="text-[#6B6B6B] text-xl leading-relaxed">
+              We believe exceptional beauty should be within reach. Our staggered payment options
+              allow you to invest in your transformation with complete peace of mind.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-8 items-center bg-muted/50 p-8 rounded-2xl border border-border">
+          <div className="flex flex-wrap justify-center gap-6 items-center bg-[#FAF9F6] p-12 rounded-[50px] border border-black/5 shadow-xl shadow-black/5">
             {['Klarna', 'Afterpay', 'Affirm', 'Zip'].map((brand) => (
-              <div key={brand} className="text-center group">
-                <div className="w-24 h-12 bg-background border border-border rounded flex items-center justify-center text-muted-foreground font-bold group-hover:bg-primary group-hover:text-primary-foreground transition-all cursor-crosshair shadow-sm">
+              <div key={brand} className="text-center group px-4">
+                <div className="w-28 h-14 bg-white border border-black/5 rounded-2xl flex items-center justify-center text-[#A8A29E] font-bold group-hover:bg-[#2D2D2D] group-hover:text-white transition-all cursor-crosshair shadow-sm">
                   {brand}
                 </div>
-                <span className="text-[9px] text-muted-foreground mt-2 block uppercase font-bold tracking-widest">Official Partner</span>
+                <span className="text-[8px] text-[#A8A29E] mt-4 block uppercase font-bold tracking-[3px]">Elite Partner</span>
               </div>
             ))}
           </div>

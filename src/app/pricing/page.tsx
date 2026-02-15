@@ -8,46 +8,51 @@ import Link from 'next/link';
 
 const PricingPage = () => {
     return (
-        <main className="min-h-screen bg-background text-foreground">
+        <main className="min-h-screen bg-[#FAF9F6] text-[#2D2D2D]">
             <Header />
 
-            <section className="pt-32 pb-20 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/10 blur-[150px] -z-10" />
-                <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/5 blur-[150px] -z-10" />
+            <section className="pt-48 pb-24 relative overflow-hidden bg-white">
+                <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-[#C5A06B]/5 blur-[120px] -z-10" />
+                <div className="absolute bottom-0 left-0 w-[40rem] h-[40rem] bg-[#2D2D2D]/5 blur-[120px] -z-10" />
 
-                <div className="section text-center">
-                    <span className="text-secondary text-sm uppercase tracking-[6px] font-bold mb-4 block">Our Rates</span>
-                    <h1 className="mb-6 font-heading text-primary">Investment in <span className="gradient-text italic">Your Beauty</span></h1>
-                    <p className="text-muted-foreground max-w-2xl mx-auto text-lg leading-relaxed font-body">
-                        Explore our transparent pricing for premium hair services. Each session is a bespoke experience tailored to your needs.
+                <div className="section text-center px-6">
+                    <span className="text-[#C5A06B] text-xs uppercase tracking-[8px] font-bold mb-6 block">Our Rates</span>
+                    <h1 className="text-5xl md:text-7xl mb-8 font-heading font-light text-[#2D2D2D]">Investment in <br /><span className="italic font-serif text-[#C5A06B]">Your Radiance</span></h1>
+                    <p className="text-[#6B6B6B] max-w-2xl mx-auto text-xl leading-relaxed font-light">
+                        Explore our curated selection of premium hair rituals. Each session is a bespoke encounter tailored to your hair's unique story.
                     </p>
                 </div>
             </section>
 
-            <section className="pb-32 px-6">
-                <div className="max-w-7xl mx-auto">
+            <section className="py-32 bg-[#FAF9F6]">
+                <div className="max-w-7xl mx-auto px-6">
                     {categories.filter(c => c.id !== 'all').map((category) => (
-                        <div key={category.id} className="mb-20 last:mb-0">
-                            <div className="flex items-center gap-6 mb-10">
-                                <h2 className="text-3xl font-heading text-primary">{category.name}</h2>
-                                <div className="h-px bg-gradient-to-r from-secondary to-transparent flex-grow opacity-30" />
+                        <div key={category.id} className="mb-32 last:mb-0">
+                            <div className="flex items-center gap-8 mb-16">
+                                <h2 className="text-3xl md:text-4xl font-heading font-light text-[#2D2D2D] uppercase tracking-widest">{category.name}</h2>
+                                <div className="h-px bg-black/5 flex-grow" />
+                                <span className="text-[#C5A06B] text-[10px] font-bold uppercase tracking-[4px]">Collection</span>
                             </div>
 
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
                                 {services.filter(s => s.category === category.value).map((service) => (
-                                    <div key={service.id} className="group flex justify-between items-start pb-6 border-b border-border hover:border-secondary/30 transition-colors">
+                                    <div key={service.id} className="group flex justify-between items-start pb-8 border-b border-black/5 hover:border-[#C5A06B]/30 transition-all">
                                         <div className="max-w-md">
-                                            <div className="flex items-center gap-3 mb-1">
-                                                <h3 className="text-xl font-bold font-heading text-primary group-hover:text-secondary transition-colors">{service.name}</h3>
+                                            <div className="flex items-center gap-4 mb-2">
+                                                <h3 className="text-xl font-heading font-bold text-[#2D2D2D] group-hover:text-[#C5A06B] transition-colors">{service.name}</h3>
                                                 {service.popular && (
-                                                    <span className="text-[10px] bg-secondary text-primary px-2 py-0.5 rounded font-bold uppercase tracking-tighter shadow-sm">Pop</span>
+                                                    <span className="text-[8px] bg-[#C5A06B] text-white px-2 py-1 rounded-full font-bold uppercase tracking-[2px] shadow-sm">Popular</span>
                                                 )}
                                             </div>
-                                            <p className="text-muted-foreground text-sm line-clamp-1 font-body">{service.description}</p>
-                                            <span className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mt-2 block">{service.duration} MIN SESSION</span>
+                                            <p className="text-[#6B6B6B] text-sm mb-4 font-light leading-relaxed">{service.description}</p>
+                                            <div className="flex items-center gap-4">
+                                                <span className="text-[10px] text-[#A8A29E] font-bold uppercase tracking-widest">{service.duration} Minute Ritual</span>
+                                                <div className="w-1 h-1 rounded-full bg-[#C5A06B]/30" />
+                                                <span className="text-[10px] text-[#C5A06B] font-bold uppercase tracking-widest">Premium Care</span>
+                                            </div>
                                         </div>
                                         <div className="text-right shrink-0">
-                                            <span className="text-secondary text-2xl font-bold font-heading">£{service.price}</span>
+                                            <span className="text-[#2D2D2D] text-3xl font-heading font-bold">£{service.price}</span>
                                         </div>
                                     </div>
                                 ))}
@@ -58,16 +63,19 @@ const PricingPage = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="section pb-32">
-                <div className="card p-12 text-center border-2 border-secondary/20 relative overflow-hidden shadow-premium">
+            <section className="section py-40 bg-white">
+                <div className="max-w-5xl mx-auto bg-[#FAF9F6] p-12 md:p-24 rounded-[80px] text-center border border-black/5 relative overflow-hidden shadow-2xl shadow-black/5 group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#C5A06B]/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000" />
+
                     <div className="relative z-10">
-                        <h2 className="text-4xl mb-6 font-heading text-primary">Ready to <span className="gradient-text">Transform?</span></h2>
-                        <p className="text-muted-foreground max-w-xl mx-auto mb-10 font-body">
-                            Book your appointment today and experience the Glamour Style difference. Secure your spot with a small deposit.
+                        <span className="text-[#C5A06B] text-xs font-bold uppercase tracking-[6px] mb-6 block">Ready to Transform?</span>
+                        <h2 className="text-4xl md:text-6xl mb-10 font-heading font-light text-[#2D2D2D]">Embrace Your <br /><span className="italic font-serif text-[#C5A06B]">New Identity</span></h2>
+                        <p className="text-[#6B6B6B] max-w-xl mx-auto mb-12 text-lg font-light leading-relaxed">
+                            Step into our studio and let our artists redefine your look. Your transformation begins with a single moment of decision.
                         </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <Link href="/#reservation" className="btn-primary">Book Appointment</Link>
-                            <Link href="/#contact" className="btn-secondary">Contact Us</Link>
+                        <div className="flex flex-col sm:flex-row justify-center gap-6">
+                            <Link href="/#booking" className="px-12 py-5 bg-[#2D2D2D] text-white font-bold text-xs uppercase tracking-[3px] rounded-full hover:bg-[#C5A06B] transition-all shadow-xl shadow-black/10">Reserve My Slot</Link>
+                            <Link href="/#contact" className="px-12 py-5 bg-white border border-black/5 text-[#2D2D2D] font-bold text-xs uppercase tracking-[3px] rounded-full hover:bg-black hover:text-white transition-all shadow-sm">Inquire via WhatsApp</Link>
                         </div>
                     </div>
                 </div>

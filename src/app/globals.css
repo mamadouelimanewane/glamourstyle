@@ -1,75 +1,58 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: hsl(222 47% 11%);
-  /* Deep Navy */
-  --color-secondary: hsl(45 93% 47%);
-  /* Gold */
-  --color-background: hsl(210 40% 98%);
-  /* Soft off-white */
-  --color-foreground: hsl(222 47% 11%);
-  --color-card: hsl(0 0% 100%);
-  --color-muted: hsl(210 40% 96.1%);
-  --color-muted-foreground: hsl(215 16% 47%);
-  --color-border: hsl(214 32% 91%);
+  --color-primary: #C5A06B;
+  /* Champagne Gold */
+  --color-secondary: #2D2D2D;
+  /* Deep Charcoal */
+  --color-background: #FAF9F6;
+  /* Ivory White */
+  --color-foreground: #2D2D2D;
+  --color-card: #FFFFFF;
+  --color-muted: #F3F1ED;
+  --color-muted-foreground: #78716C;
+  --color-border: #E7E5E4;
 
-  --font-heading: var(--font-outfit), sans-serif;
+  --font-heading: var(--font-outfit), serif;
   --font-body: var(--font-inter), sans-serif;
 }
 
 :root {
-  /* Premium Palette from Avocat (Notary Palette) */
-  --background: 210 40% 98%;
-  --foreground: 222 47% 11%;
+  --background: 40 20% 98%;
+  --foreground: 20 10% 18%;
 
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 20 10% 18%;
 
-  --primary: 222 47% 11%;
-  --primary-foreground: 210 40% 98%;
+  --primary: 38 45% 60%;
+  --primary-foreground: 40 20% 98%;
 
-  --secondary: 45 93% 47%;
-  --secondary-foreground: 222 47% 11%;
+  --secondary: 20 10% 18%;
+  --secondary-foreground: 40 20% 98%;
 
-  --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%;
+  --muted: 33 20% 95%;
+  --muted-foreground: 25 5% 45%;
 
-  --accent: 210 40% 96.1%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 38 45% 95%;
+  --accent-foreground: 38 45% 40%;
 
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 222 47% 11%;
+  --border: 33 20% 90%;
+  --input: 33 20% 90%;
+  --ring: 38 45% 60%;
 
-  --radius: 0.5rem;
+  --radius: 1.5rem;
+  /* More rounded for organic feel */
 
-  /* Typography */
-  --font-heading: "Outfit", sans-serif;
+  --font-heading: "Outfit", serif;
   --font-body: "Inter", sans-serif;
 }
 
 .dark {
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
-
-  --card: 217 33% 17%;
-  --card-foreground: 210 40% 98%;
-
-  --primary: 45 93% 47%;
-  --primary-foreground: 222 47% 11%;
-
-  --secondary: 217 33% 17%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217 33% 17%;
-  --muted-foreground: 215 20% 65%;
-
-  --accent: 217 33% 17%;
-  --accent-foreground: 210 40% 98%;
-
-  --border: 217 33% 20%;
-  --input: 217 33% 20%;
-  --ring: 45 93% 47%;
+  /* Keep a soft dark theme if needed, but primary focus is Ivory */
+  --background: 20 10% 10%;
+  --foreground: 40 20% 98%;
+  --primary: 38 45% 60%;
+  --border: 20 10% 15%;
 }
 
 * {
@@ -85,15 +68,11 @@ body {
   height: 100%;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: var(--font-body);
-  background: hsl(var(--background));
-  color: hsl(var(--foreground));
-  line-height: 1.6;
+  background: #FAF9F6;
+  color: #2D2D2D;
+  line-height: 1.7;
   overflow-x: hidden;
   display: flex;
   flex-direction: column;
@@ -139,53 +118,58 @@ p {
 
 /* Glass Morphism Effect */
 .glass {
-  background: hsl(var(--card) / 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid hsl(var(--secondary) / 0.2);
+  background: rgba(250, 249, 246, 0.7);
+  /* Ivory White */
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(45, 45, 45, 0.05);
 }
 
 /* Premium Button Styles */
 .btn-primary {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: #2D2D2D;
+  /* Deep Charcoal */
+  color: #FAF9F6;
+  /* Ivory White */
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.875rem;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 2rem;
   border: none;
   border-radius: var(--radius);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 1px;
-  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  letter-spacing: 2px;
+  box-shadow: 0 10px 20px -5px rgba(45, 45, 45, 0.2);
 }
 
 .btn-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
-  filter: brightness(1.1);
+  transform: translateY(-2px);
+  background: #C5A06B;
+  /* Champagne Gold */
+  box-shadow: 0 15px 30px -5px rgba(197, 160, 107, 0.3);
 }
 
 .btn-secondary {
   background: transparent;
-  color: hsl(var(--primary));
+  color: #2D2D2D;
   font-family: var(--font-heading);
   font-weight: 600;
   font-size: 0.875rem;
-  padding: 0.75rem 1.5rem;
-  border: 1px solid hsl(var(--primary));
+  padding: 1rem 2rem;
+  border: 1px solid rgba(45, 45, 45, 0.1);
   border-radius: var(--radius);
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 2px;
 }
 
 .btn-secondary:hover {
-  background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  background: #FAF9F6;
+  border-color: #C5A06B;
+  color: #C5A06B;
 }
 
 /* Card Styles */
@@ -212,7 +196,7 @@ p {
 
 /* Gradient Text */
 .gradient-text {
-  background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary)) 100%);
+  background: linear-gradient(135deg, #C5A06B 0%, #2D2D2D 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

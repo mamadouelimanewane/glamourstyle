@@ -31,15 +31,15 @@ const homeServices = [
 
 const Services = () => {
     return (
-        <section id="services" className="py-32 bg-[#0A0A0A] relative overflow-hidden">
+        <section id="services" className="py-32 bg-white relative overflow-hidden">
             <div className="section">
                 <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-20 px-4">
                     <div className="max-w-2xl">
-                        <span className="text-[#D4AF37] font-black text-xs uppercase tracking-[6px] mb-4 block">Our Expertise</span>
-                        <h2 className="text-4xl md:text-6xl font-heading mb-6 leading-tight">Elite Styling <br /> <span className="gradient-text italic">Services</span></h2>
+                        <span className="text-[#C5A06B] font-bold text-xs uppercase tracking-[6px] mb-4 block">Our Expertise</span>
+                        <h2 className="text-4xl md:text-6xl font-heading mb-6 leading-tight text-[#2D2D2D]">Artistry in <br /> <span className="italic font-serif text-[#C5A06B]">Haircare</span></h2>
                     </div>
-                    <p className="text-gray-400 max-w-sm mb-4">
-                        Every service is a unique ritual designed to enhance your natural beauty while ensuring the health of your hair.
+                    <p className="text-[#6B6B6B] max-w-sm mb-4 font-light leading-relaxed">
+                        Every session is a bespoke ritual designed to celebrate your heritage while ensuring the pinnacle of hair health.
                     </p>
                 </div>
 
@@ -47,23 +47,23 @@ const Services = () => {
                     {homeServices.map((service, index) => (
                         <div
                             key={service.title}
-                            className="group p-10 bg-white/5 border border-white/5 rounded-[40px] hover:bg-white/10 hover:border-[#D4AF37]/30 transition-all duration-500 hover:-translate-y-2 relative overflow-hidden"
+                            className="group p-10 bg-[#FAF9F6] border border-black/5 rounded-[40px] hover:bg-white hover:border-[#C5A06B]/30 transition-all duration-500 hover:shadow-2xl hover:shadow-[#C5A06B]/10 relative overflow-hidden"
                         >
-                            <div className="text-4xl mb-8 group-hover:scale-110 transition-transform inline-block opacity-80 group-hover:opacity-100">
+                            <div className="text-4xl mb-8 group-hover:scale-110 transition-transform inline-block grayscale group-hover:grayscale-0">
                                 {service.icon}
                             </div>
-                            <h3 className="text-2xl font-heading font-bold mb-4 text-white group-hover:text-[#D4AF37] transition-colors">
+                            <h3 className="text-2xl font-heading font-light mb-4 text-[#2D2D2D] group-hover:text-[#C5A06B] transition-colors">
                                 {service.title}
                             </h3>
-                            <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-1">
+                            <p className="text-[#6B6B6B] text-sm leading-relaxed mb-8 font-light">
                                 {service.description}
                             </p>
-                            <div className="pt-6 border-t border-white/5">
-                                <span className="text-white font-black text-xs uppercase tracking-widest">{service.price}</span>
+                            <div className="pt-6 border-t border-black/5">
+                                <span className="text-[#2D2D2D] font-bold text-xs uppercase tracking-widest">{service.price}</span>
                             </div>
 
-                            {/* Decorative circle */}
-                            <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-[#D4AF37]/5 rounded-full blur-2xl group-hover:bg-[#D4AF37]/10 transition-all" />
+                            {/* Minimal Decorative line */}
+                            <div className="absolute top-0 left-10 right-10 h-[2px] bg-[#C5A06B]/0 group-hover:bg-[#C5A06B]/30 transition-all duration-500" />
                         </div>
                     ))}
                 </div>

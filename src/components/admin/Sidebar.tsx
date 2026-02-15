@@ -27,21 +27,21 @@ const Sidebar = ({ onClose }: SidebarProps) => {
     ];
 
     return (
-        <aside className="w-64 bg-gray-950 h-screen flex flex-col border-r border-gray-800 shadow-xl">
+        <aside className="w-68 bg-white h-screen flex flex-col border-r border-black/5 shadow-2xl shadow-black/5">
             {/* Logo Section - Elegant & Professional */}
-            <div className="p-6 border-b border-gray-800/50 flex justify-between items-center bg-black/20">
-                <Link href="/" className="flex items-center space-x-3 group">
-                    <div className="w-9 h-9 bg-[#D4AF37] rounded-lg flex items-center justify-center text-xl shadow-lg shadow-[#D4AF37]/10 transition-transform group-hover:scale-105">
+            <div className="p-8 flex justify-between items-center">
+                <Link href="/" className="flex items-center space-x-4 group">
+                    <div className="w-10 h-10 bg-[#C5A06B] rounded-xl flex items-center justify-center text-xl shadow-lg shadow-[#C5A06B]/20 transition-transform group-hover:scale-110">
                         <span>💇</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-base font-black text-white tracking-widest">GLAMOUR STYLE</span>
-                        <span className="text-xs text-[#D4AF37] uppercase font-bold tracking-wider">Administration</span>
+                        <span className="text-base font-black text-[#2D2D2D] tracking-[4px] leading-none mb-1">GLAMOUR</span>
+                        <span className="text-[10px] text-[#C5A06B] uppercase font-bold tracking-[3px]">Atelier System</span>
                     </div>
                 </Link>
                 <button
                     onClick={onClose}
-                    className="lg:hidden text-gray-500 hover:text-white p-1"
+                    className="lg:hidden text-[#A8A29E] hover:text-[#2D2D2D] p-1"
                 >
                     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -50,7 +50,7 @@ const Sidebar = ({ onClose }: SidebarProps) => {
             </div>
 
             {/* Navigation - Ergonomic Spacing */}
-            <nav className="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto custom-scrollbar">
+            <nav className="flex-1 px-6 py-4 space-y-1 overflow-y-auto custom-scrollbar">
                 {menuItems.map((item) => {
                     const isActive = pathname === item.path;
                     return (
@@ -58,17 +58,17 @@ const Sidebar = ({ onClose }: SidebarProps) => {
                             key={item.name}
                             href={item.path}
                             onClick={onClose}
-                            className={`flex items-center space-x-3 px-4 py-3 rounded-xl transition-all duration-200 relative group ${isActive
-                                ? 'bg-white/10 text-white border border-white/10 shadow-lg'
-                                : 'text-gray-400 hover:bg-white/5 hover:text-white border border-transparent'
+                            className={`flex items-center space-x-4 px-5 py-3.5 rounded-2xl transition-all duration-500 relative group ${isActive
+                                ? 'bg-[#FAF9F6] text-[#2D2D2D] border border-black/5 shadow-lg shadow-black/5'
+                                : 'text-[#A8A29E] hover:bg-[#FAF9F6] hover:text-[#2D2D2D] border border-transparent'
                                 }`}
                         >
-                            <span className={`text-xl transition-all ${isActive ? 'scale-110' : 'opacity-70 group-hover:opacity-100'}`}>{item.icon}</span>
-                            <span className={`font-semibold text-base tracking-wide ${isActive ? 'text-white' : 'text-gray-400 group-hover:text-gray-200'}`}>
+                            <span className={`text-xl transition-all duration-500 ${isActive ? 'scale-110' : 'opacity-60 group-hover:opacity-100'}`}>{item.icon}</span>
+                            <span className={`font-bold text-xs uppercase tracking-[2px] ${isActive ? 'text-[#2D2D2D]' : 'text-[#A8A29E] group-hover:text-[#6B6B6B]'}`}>
                                 {item.name}
                             </span>
                             {isActive && (
-                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 bg-[#D4AF37] rounded-r-full shadow-[0_0_10px_#D4AF37]" />
+                                <div className="absolute left-0 top-1/2 -translate-y-1/2 h-6 w-1 bg-[#C5A06B] rounded-r-full shadow-[0_0_15px_#C5A06B]" />
                             )}
                         </Link>
                     );
@@ -76,14 +76,14 @@ const Sidebar = ({ onClose }: SidebarProps) => {
             </nav>
 
             {/* User Section - Premium Feel */}
-            <div className="p-4 border-t border-gray-800/50 bg-black/40">
-                <div className="flex items-center space-x-3 p-3 rounded-xl bg-gray-900/50 border border-gray-800">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#D4AF37] to-[#8B7355] flex items-center justify-center border-2 border-gray-800 shadow-xl">
-                        <span className="text-gray-950 text-sm font-black">AD</span>
+            <div className="p-6 border-t border-black/5 bg-[#FAF9F6]/50">
+                <div className="flex items-center space-x-4 p-4 rounded-[20px] bg-white border border-black/5 shadow-sm group hover:shadow-md transition-all">
+                    <div className="w-10 h-10 rounded-full bg-[#C5A06B] flex items-center justify-center border-2 border-white shadow-lg shadow-[#C5A06B]/20">
+                        <span className="text-white text-xs font-black">AD</span>
                     </div>
                     <div className="flex flex-col overflow-hidden leading-tight">
-                        <span className="text-white font-bold text-sm truncate">Admin Manager</span>
-                        <span className="text-gray-500 text-xs truncate">LexPremium ERP System</span>
+                        <span className="text-[#2D2D2D] font-bold text-xs truncate uppercase tracking-widest">Maître d'Atelier</span>
+                        <span className="text-[#A8A29E] text-[10px] truncate uppercase tracking-widest">Studio Manager</span>
                     </div>
                 </div>
             </div>
