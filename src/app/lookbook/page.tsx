@@ -3,45 +3,46 @@
 import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Link from 'next/link';
 
 const lookbookItems = [
     {
         id: 1,
-        title: 'Luxury Box Braids',
-        category: 'Braids',
-        hairType: 'Coily',
-        image: '/luxury_box_braids_black_woman_1769458648557.png'
+        title: 'Tresses box de luxe',
+        category: 'Tresses',
+        hairType: 'frisé',
+        image: '/images/style1.png'
     },
     {
         id: 2,
-        title: 'Elegant Knotless Braids',
-        category: 'Braids',
-        hairType: 'Coily',
-        image: '/knotless_braids_style_1769458664468.png'
+        title: 'Tresses élégantes sans nœuds',
+        category: 'Tresses',
+        hairType: 'frisé',
+        image: '/images/style2.png'
     },
     {
         id: 3,
-        title: 'Artistic Cornrows',
-        category: 'Braids',
-        hairType: 'Curly',
-        image: '/african_cornrows_design_1769458682980.png'
+        title: 'Tresses artistiques',
+        category: 'Tresses',
+        hairType: 'Bouclé',
+        image: '/images/style3.png'
     },
     {
         id: 4,
-        title: 'Shiny Silk Press',
+        title: 'Presse à soie brillante',
         category: 'Coloration',
-        hairType: 'Straight',
-        image: '/silk_press_natural_hair_1769458698699.png'
+        hairType: 'Droit',
+        image: '/images/style4.png'
     }
 ];
 
 const LookbookPage = () => {
-    const [filterCategory, setFilterCategory] = useState('All');
-    const [filterHair, setFilterHair] = useState('All');
+    const [filterCategory, setFilterCategory] = useState('Tous');
+    const [filterHair, setFilterHair] = useState('Tous');
 
     const filteredItems = lookbookItems.filter(item => {
-        const catMatch = filterCategory === 'All' || item.category === filterCategory;
-        const hairMatch = filterHair === 'All' || item.hairType === filterHair;
+        const catMatch = filterCategory === 'Tous' || item.category === filterCategory;
+        const hairMatch = filterHair === 'Tous' || item.hairType === filterHair;
         return catMatch && hairMatch;
     });
 
@@ -53,21 +54,21 @@ const LookbookPage = () => {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[150px] -z-10" />
                 <div className="section text-center">
                     <span className="text-[#D4AF37] text-sm uppercase tracking-[6px] font-bold mb-4 block">Inspiration</span>
-                    <h1 className="mb-6 font-heading">Interactive <span className="gradient-text italic">Lookbook</span></h1>
+                    <h1 className="mb-6 font-heading">Lookbook <span className="gradient-text italic">Interactif</span></h1>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
-                        Discover our exclusive creations to enhance African beauty. Filter by style or hair type to find your next transformation.
+                        Découvrez nos créations exclusives pour sublimer la beauté africaine. Filtrez par style ou type de cheveux pour trouver votre prochaine transformation.
                     </p>
 
                     {/* Filters */}
-                    <div className="flex flex-wrap justify-center gap-4 mb-12">
-                        <div className="space-y-2">
-                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Service Style</p>
-                            <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-                                {['All', 'Braids', 'Coloration', 'Care'].map((cat) => (
+                    <div className="flex flex-wrap justify-center gap-4 mb-20">
+                        <div className="space-y-4">
+                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Style de service</p>
+                            <div className="flex flex-wrap justify-center gap-2 bg-white/5 p-2 rounded-2xl border border-white/10">
+                                {['Tous', 'Tresses', 'Coloration', 'Soins'].map((cat) => (
                                     <button
                                         key={cat}
                                         onClick={() => setFilterCategory(cat)}
-                                        className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${filterCategory === cat ? 'bg-[#D4AF37] text-black shadow-lg shadow-[#D4AF37]/20' : 'text-gray-400 hover:text-white'}`}
+                                        className={`px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${filterCategory === cat ? 'bg-[#D4AF37] text-black shadow-lg shadow-[#D4AF37]/20 scale-105' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                                     >
                                         {cat}
                                     </button>
@@ -75,14 +76,14 @@ const LookbookPage = () => {
                             </div>
                         </div>
 
-                        <div className="space-y-2">
-                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Hair Type</p>
-                            <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-                                {['All', 'Coily', 'Curly', 'Straight'].map((hair) => (
+                        <div className="space-y-4">
+                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Type de cheveux</p>
+                            <div className="flex flex-wrap justify-center gap-2 bg-white/5 p-2 rounded-2xl border border-white/10">
+                                {['Tous', 'frisé', 'Bouclé', 'Droit'].map((hair) => (
                                     <button
                                         key={hair}
                                         onClick={() => setFilterHair(hair)}
-                                        className={`px-4 py-2 rounded-lg text-xs font-bold uppercase tracking-widest transition-all ${filterHair === hair ? 'bg-[#D4AF37] text-black shadow-lg shadow-[#D4AF37]/20' : 'text-gray-400 hover:text-white'}`}
+                                        className={`px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest transition-all ${filterHair === hair ? 'bg-[#D4AF37] text-black shadow-lg shadow-[#D4AF37]/20 scale-105' : 'text-gray-400 hover:text-white hover:bg-white/5'}`}
                                     >
                                         {hair}
                                     </button>
@@ -92,37 +93,42 @@ const LookbookPage = () => {
                     </div>
 
                     {/* Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-12 px-6 max-w-6xl mx-auto">
                         {filteredItems.map((item) => (
-                            <div key={item.id} className="group relative aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-500 shadow-2xl">
+                            <div key={item.id} className="group relative aspect-[4/5] rounded-[40px] overflow-hidden border border-white/10 hover:border-[#D4AF37]/50 transition-all duration-700 shadow-2xl bg-[#111]">
                                 <img
                                     src={item.image}
                                     alt={item.title}
-                                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
-                                <div className="absolute bottom-0 left-0 p-8 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
-                                    <div className="flex gap-2 mb-3">
-                                        <span className="text-[8px] font-black uppercase tracking-widest bg-[#D4AF37] text-black px-2 py-1 rounded">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
+
+                                <div className="absolute bottom-0 left-0 p-10 w-full">
+                                    <div className="flex gap-3 mb-6">
+                                        <span className="text-[10px] font-black uppercase tracking-widest bg-[#D4AF37] text-black px-4 py-1.5 rounded-full">
                                             {item.category}
                                         </span>
-                                        <span className="text-[8px] font-black uppercase tracking-widest bg-white/20 text-white backdrop-blur-md px-2 py-1 rounded border border-white/10">
+                                        <span className="text-[10px] font-black uppercase tracking-widest bg-white/10 text-white backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10">
                                             {item.hairType}
                                         </span>
                                     </div>
-                                    <h3 className="text-xl font-heading font-bold text-white mb-4">{item.title}</h3>
-                                    <button className="w-full py-3 bg-white text-black font-black text-[10px] uppercase tracking-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-500">
-                                        Book this Style
-                                    </button>
+                                    <h3 className="text-3xl font-heading font-bold text-white mb-8 group-hover:text-[#D4AF37] transition-colors">{item.title}</h3>
+
+                                    <Link
+                                        href="/#reservation"
+                                        className="inline-block w-full py-5 bg-white text-black font-black text-xs uppercase tracking-[3px] rounded-2xl hover:bg-[#D4AF37] hover:text-black transition-all duration-500 shadow-xl"
+                                    >
+                                        Réservez ce style
+                                    </Link>
                                 </div>
                             </div>
                         ))}
                     </div>
 
                     {filteredItems.length === 0 && (
-                        <div className="py-20 text-center">
-                            <span className="text-6xl mb-6 block opacity-20">🎞️</span>
-                            <p className="text-gray-500 text-lg italic">No creations match these criteria at the moment.</p>
+                        <div className="py-40 text-center">
+                            <span className="text-8xl mb-8 block opacity-10">🎞️</span>
+                            <p className="text-gray-500 text-2xl italic font-light">Aucune création ne correspond à ces critères pour le moment.</p>
                         </div>
                     )}
                 </div>

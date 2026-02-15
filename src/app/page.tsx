@@ -22,10 +22,9 @@ export default function Home() {
             An Unforgettable <br />
             <span className="gradient-text italic font-serif">Experience</span>
           </h2>
-          <p className="text-gray-400 text-xl font-light leading-relaxed">
-            Located in the heart of the capital, our salon is a sanctuary dedicated to women's hair artistry.
-            Blending traditional techniques with cutting-edge innovations, we offer every client
-            personalized care within an exclusive and refined environment.
+          <p className="text-white text-2xl font-light leading-relaxed max-w-5xl mx-auto">
+            Situé au cœur de la capitale, notre salon est un havre de paix dédié à l'art capillaire féminin.
+            Alliant techniques traditionnelles et innovations de pointe, nous offrons à chaque cliente une prise en charge personnalisée dans un cadre exclusif et raffiné.
           </p>
           <div className="mt-12 flex justify-center items-center gap-12 grayscale opacity-30">
             <div className="w-16 h-16 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-2xl">🏆</div>

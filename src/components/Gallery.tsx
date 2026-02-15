@@ -21,8 +21,8 @@ const Gallery = () => {
                     <h2 className="mt-4">Our Gallery of <span className="gradient-text">Masterpieces</span></h2>
                 </div>
                 <div className="hidden md:block">
-                    <p className="text-gray-200 text-lg max-w-sm text-right italic font-serif leading-relaxed border-l-2 border-[#D4AF37]/30 pl-6">
-                        "Every hairstyle is a unique work of art, crafted to reveal your true essence."
+                    <p className="text-white text-2xl max-w-lg text-right italic font-serif leading-relaxed border-l-4 border-[#D4AF37] pl-8 font-medium">
+                        "Chaque coiffure est une œuvre d'art unique, conçue pour révéler votre véritable essence."
                     </p>
                 </div>
             </div>
