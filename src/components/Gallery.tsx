@@ -20,7 +20,7 @@ const Gallery = () => {
                     <h2 className="mt-4">Our Gallery of <span className="gradient-text">Masterpieces</span></h2>
                 </div>
                 <div className="hidden md:block">
-                    <p className="text-gray-400 max-w-xs text-right italic">
+                    <p className="text-gray-200 text-lg max-w-sm text-right italic font-serif leading-relaxed border-l-2 border-[#D4AF37]/30 pl-6">
                         "Every hairstyle is a unique work of art, crafted to reveal your true essence."
                     </p>
                 </div>
@@ -49,7 +49,7 @@ const Gallery = () => {
             </div>
 
             <div className="mt-16 flex justify-center">
-                <button className="btn-secondary px-12">View Full Collection</button>
+                <Link href="/lookbook" className="btn-secondary px-12">View Full Collection</Link>
             </div>
         </section>
     );
