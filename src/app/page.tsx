@@ -13,14 +13,14 @@ export default function Home() {
       <Hero />
 
       {/* Introduction Section */}
-      <section className="py-32 text-center animate-fadeIn relative bg-white">
-        <div className="max-w-5xl mx-auto px-4">
+      <section className="py-32 animate-fadeIn relative bg-white text-center">
+        <div className="max-w-5xl mx-auto px-4 flex flex-col items-center">
           <span className="text-[#D4AF37] text-sm uppercase tracking-[8px] font-black mb-8 block">Héritage & Passion</span>
-          <h2 className="mb-10 leading-tight text-black text-3xl md:text-5xl">
+          <h2 className="mb-10 leading-tight text-black text-3xl md:text-5xl text-center">
             Une Expérience <br />
-            <span className="gradient-text italic font-serif text-4xl md:text-6xl">Inoubliable</span>
+            <span className="gradient-text italic font-serif text-4xl md:text-6xl text-center">Inoubliable</span>
           </h2>
-          <p className="text-black text-base md:text-lg font-medium leading-relaxed mb-16 max-w-3xl mx-auto">
+          <p className="text-black text-base md:text-lg font-medium leading-relaxed mb-16 max-w-3xl mx-auto text-center">
             Situé au cœur de la capitale, notre salon est un havre de paix dédié à l'art capillaire féminin.
             Alliant techniques traditionnelles et innovations de pointe, nous offrons à chaque cliente une prise en charge personnalisée dans un cadre exclusif et raffiné.
           </p>
