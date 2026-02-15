@@ -6,10 +6,10 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
 
 export const metadata: Metadata = {
-  title: "Glamour Style | Exclusive Women's Hair Artistry",
-  description: "Experience excellence in luxury hair styling. Secure online booking, professional color, premium afro hair care, and braids. Buy now, pay later with Klarna or Afterpay.",
-  keywords: "luxury hair salon, women's hair artistry, professional color, premium braids, online hair booking, flexible payments hairstylist",
-  authors: [{ name: "Glamour Style Team" }],
+  title: "Style Glamour | Art Capillaire Féminin Exclusif",
+  description: "Découvrez l'excellence de la coiffure de luxe. Réservation en ligne sécurisée, coloration professionnelle, soins afro premium et tresses. Payez plus tard avec Klarna ou Afterpay.",
+  keywords: "salon de coiffure luxe, art capillaire féminin, coloration professionnelle, tresses premium, réservation coiffeur en ligne, paiement flexible coiffeur",
+  authors: [{ name: "Équipe Style Glamour" }],
   viewport: "width=device-width, initial-scale=1",
   robots: "index, follow",
 };
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body className={`${inter.variable} ${outfit.variable} font-sans antialiased`}>
         {children}
       </body>

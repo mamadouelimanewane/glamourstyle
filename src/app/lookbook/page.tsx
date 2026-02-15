@@ -11,28 +11,28 @@ const lookbookItems = [
         title: 'Tresses box de luxe',
         category: 'Tresses',
         hairType: 'frisé',
-        image: '/images/style1.png'
+        image: '/images/gallery/gallery-3.jpg'
     },
     {
         id: 2,
         title: 'Tresses élégantes sans nœuds',
         category: 'Tresses',
         hairType: 'frisé',
-        image: '/images/style2.png'
+        image: '/images/gallery/gallery-2.jpg'
     },
     {
         id: 3,
         title: 'Tresses artistiques',
         category: 'Tresses',
         hairType: 'Bouclé',
-        image: '/images/style3.png'
+        image: '/images/gallery/gallery-5.jpg'
     },
     {
         id: 4,
-        title: 'Presse à soie brillante',
-        category: 'Coloration',
-        hairType: 'Droit',
-        image: '/images/style4.png'
+        title: 'Volume Naturel Premium',
+        category: 'Soin',
+        hairType: 'Bouclé',
+        image: '/images/gallery/gallery-4.jpg'
     }
 ];
 
@@ -54,8 +54,8 @@ const LookbookPage = () => {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[150px] -z-10" />
                 <div className="section text-center">
                     <span className="text-[#D4AF37] text-sm uppercase tracking-[6px] font-bold mb-4 block">Inspiration</span>
-                    <h1 className="mb-6 font-heading">Lookbook <span className="gradient-text italic">Interactif</span></h1>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
+                    <h1 className="mb-6 font-heading text-white">Lookbook <span className="gradient-text italic font-serif">Interactif</span></h1>
+                    <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-12 font-body">
                         Découvrez nos créations exclusives pour sublimer la beauté africaine. Filtrez par style ou type de cheveux pour trouver votre prochaine transformation.
                     </p>
 
