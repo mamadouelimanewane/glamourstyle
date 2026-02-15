@@ -15,21 +15,37 @@ export default function Home() {
       {/* Introduction Section */}
       {/* Introduction Section */}
       {/* Introduction Section */}
-      <section className="section py-32 text-center animate-fadeIn">
-        <div className="max-w-4xl mx-auto">
-          <span className="text-[#D4AF37] text-sm uppercase tracking-[6px] font-bold mb-8 block">Heritage & Passion</span>
-          <h2 className="mb-8 leading-tight">
-            An Unforgettable <br />
-            <span className="gradient-text italic font-serif">Experience</span>
+      <section className="section py-32 text-center animate-fadeIn relative">
+        <div className="max-w-5xl mx-auto px-4">
+          <span className="text-[#D4AF37] text-sm uppercase tracking-[8px] font-black mb-8 block">Héritage & Passion</span>
+          <h2 className="mb-10 leading-tight text-white text-4xl md:text-7xl">
+            Une Expérience <br />
+            <span className="gradient-text italic font-serif text-5xl md:text-8xl">Inoubliable</span>
           </h2>
-          <p className="text-white text-2xl font-light leading-relaxed max-w-5xl mx-auto">
+          <p className="text-white text-xl md:text-2xl font-light leading-relaxed mb-16 bg-black/40 backdrop-blur-sm p-8 rounded-3xl border border-white/5 shadow-2xl">
             Situé au cœur de la capitale, notre salon est un havre de paix dédié à l'art capillaire féminin.
             Alliant techniques traditionnelles et innovations de pointe, nous offrons à chaque cliente une prise en charge personnalisée dans un cadre exclusif et raffiné.
           </p>
-          <div className="mt-12 flex justify-center items-center gap-12 grayscale opacity-30">
-            <div className="w-16 h-16 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-2xl">🏆</div>
-            <div className="w-16 h-16 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-2xl">✨</div>
-            <div className="w-16 h-16 bg-[#D4AF37]/20 rounded-full flex items-center justify-center text-2xl">💎</div>
+
+          <div className="flex justify-center items-center gap-16 md:gap-24">
+            <div className="flex flex-col items-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#AA8B2E] rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform duration-500">
+                <span className="text-black">🏆</span>
+              </div>
+              <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-widest mt-4">Excellence</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#AA8B2E] rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform duration-500">
+                <span className="text-black">✨</span>
+              </div>
+              <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-widest mt-4">Artistry</span>
+            </div>
+            <div className="flex flex-col items-center group">
+              <div className="w-20 h-20 bg-gradient-to-br from-[#D4AF37] to-[#AA8B2E] rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(212,175,55,0.3)] group-hover:scale-110 transition-transform duration-500">
+                <span className="text-black">💎</span>
+              </div>
+              <span className="text-[#D4AF37] text-[10px] font-black uppercase tracking-widest mt-4">Premium</span>
+            </div>
           </div>
         </div>
       </section>
