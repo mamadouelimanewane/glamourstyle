@@ -8,75 +8,80 @@ import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#FAF9F6] text-[#2D2D2D]">
+    <main className="min-h-screen bg-background text-secondary">
       <Header />
       <Hero />
+      <Booking />
 
-      {/* Introduction Section */}
-      <section id="experience" className="section py-40 text-center animate-fadeInUp bg-white">
-        <div className="max-w-4xl mx-auto px-6">
-          <span className="text-[#C5A06B] text-xs uppercase tracking-[8px] font-bold mb-10 block">Heritage & Passion</span>
-          <h2 className="text-4xl md:text-6xl mb-10 leading-tight font-heading font-light text-[#2D2D2D]">
-            An Unforgettable <br />
-            <span className="italic font-serif text-[#C5A06B]">Experience</span>
+      {/* Introduction Section - Artistic Cocoon */}
+      <section id="experience" className="section py-52 text-center bg-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px] translate-y-1/2 -translate-x-1/2" />
+
+        <div className="max-w-5xl mx-auto px-10 relative z-10">
+          <span className="text-primary text-xs uppercase tracking-[12px] font-bold mb-12 block">Héritage & Passion</span>
+          <h2 className="text-5xl md:text-8xl mb-12 leading-[1] font-heading font-light text-secondary">
+            Bienvenue dans <br />
+            <span className="italic font-serif text-accent underline decoration-primary/20 decoration-8 underline-offset-8">L'Univers Ka</span>
           </h2>
-          <p className="text-[#6B6B6B] text-xl font-light leading-relaxed max-w-3xl mx-auto">
-            Located in the heart of Waltham Cross, our studio is a sanctuary dedicated to the artistry of hair.
-            By blending ancestral techniques with contemporary innovation, we offer every guest
-            a bespoke journey in an atmosphere of serene luxury.
+          <p className="text-secondary/70 text-2xl font-light italic leading-relaxed max-w-4xl mx-auto mb-20">
+            Situé au centre commercial du Sea Plaza sur la magnifique corniche de Dakar,
+            Michèle KA n'est pas qu'un salon, c'est un sanctuaire où se mêlent Art de vivre,
+            Design et Coiffure Haute Couture. Ici, chaque visite est un voyage, chaque boucle un poème.
           </p>
-          <div className="mt-20 flex justify-center items-center gap-16 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-            <div className="w-20 h-20 bg-[#FAF9F6] rounded-full flex items-center justify-center text-3xl border border-black/5 shadow-sm">🏆</div>
-            <div className="w-20 h-20 bg-[#FAF9F6] rounded-full flex items-center justify-center text-3xl border border-black/5 shadow-sm">✨</div>
-            <div className="w-20 h-20 bg-[#FAF9F6] rounded-full flex items-center justify-center text-3xl border border-black/5 shadow-sm">💎</div>
+
+          <div className="flex justify-center flex-wrap items-center gap-20 opacity-40 hover:opacity-100 transition-opacity duration-1000">
+            <div className="group flex flex-col items-center gap-4 cursor-crosshair">
+              <div className="w-24 h-24 bg-background rounded-full flex items-center justify-center text-4xl border border-secondary/5 shadow-xl group-hover:scale-110 group-hover:bg-primary transition-all">✨</div>
+              <span className="text-[10px] uppercase tracking-[4px] font-bold">Luxe</span>
+            </div>
+            <div className="group flex flex-col items-center gap-4 cursor-crosshair">
+              <div className="w-24 h-24 bg-background rounded-full flex items-center justify-center text-4xl border border-secondary/5 shadow-xl group-hover:scale-110 group-hover:bg-accent transition-all">🎨</div>
+              <span className="text-[10px] uppercase tracking-[4px] font-bold">Art</span>
+            </div>
+            <div className="group flex flex-col items-center gap-4 cursor-crosshair">
+              <div className="w-24 h-24 bg-background rounded-full flex items-center justify-center text-4xl border border-secondary/5 shadow-xl group-hover:scale-110 group-hover:bg-secondary group-hover:text-white transition-all">💖</div>
+              <span className="text-[10px] uppercase tracking-[4px] font-bold">Passion</span>
+            </div>
           </div>
         </div>
       </section>
 
       <Services />
       <Gallery />
-      <Booking />
 
-      {/* Loyalty Program Highlight */}
-      <section className="bg-white py-32 px-6">
+      {/* Loyalty Program Highlight - Restyled for Michele Ka */}
+      <section className="bg-background py-40 px-8 relative">
         <div className="section">
-          <div className="bg-[#FAF9F6] p-10 md:p-20 rounded-[80px] border border-black/5 relative overflow-hidden group shadow-2xl shadow-black/5">
-            <div className="absolute top-0 right-0 w-[40rem] h-[40rem] bg-[#C5A06B]/5 blur-[120px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[#C5A06B]/10 transition-all duration-1000" />
+          <div className="bg-white p-12 md:p-24 rounded-[100px] border border-secondary/5 relative overflow-hidden group shadow-2xl">
+            <div className="absolute -top-10 -right-10 w-80 h-80 bg-accent/20 rounded-full blur-3xl group-hover:scale-150 transition-transform duration-1000" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center relative z-10">
               <div>
-                <span className="text-[#C5A06B] font-bold uppercase tracking-[6px] text-xs mb-6 block">The Private Collection</span>
-                <h2 className="text-4xl md:text-5xl mb-8 font-heading font-light text-[#2D2D2D]">Join Our Exclusive <br /><span className="italic font-serif text-[#C5A06B]">Loyalty Circle</span></h2>
-                <p className="text-[#6B6B6B] text-lg mb-10 font-light leading-relaxed">
-                  Because your loyalty is a testament to our craft, we invite you to our rewards circle.
-                  Enjoy bespoke privileges, from curated discounts to private session invitations.
+                <span className="text-primary font-bold uppercase tracking-[10px] text-xs mb-8 block font-body">Le Club Privé</span>
+                <h2 className="text-5xl md:text-7xl mb-10 font-heading font-light text-secondary leading-tight">Rejoignez le <br /><span className="italic font-serif text-accent">Cercle Ka</span></h2>
+                <p className="text-muted-foreground text-xl mb-12 font-light italic leading-relaxed">
+                  L'exclusivité a un nom. En tant que membre privilégié, accédez à des expériences curatées,
+                  des rituels avant-première et des attentions artistiques dédiées.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6">
-                  <button className="px-10 py-5 bg-[#2D2D2D] text-white font-bold text-xs uppercase tracking-[3px] rounded-full hover:bg-[#C5A06B] transition-all shadow-xl active:scale-95">Become a Member</button>
-                  <button className="px-10 py-5 bg-transparent border border-[#2D2D2D]/10 text-[#2D2D2D] font-bold text-xs uppercase tracking-[3px] rounded-full hover:bg-white transition-all">Learn More</button>
+                <div className="flex flex-col sm:flex-row gap-8">
+                  <button className="px-16 py-6 bg-secondary text-white font-bold text-xs uppercase tracking-[5px] rounded-full hover:bg-primary transition-all shadow-2xl active:scale-95">Devenir Membre</button>
+                  <button className="px-16 py-6 bg-transparent border border-secondary/10 text-secondary font-bold text-xs uppercase tracking-[5px] rounded-full hover:bg-background transition-all">Découvrir</button>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500">
-                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">🎁</div>
-                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">-10%</h4>
-                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">OFF SESSIONS</p>
-                </div>
-                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500 delay-75">
-                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">🥂</div>
-                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">PRIORITY</h4>
-                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">PRE-BOOKING</p>
-                </div>
-                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500 delay-150">
-                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">💅</div>
-                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">ELITE</h4>
-                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">GIFT CARE</p>
-                </div>
-                <div className="bg-white p-8 rounded-[40px] border border-black/5 text-center shadow-premium group-hover:-translate-y-2 transition-transform duration-500 delay-225">
-                  <div className="text-4xl mb-4 grayscale group-hover:grayscale-0 transition-all">🎈</div>
-                  <h4 className="font-bold text-[#C5A06B] text-2xl mb-1">FÊTE</h4>
-                  <p className="text-[10px] text-[#A8A29E] uppercase tracking-widest font-bold">B-DAY SURPRISE</p>
-                </div>
+              <div className="grid grid-cols-2 gap-8">
+                {[
+                  { icon: '🎁', tag: '-15%', label: 'POUR VOUS' },
+                  { icon: '🥂', tag: 'PRIORITÉ', label: 'ACCÈS' },
+                  { icon: '🎭', tag: 'VERNISSAGE', label: 'INVITATIONS' },
+                  { icon: '🌹', tag: 'CADEAU', label: 'ANNIVERSAIRE' }
+                ].map((item, i) => (
+                  <div key={i} className="bg-background/50 backdrop-blur-md p-10 rounded-[60px] border border-white/40 text-center shadow-xl hover:-translate-y-4 transition-all duration-500 group/item">
+                    <div className="text-5xl mb-6 group-hover/item:scale-125 transition-transform">{item.icon}</div>
+                    <h4 className="font-bold text-primary text-3xl mb-2">{item.tag}</h4>
+                    <p className="text-[10px] text-muted-foreground uppercase tracking-[4px] font-bold">{item.label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -85,23 +90,23 @@ export default function Home() {
 
       <Testimonials />
 
-      {/* BNPL Section (Buy Now, Pay Later) */}
-      <section className="section py-40 border-t border-black/5 bg-white">
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-20 px-6 font-light">
+      {/* BNPL Section - Restyled for Michele Ka */}
+      <section className="section py-52 border-t border-secondary/5 bg-white">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-24 px-8">
           <div className="max-w-2xl text-center lg:text-left">
-            <h2 className="text-4xl md:text-5xl mb-8 font-heading text-[#2D2D2D]">Artistry Made <br /><span className="italic font-serif text-[#C5A06B]">Accessible</span></h2>
-            <p className="text-[#6B6B6B] text-xl leading-relaxed">
-              We believe exceptional beauty should be within reach. Our staggered payment options
-              allow you to invest in your transformation with complete peace of mind.
+            <h2 className="text-5xl md:text-7xl mb-10 font-heading text-secondary leading-tight">La Beauté à <br /><span className="italic font-serif text-accent underline decoration-primary/20">Votre Rythme</span></h2>
+            <p className="text-muted-foreground text-2xl leading-relaxed italic font-light">
+              L'excellence ne devrait jamais attendre. Profitez de nos facilités de paiement
+              pour vivre votre transformation sans compromis sur votre sérénité.
             </p>
           </div>
-          <div className="flex flex-wrap justify-center gap-6 items-center bg-[#FAF9F6] p-12 rounded-[50px] border border-black/5 shadow-xl shadow-black/5">
+          <div className="flex flex-wrap justify-center gap-8 items-center bg-background p-16 rounded-[80px] border border-secondary/5 shadow-2xl">
             {['Klarna', 'Afterpay', 'Affirm', 'Zip'].map((brand) => (
-              <div key={brand} className="text-center group px-4">
-                <div className="w-28 h-14 bg-white border border-black/5 rounded-2xl flex items-center justify-center text-[#A8A29E] font-bold group-hover:bg-[#2D2D2D] group-hover:text-white transition-all cursor-crosshair shadow-sm">
+              <div key={brand} className="text-center group">
+                <div className="w-32 h-16 bg-white border border-secondary/5 rounded-3xl flex items-center justify-center text-secondary/40 font-bold group-hover:bg-secondary group-hover:text-white transition-all cursor-pointer shadow-md">
                   {brand}
                 </div>
-                <span className="text-[8px] text-[#A8A29E] mt-4 block uppercase font-bold tracking-[3px]">Elite Partner</span>
+                <span className="text-[10px] text-primary mt-6 block uppercase font-bold tracking-[4px]">Partenaire</span>
               </div>
             ))}
           </div>

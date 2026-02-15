@@ -25,80 +25,64 @@ const Header = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${isScrolled ? 'bg-white/70 backdrop-blur-xl py-4 border-b border-black/5 shadow-sm' : 'bg-transparent py-8'
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 ${isScrolled ? 'bg-white/90 backdrop-blur-2xl py-4 border-b border-black/5 shadow-md' : 'bg-transparent py-10'
                 }`}
         >
-            <div className="section flex items-center justify-between">
-                <Link href="/" className="group flex items-center gap-3">
-                    <div className="w-10 h-10 bg-[#C5A06B] rounded-full flex items-center justify-center text-xl shadow-lg shadow-[#C5A06B]/20 group-hover:scale-110 transition-transform">
-                        💇
+            <div className="section flex items-center justify-between px-8">
+                <Link href="/" className="group flex items-center gap-4">
+                    <div className="relative w-12 h-12 bg-primary rounded-full flex items-center justify-center text-2xl shadow-xl shadow-primary/20 group-hover:rotate-12 transition-transform duration-500">
+                        <span className="text-white">✨</span>
                     </div>
                     <div className="flex flex-col">
-                        <span className="text-[#2D2D2D] font-black text-xl tracking-[4px] leading-none mb-1">GLAMOUR STYLE</span>
-                        <span className="text-[#C5A06B] text-[10px] font-bold uppercase tracking-[3px]">Elite Hair Artistry</span>
+                        <span className="text-secondary font-black text-2xl tracking-[5px] leading-none mb-1 font-heading">MICHELE KA</span>
+                        <span className="text-accent text-[9px] font-bold uppercase tracking-[4px]">Dakar • Paris Artistry</span>
                     </div>
                 </Link>
 
                 {/* Desktop Nav */}
-                <nav className="hidden lg:flex items-center gap-10">
-                    <a
-                        href="tel:+447943555555"
-                        className="text-xs font-black uppercase tracking-[2px] text-[#C5A06B] hover:text-[#2D2D2D] transition-colors flex items-center gap-2"
-                    >
-                        📞 Call Support
-                    </a>
+                <nav className="hidden lg:flex items-center gap-12 font-heading">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="text-xs font-black uppercase tracking-[2px] text-[#2D2D2D]/70 hover:text-[#C5A06B] transition-colors relative group"
+                            className="text-[11px] font-bold uppercase tracking-[3px] text-secondary/70 hover:text-primary transition-all relative group"
                         >
                             {link.name}
-                            <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-[#C5A06B] transition-all group-hover:w-full"></span>
+                            <span className="absolute -bottom-2 left-0 w-0 h-[2px] bg-accent transition-all duration-500 group-hover:w-full"></span>
                         </Link>
                     ))}
-                    <div className="flex items-center gap-4">
-                        <a
-                            href="https://wa.me/447943555555"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="w-10 h-10 bg-[#C5A06B]/10 border border-[#C5A06B]/20 rounded-full flex items-center justify-center hover:bg-[#C5A06B]/20 transition-all text-[#C5A06B] font-bold"
-                            title="Chat on WhatsApp"
-                        >
-                            💬
-                        </a>
+                    <div className="flex items-center gap-6">
                         <Link
                             href="/#booking"
-                            className="px-8 py-3 bg-[#C5A06B] text-white font-black text-[10px] uppercase tracking-[3px] rounded-full hover:bg-[#2D2D2D] transition-all shadow-lg shadow-[#C5A06B]/20 active:scale-95"
+                            className="px-10 py-4 bg-secondary text-white font-bold text-[10px] uppercase tracking-[4px] rounded-full hover:bg-primary transition-all duration-500 shadow-2xl active:scale-95"
                         >
-                            Book Now
+                            Rendez-vous
                         </Link>
                     </div>
                 </nav>
 
-                <div className="lg:hidden flex items-center gap-4">
-                    <a href="tel:+447943555555" className="text-xl">📞</a>
+                <div className="lg:hidden flex items-center gap-6">
                     {/* Mobile Toggle */}
                     <button
-                        className="w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+                        className="w-12 h-12 flex flex-col items-center justify-center gap-2 bg-secondary rounded-full"
                         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                     >
-                        <span className={`w-6 h-0.5 bg-[#2D2D2D] transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                        <span className={`w-6 h-0.5 bg-[#2D2D2D] transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                        <span className={`w-6 h-0.5 bg-[#2D2D2D] transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'rotate-45 translate-y-2.5' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? 'opacity-0' : ''}`}></span>
+                        <span className={`w-6 h-0.5 bg-white transition-all ${isMobileMenuOpen ? '-rotate-45 -translate-y-2.5' : ''}`}></span>
                     </button>
                 </div>
             </div>
 
             {/* Mobile Menu */}
-            <div className={`lg:hidden fixed inset-0 bg-white/95 backdrop-blur-2xl transition-all duration-500 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
-                <div className="flex flex-col items-center justify-center h-full gap-8">
+            <div className={`lg:hidden fixed inset-0 bg-background/98 backdrop-blur-3xl transition-all duration-700 ${isMobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'}`}>
+                <div className="flex flex-col items-center justify-center h-full gap-12">
                     {navLinks.map((link) => (
                         <Link
                             key={link.name}
                             href={link.href}
                             onClick={() => setIsMobileMenuOpen(false)}
-                            className="text-2xl font-heading font-bold text-[#2D2D2D] hover:text-[#C5A06B] transition-colors"
+                            className="text-4xl font-heading font-light text-secondary hover:text-primary transition-colors italic"
                         >
                             {link.name}
                         </Link>
@@ -106,9 +90,9 @@ const Header = () => {
                     <Link
                         href="/#booking"
                         onClick={() => setIsMobileMenuOpen(false)}
-                        className="px-10 py-4 bg-[#C5A06B] text-white font-black text-xs uppercase tracking-[3px] rounded-full mt-4"
+                        className="px-12 py-5 bg-primary text-white font-black text-xs uppercase tracking-[5px] rounded-full mt-6 shadow-2xl"
                     >
-                        Book Now
+                        Réserver
                     </Link>
                 </div>
             </div>

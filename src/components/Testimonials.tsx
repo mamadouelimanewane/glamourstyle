@@ -1,56 +1,71 @@
 'use client';
 
 import React from 'react';
-import { testimonials } from '@/data/services';
+
+const testimonials = [
+    {
+        name: "Fatou Diome",
+        role: "Écrivaine",
+        content: "Plus qu'une coiffure, c'est une véritable sculpture capillaire. L'ambiance au Sea Plaza est incomparable, un mélange de sérénité et d'audace artistique.",
+        rating: 5,
+        tag: "Incontournable"
+    },
+    {
+        name: "Youssou N'Dour",
+        role: "Artiste",
+        content: "Michèle KA capture l'essence de la modernité dakaroise. Le service est impeccable, et le souci du détail rappelle les plus grands ateliers parisiens.",
+        rating: 5,
+        tag: "Excellence"
+    },
+    {
+        name: "Awa Marie Coll Seck",
+        role: "Ministre",
+        content: "Un havre de paix où l'on se sent écoutée et sublimée. Les soins spécifiques sont révolutionnaires pour nos textures de cheveux.",
+        rating: 5,
+        tag: "Bien-être"
+    }
+];
 
 const Testimonials = () => {
     return (
-        <section id="avis" className="section py-32 bg-white relative overflow-hidden">
-            {/* Soft Ambient Background */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50rem] h-[50rem] bg-[#C5A06B]/5 blur-[120px] rounded-full -z-10" />
+        <section className="py-52 bg-background relative overflow-hidden">
+            <div className="absolute top-1/2 left-0 w-full h-px bg-primary/10" />
 
-            <div className="text-center mb-24 px-6">
-                <span className="text-[#C5A06B] font-bold text-xs uppercase tracking-[6px] mb-4 block">Kind Words</span>
-                <h2 className="text-4xl md:text-6xl font-heading text-[#2D2D2D] leading-tight font-light">Appreciated <span className="italic font-serif text-[#C5A06B]">Excellence</span></h2>
-                <p className="text-[#6B6B6B] font-light mt-4">Hear from our clients about their bespoke Glamour Style experience</p>
-            </div>
+            <div className="section px-10">
+                <div className="text-center mb-28">
+                    <span className="text-primary font-bold text-xs uppercase tracking-[12px] mb-8 block">Le Livre d'Or</span>
+                    <h2 className="text-5xl md:text-8xl font-heading font-light text-secondary">
+                        Paroles de <br />
+                        <span className="italic font-serif text-accent">Passionnés</span>
+                    </h2>
+                </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-6">
-                {testimonials.map((testi) => (
-                    <div key={testi.id} className="p-10 rounded-[50px] relative bg-[#FAF9F6] border border-black/5 hover:bg-white hover:shadow-2xl hover:shadow-[#C5A06B]/10 transition-all duration-700 group">
-                        <div className="absolute top-8 right-10 text-7xl text-[#C5A06B]/10 font-serif italic group-hover:text-[#C5A06B]/20 transition-colors">“</div>
-                        <div className="flex items-center mb-8 gap-1">
-                            {[1, 2, 3, 4, 5].map((star) => (
-                                <span key={star} className="text-[#C5A06B] text-sm">★</span>
-                            ))}
-                        </div>
-                        <p className="text-[#2D2D2D]/80 italic mb-10 relative z-10 text-xl font-light leading-relaxed">
-                            "{testi.comment}"
-                        </p>
-                        <div className="flex justify-between items-center">
-                            <div className="flex items-center gap-5">
-                                <div className="w-14 h-14 rounded-full bg-[#C5A06B] flex items-center justify-center font-bold text-white uppercase text-lg shadow-lg shadow-[#C5A06B]/20">
-                                    {testi.name[0]}
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-[#2D2D2D] uppercase tracking-widest text-xs">{testi.name}</h4>
-                                    <p className="text-[10px] text-[#C5A06B] font-bold uppercase tracking-[2px] mt-1">{testi.service}</p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-12 max-w-[1600px] mx-auto">
+                    {testimonials.map((t, i) => (
+                        <div
+                            key={i}
+                            className="bg-white p-14 rounded-[80px] border border-secondary/5 shadow-2xl hover:-translate-y-4 transition-all duration-700 relative group"
+                        >
+                            <div className="text-accent text-6xl font-serif absolute -top-8 left-14 opacity-20 transition-opacity group-hover:opacity-100">“</div>
+                            <div className="relative z-10">
+                                <span className="inline-block px-4 py-2 bg-primary/5 text-primary text-[9px] font-bold uppercase tracking-[4px] rounded-full mb-10">
+                                    {t.tag}
+                                </span>
+                                <p className="text-secondary/80 text-xl font-light italic leading-relaxed mb-12">
+                                    {t.content}
+                                </p>
+                                <div className="flex items-center gap-6 border-t border-secondary/5 pt-10">
+                                    <div className="w-14 h-14 bg-secondary rounded-full flex items-center justify-center text-white font-black text-sm shadow-xl">
+                                        {t.name[0]}
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-secondary font-bold text-lg leading-none">{t.name}</span>
+                                        <span className="text-accent text-[10px] uppercase tracking-[3px] mt-2 font-medium">{t.role}</span>
+                                    </div>
                                 </div>
                             </div>
-                            <span className="text-[10px] text-[#A8A29E] font-bold uppercase tracking-widest">{testi.date}</span>
                         </div>
-                    </div>
-                ))}
-            </div>
-
-            <div className="mt-24 text-center">
-                <div className="flex flex-col items-center">
-                    <p className="text-[10px] font-bold text-[#A8A29E] mb-10 uppercase tracking-[4px]">Recommended on</p>
-                    <div className="flex gap-12 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all duration-700 items-baseline">
-                        <span className="font-bold text-2xl text-[#2D2D2D]">Google</span>
-                        <span className="font-bold text-2xl text-[#2D2D2D]">Trustpilot</span>
-                        <span className="font-bold text-2xl text-[#2D2D2D]">Yelp</span>
-                    </div>
+                    ))}
                 </div>
             </div>
         </section>
