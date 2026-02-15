@@ -58,16 +58,16 @@ const PricingPage = () => {
             </section>
 
             {/* CTA Section */}
-            <section className="section pb-32">
-                <div className="card p-12 text-center border-2 border-[#D4AF37]/20 relative overflow-hidden shadow-premium bg-[#1A1A1A]">
+            <section className="section pb-16 md:pb-32">
+                <div className="card p-6 md:p-12 text-center border-2 border-[#D4AF37]/20 relative overflow-hidden shadow-premium bg-[#1A1A1A]">
                     <div className="relative z-10">
-                        <h2 className="text-4xl mb-6 font-heading text-white">Prête pour la <span className="gradient-text">Transformation ?</span></h2>
-                        <p className="text-gray-400 max-w-xl mx-auto mb-10 font-body">
-                            Réservez votre rendez-vous aujourd'hui et vivez la différence Glamour Style. Sécurisez votre créneau avec un petit acompte.
+                        <h2 className="text-2xl md:text-4xl mb-4 md:mb-6 font-heading text-white">Ready for the <span className="gradient-text">Transformation?</span></h2>
+                        <p className="text-gray-400 max-w-xl mx-auto mb-6 md:mb-10 font-body text-sm md:text-base">
+                            Book your appointment today and experience the Glamour Style difference. Secure your slot with a small deposit.
                         </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <Link href="/#reservation" className="btn-primary px-10">Réserver</Link>
-                            <Link href="/#contact" className="btn-secondary text-[#D4AF37] border-[#D4AF37] hover:bg-[#D4AF37] hover:text-black px-10">Nous Contacter</Link>
+                        <div className="flex flex-col sm:flex-row justify-center gap-3 md:gap-4">
+                            <Link href="/#reservation" className="btn-primary px-8 md:px-10">Book Now</Link>
+                            <Link href="/#contact" className="btn-secondary text-[#D4AF37] border-[#D4AF37] hover:bg-[#D4AF37] hover:text-black px-8 md:px-10">Contact Us</Link>
                         </div>
                     </div>
                 </div>

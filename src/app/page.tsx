@@ -53,44 +53,44 @@ export default function Home() {
       <Booking />
 
       {/* Loyalty Program Highlight */}
-      <section className="bg-gradient-to-b from-[#0D0D0D] to-[#0A0A0A] py-24">
+      <section className="bg-gradient-to-b from-[#0D0D0D] to-[#0A0A0A] py-16 md:py-24">
         <div className="section">
-          <div className="glass p-12 rounded-3xl border-2 border-[#D4AF37]/20 relative overflow-hidden group">
+          <div className="glass p-6 md:p-12 rounded-3xl border-2 border-[#D4AF37]/20 relative overflow-hidden group">
             <div className="absolute top-0 right-0 w-64 h-64 bg-[#D4AF37]/10 blur-[100px] -translate-y-1/2 translate-x-1/2 group-hover:bg-[#D4AF37]/20 transition-all duration-700" />
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
-                <span className="text-[#D4AF37] font-bold uppercase tracking-widest text-sm mb-4 block">The Private Circle</span>
-                <h2 className="text-4xl mb-6">Join Our Exclusive <span className="gradient-text">Loyalty Program</span></h2>
-                <p className="text-gray-400 text-lg mb-8">
+                <span className="text-[#D4AF37] font-bold uppercase tracking-widest text-xs md:text-sm mb-3 md:mb-4 block">The Private Circle</span>
+                <h2 className="text-2xl md:text-4xl mb-4 md:mb-6 leading-tight">Join Our Exclusive <span className="gradient-text">Loyalty Program</span></h2>
+                <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8 leading-relaxed">
                   Because your loyalty deserves to be celebrated, we've created an exclusive rewards program.
                   Enjoy a 10% discount from your 5th visit and receive priority invites to our private events.
                 </p>
-                <div className="flex gap-4">
-                  <button className="btn-primary">Become a Member</button>
-                  <button className="btn-secondary">Learn More</button>
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                  <Link href="/#reservation" className="btn-primary text-center px-8 py-4">Become a Member</Link>
+                  <Link href="/#contact" className="btn-secondary text-center px-8 py-4">Learn More</Link>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
-                  <div className="text-3xl mb-2">🎁</div>
-                  <h4 className="font-bold text-[#D4AF37]">-10%</h4>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-tighter">OFF ALL SERVICES</p>
+              <div className="grid grid-cols-2 gap-3 md:gap-4">
+                <div className="bg-white/5 p-4 md:p-6 rounded-2xl border border-white/5 text-center">
+                  <div className="text-2xl md:text-3xl mb-2">🎁</div>
+                  <h4 className="font-bold text-[#D4AF37] text-sm md:text-base">-10%</h4>
+                  <p className="text-[9px] md:text-[10px] text-gray-500 uppercase tracking-tighter">OFF ALL SERVICES</p>
                 </div>
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
-                  <div className="text-3xl mb-2">🥂</div>
-                  <h4 className="font-bold text-[#D4AF37]">PRIORITY</h4>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-tighter">EXCLUSIVE PRE-SALES</p>
+                <div className="bg-white/5 p-4 md:p-6 rounded-2xl border border-white/5 text-center">
+                  <div className="text-2xl md:text-3xl mb-2">🥂</div>
+                  <h4 className="font-bold text-[#D4AF37] text-sm md:text-base">PRIORITY</h4>
+                  <p className="text-[9px] md:text-[10px] text-gray-500 uppercase tracking-tighter">EXCLUSIVE PRE-SALES</p>
                 </div>
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
-                  <div className="text-3xl mb-2">💅</div>
-                  <h4 className="font-bold text-[#D4AF37]">CARE</h4>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-tighter">COMPLIMENTARY SAMPLES</p>
+                <div className="bg-white/5 p-4 md:p-6 rounded-2xl border border-white/5 text-center">
+                  <div className="text-2xl md:text-3xl mb-2">💅</div>
+                  <h4 className="font-bold text-[#D4AF37] text-sm md:text-base">CARE</h4>
+                  <p className="text-[9px] md:text-[10px] text-gray-500 uppercase tracking-tighter">COMPLIMENTARY SAMPLES</p>
                 </div>
-                <div className="bg-white/5 p-6 rounded-2xl border border-white/5 text-center">
-                  <div className="text-3xl mb-2">🎈</div>
-                  <h4 className="font-bold text-[#D4AF37]">B-DAY</h4>
-                  <p className="text-[10px] text-gray-500 uppercase tracking-tighter">ANNIVERSARY GIFT</p>
+                <div className="bg-white/5 p-4 md:p-6 rounded-2xl border border-white/5 text-center">
+                  <div className="text-2xl md:text-3xl mb-2">🎈</div>
+                  <h4 className="font-bold text-[#D4AF37] text-sm md:text-base">B-DAY</h4>
+                  <p className="text-[9px] md:text-[10px] text-gray-500 uppercase tracking-tighter">ANNIVERSARY GIFT</p>
                 </div>
               </div>
             </div>
