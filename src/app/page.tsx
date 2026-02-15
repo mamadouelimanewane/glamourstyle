@@ -16,11 +16,11 @@ export default function Home() {
       <section className="py-32 text-center animate-fadeIn relative bg-white">
         <div className="max-w-5xl mx-auto px-4">
           <span className="text-[#D4AF37] text-sm uppercase tracking-[8px] font-black mb-8 block">Héritage & Passion</span>
-          <h2 className="mb-10 leading-tight text-black text-4xl md:text-7xl">
+          <h2 className="mb-10 leading-tight text-black text-3xl md:text-5xl">
             Une Expérience <br />
-            <span className="gradient-text italic font-serif text-5xl md:text-8xl">Inoubliable</span>
+            <span className="gradient-text italic font-serif text-4xl md:text-6xl">Inoubliable</span>
           </h2>
-          <p className="text-black text-xl md:text-2xl font-medium leading-relaxed mb-16 max-w-4xl mx-auto">
+          <p className="text-black text-base md:text-lg font-medium leading-relaxed mb-16 max-w-3xl mx-auto">
             Situé au cœur de la capitale, notre salon est un havre de paix dédié à l'art capillaire féminin.
             Alliant techniques traditionnelles et innovations de pointe, nous offrons à chaque cliente une prise en charge personnalisée dans un cadre exclusif et raffiné.
           </p>
