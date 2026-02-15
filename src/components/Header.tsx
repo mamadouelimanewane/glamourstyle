@@ -41,7 +41,7 @@ const Header = () => {
                 <ul className="hidden lg:flex flex-row items-center space-x-12">
                     <li>
                         <Link href="/#accueil" className="text-white hover:text-[#D4AF37] transition-all font-bold text-xs uppercase tracking-[3px]">
-                            Maison
+                            Home
                         </Link>
                     </li>
                     <li>
@@ -51,17 +51,17 @@ const Header = () => {
                     </li>
                     <li>
                         <Link href="/lookbook" className="text-white hover:text-[#D4AF37] transition-all font-bold text-xs uppercase tracking-[3px]">
-                            Portefeuille
+                            Lookbook
                         </Link>
                     </li>
                     <li>
                         <Link href="/pricing" className="text-white hover:text-[#D4AF37] transition-all font-bold text-xs uppercase tracking-[3px]">
-                            Tarification
+                            Pricing
                         </Link>
                     </li>
                     <li>
                         <Link href="/#avis" className="text-white hover:text-[#D4AF37] transition-all font-bold text-xs uppercase tracking-[3px]">
-                            Avis
+                            Reviews
                         </Link>
                     </li>
                 </ul>
@@ -72,7 +72,7 @@ const Header = () => {
                         href="/#reservation"
                         className="btn-primary py-4 px-10 text-[10px] font-black tracking-[4px]"
                     >
-                        RÉSERVEZ MAINTENANT
+                        BOOK NOW
                     </Link>
                 </div>
 
@@ -92,12 +92,12 @@ const Header = () => {
             {/* Mobile Menu Overlay */}
             <div className={`fixed inset-0 bg-black z-40 lg:hidden transition-transform duration-700 ease-in-out ${isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'}`}>
                 <div className="flex flex-col h-full justify-center items-center space-y-12 text-center">
-                    <Link href="/#accueil" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Maison</Link>
+                    <Link href="/#accueil" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Home</Link>
                     <Link href="/#services" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Services</Link>
-                    <Link href="/lookbook" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Portefeuille</Link>
-                    <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Tarification</Link>
-                    <Link href="/#avis" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Avis</Link>
-                    <Link href="/#reservation" onClick={() => setIsMobileMenuOpen(false)} className="btn-primary py-6 px-12 text-xs">RÉSERVEZ MAINTENANT</Link>
+                    <Link href="/lookbook" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Lookbook</Link>
+                    <Link href="/pricing" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Pricing</Link>
+                    <Link href="/#avis" onClick={() => setIsMobileMenuOpen(false)} className="text-4xl font-heading text-white hover:text-[#D4AF37] transition-colors">Reviews</Link>
+                    <Link href="/#reservation" onClick={() => setIsMobileMenuOpen(false)} className="btn-primary py-6 px-12 text-xs">BOOK NOW</Link>
                 </div>
             </div>
         </header>

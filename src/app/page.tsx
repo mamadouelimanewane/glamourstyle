@@ -15,14 +15,14 @@ export default function Home() {
       {/* Introduction Section */}
       <section className="py-32 animate-fadeIn relative bg-white text-center">
         <div className="max-w-5xl mx-auto px-4 flex flex-col items-center">
-          <span className="text-[#D4AF37] text-sm uppercase tracking-[8px] font-black mb-8 block">Héritage & Passion</span>
+          <span className="text-[#D4AF37] text-sm uppercase tracking-[8px] font-black mb-8 block">Heritage & Passion</span>
           <h2 className="mb-10 leading-tight text-black text-3xl md:text-5xl text-center">
-            Une Expérience <br />
-            <span className="gradient-text italic font-serif text-4xl md:text-6xl text-center">Inoubliable</span>
+            An Unforgettable <br />
+            <span className="gradient-text italic font-serif text-4xl md:text-6xl text-center">Experience</span>
           </h2>
           <p className="text-black text-base md:text-lg font-medium leading-relaxed mb-16 max-w-3xl mx-auto text-center">
-            Situé au cœur de la capitale, notre salon est un havre de paix dédié à l'art capillaire féminin.
-            Alliant techniques traditionnelles et innovations de pointe, nous offrons à chaque cliente une prise en charge personnalisée dans un cadre exclusif et raffiné.
+            Located in the heart of the capital, our salon is a haven of peace dedicated to the art of women's hair.
+            Combining traditional techniques with cutting-edge innovations, we offer each client personalized care in an exclusive and refined setting.
           </p>
 
           <div className="flex justify-center items-center gap-16 md:gap-24">

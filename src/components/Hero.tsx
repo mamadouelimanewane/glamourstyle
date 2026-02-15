@@ -18,14 +18,14 @@ const Hero = () => {
             <div className="section text-center relative z-10">
                 <div className="animate-reveal">
                     <span className="inline-block text-[#D4AF37] font-black text-xs md:text-sm uppercase tracking-[8px] mb-6 border-b-2 border-[#D4AF37]/30 pb-2">
-                        Le meilleur studio de coiffure africaine de Londres
+                        London's Premier African Hair Studio
                     </span>
                     <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-8 leading-[0.9] font-heading text-white">
                         Excellence <br />
-                        <span className="gradient-text italic font-serif">& Beauté</span>
+                        <span className="gradient-text italic font-serif">& Beauty</span>
                     </h1>
                     <p className="text-gray-400 text-base md:text-xl max-w-2xl mx-auto leading-relaxed mb-12 font-medium px-4">
-                        Découvrez une expérience premium où l'art traditionnel rencontre le luxe contemporain. Tressage haut de gamme et soins capillaires sur mesure.
+                        Discover a premium experience where traditional artistry meets contemporary luxury. High-end braiding and bespoke hair care.
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -33,20 +33,20 @@ const Hero = () => {
                             href="/#reservation"
                             className="w-full sm:w-auto px-10 py-5 bg-[#D4AF37] text-black font-black text-xs uppercase tracking-[4px] rounded-full hover:bg-white transition-all duration-500 shadow-2xl shadow-[#D4AF37]/20 hover:-translate-y-1"
                         >
-                            Sécurisez votre session
+                            Secure Your Session
                         </Link>
                         <Link
                             href="/lookbook"
                             className="w-full sm:w-auto px-10 py-5 bg-white/5 text-white border border-white/10 font-black text-xs uppercase tracking-[4px] rounded-full hover:bg-white/10 transition-all duration-500 backdrop-blur-md"
                         >
-                            Explorez le Lookbook
+                            Explore Lookbook
                         </Link>
                     </div>
                 </div>
 
                 {/* Scroll indicator */}
                 <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 animate-bounce opacity-40">
-                    <span className="text-[10px] font-black uppercase tracking-[4px] rotate-90 origin-left mt-10 text-white">Défiler</span>
+                    <span className="text-[10px] font-black uppercase tracking-[4px] rotate-90 origin-left mt-10 text-white">Scroll</span>
                     <div className="w-[1px] h-20 bg-gradient-to-b from-[#D4AF37] to-transparent" />
                 </div>
             </div>
