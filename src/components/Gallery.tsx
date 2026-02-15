@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const galleryItems = [
     { id: 1, src: '/images/gallery/gallery-1.jpg', title: 'Signature Cut', category: 'Styling' },
