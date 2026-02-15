@@ -4,27 +4,27 @@ import React from 'react';
 
 const homeServices = [
     {
-        title: 'Tresses Box de Luxe',
-        description: 'Un savoir-faire impeccable et un style protecteur utilisant des extensions premium. Longueur et épaisseur sur mesure.',
-        price: 'À partir de £180',
+        title: 'Luxury Box Braids',
+        description: 'Impeccable craftsmanship and protective styling using premium extensions. Custom length and thickness.',
+        price: 'From £180',
         icon: '✨'
     },
     {
-        title: 'Silk Press & Soin',
-        description: 'L\'hydratation ultime et le lissage thermique pour une brillance naturelle et rebondissante sans dommages chimiques.',
-        price: 'À partir de £95',
+        title: 'Silk Press & Care',
+        description: 'Ultimate hydration and thermal straightening for natural, bouncy shine without chemical damage.',
+        price: 'From £95',
         icon: '💎'
     },
     {
-        title: 'Coloration Expert',
-        description: 'Coloration créative sur mesure qui respecte la structure délicate des cheveux texturés.',
-        price: 'À partir de £120',
+        title: 'Expert Coloring',
+        description: 'Custom creative coloring that respects the delicate structure of textured hair.',
+        price: 'From £120',
         icon: '🎨'
     },
     {
-        title: 'Mariage & Événements',
-        description: 'Service de coiffure exclusif pour vos moments les plus précieux. Séances d\'essai incluses.',
-        price: 'Devis Personnalisé',
+        title: 'Weddings & Events',
+        description: 'Exclusive styling service for your most precious moments. Trial sessions included.',
+        price: 'Custom Quote',
         icon: '👑'
     }
 ];
@@ -35,11 +35,11 @@ const Services = () => {
             <div className="section">
                 <div className="flex flex-col lg:flex-row justify-between items-end gap-10 mb-20 px-4">
                     <div className="max-w-2xl">
-                        <span className="text-[#D4AF37] font-black text-xs uppercase tracking-[6px] mb-4 block">Notre Expertise</span>
-                        <h2 className="text-4xl md:text-6xl font-heading mb-6 leading-tight">Services de Coiffage <br /> <span className="gradient-text italic">d'Élite</span></h2>
+                        <span className="text-[#D4AF37] font-black text-xs uppercase tracking-[6px] mb-4 block">Our Expertise</span>
+                        <h2 className="text-4xl md:text-6xl font-heading mb-6 leading-tight">Elite Hair <br /> <span className="gradient-text italic">Styling</span></h2>
                     </div>
                     <p className="text-white text-xl max-w-sm mb-4 font-light">
-                        Chaque service est un rituel unique conçu pour sublimer votre beauté naturelle tout en garantissant la santé de vos cheveux.
+                        Each service is a unique ritual designed to enhance your natural beauty while ensuring the health of your hair.
                     </p>
                 </div>
 
