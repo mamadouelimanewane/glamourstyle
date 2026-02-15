@@ -7,41 +7,41 @@ import Footer from '@/components/Footer';
 const lookbookItems = [
     {
         id: 1,
-        title: 'Luxury Box Braids',
-        category: 'Braids',
-        hairType: 'Coily',
+        title: 'Box Braids de Luxe',
+        category: 'Tresses',
+        hairType: 'Crépus',
         image: '/luxury_box_braids_black_woman_1769458648557.png'
     },
     {
         id: 2,
-        title: 'Elegant Knotless Braids',
-        category: 'Braids',
-        hairType: 'Coily',
+        title: 'Knotless Braids Élégantes',
+        category: 'Tresses',
+        hairType: 'Crépus',
         image: '/knotless_braids_style_1769458664468.png'
     },
     {
         id: 3,
-        title: 'Artistic Cornrows',
-        category: 'Braids',
-        hairType: 'Curly',
+        title: 'Cornrows Artistiques',
+        category: 'Tresses',
+        hairType: 'Bouclés',
         image: '/african_cornrows_design_1769458682980.png'
     },
     {
         id: 4,
-        title: 'Shiny Silk Press',
+        title: 'Silk Press Brillant',
         category: 'Coloration',
-        hairType: 'Straight',
+        hairType: 'Lisses',
         image: '/silk_press_natural_hair_1769458698699.png'
     }
 ];
 
 const LookbookPage = () => {
-    const [filterCategory, setFilterCategory] = useState('All');
-    const [filterHair, setFilterHair] = useState('All');
+    const [filterCategory, setFilterCategory] = useState('Tout');
+    const [filterHair, setFilterHair] = useState('Tout');
 
     const filteredItems = lookbookItems.filter(item => {
-        const catMatch = filterCategory === 'All' || item.category === filterCategory;
-        const hairMatch = filterHair === 'All' || item.hairType === filterHair;
+        const catMatch = filterCategory === 'Tout' || item.category === filterCategory;
+        const hairMatch = filterHair === 'Tout' || item.hairType === filterHair;
         return catMatch && hairMatch;
     });
 
@@ -53,17 +53,17 @@ const LookbookPage = () => {
                 <div className="absolute top-0 right-0 w-96 h-96 bg-[#D4AF37]/10 blur-[150px] -z-10" />
                 <div className="section text-center">
                     <span className="text-[#D4AF37] text-sm uppercase tracking-[6px] font-bold mb-4 block">Inspiration</span>
-                    <h1 className="mb-6 font-heading">Interactive <span className="gradient-text italic">Lookbook</span></h1>
+                    <h1 className="mb-6 font-heading">Lookbook <span className="gradient-text italic">Interactif</span></h1>
                     <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed mb-12">
-                        Discover our exclusive creations to enhance African beauty. Filter by style or hair type to find your next transformation.
+                        Découvrez nos créations exclusives pour sublimer la beauté africaine. Filtrez par style ou type de cheveux pour trouver votre prochaine transformation.
                     </p>
 
                     {/* Filters */}
                     <div className="flex flex-wrap justify-center gap-4 mb-12">
                         <div className="space-y-2">
-                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Service Style</p>
+                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Style de Service</p>
                             <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-                                {['All', 'Braids', 'Coloration', 'Care'].map((cat) => (
+                                {['Tout', 'Tresses', 'Coloration', 'Soin'].map((cat) => (
                                     <button
                                         key={cat}
                                         onClick={() => setFilterCategory(cat)}
@@ -76,9 +76,9 @@ const LookbookPage = () => {
                         </div>
 
                         <div className="space-y-2">
-                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Hair Type</p>
+                            <p className="text-[10px] uppercase tracking-widest text-[#D4AF37] font-bold">Type de Cheveux</p>
                             <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-                                {['All', 'Coily', 'Curly', 'Straight'].map((hair) => (
+                                {['Tout', 'Crépus', 'Bouclés', 'Lisses'].map((hair) => (
                                     <button
                                         key={hair}
                                         onClick={() => setFilterHair(hair)}
@@ -112,7 +112,7 @@ const LookbookPage = () => {
                                     </div>
                                     <h3 className="text-xl font-heading font-bold text-white mb-4">{item.title}</h3>
                                     <button className="w-full py-3 bg-white text-black font-black text-[10px] uppercase tracking-[2px] rounded-xl opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-2 group-hover:translate-y-0 duration-500">
-                                        Book this Style
+                                        Réserver ce style
                                     </button>
                                 </div>
                             </div>
@@ -122,7 +122,7 @@ const LookbookPage = () => {
                     {filteredItems.length === 0 && (
                         <div className="py-20 text-center">
                             <span className="text-6xl mb-6 block opacity-20">🎞️</span>
-                            <p className="text-gray-500 text-lg italic">No creations match these criteria at the moment.</p>
+                            <p className="text-gray-500 text-lg italic">Aucune création ne correspond à ces critères pour le moment.</p>
                         </div>
                     )}
                 </div>
