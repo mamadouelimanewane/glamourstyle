@@ -18,7 +18,7 @@ const Footer = () => {
                             <h2 className="text-2xl font-heading gradient-text">Style Glamour</h2>
                         </div>
                         <p className="text-gray-500 text-sm">
-                            L'excellence au service de votre beauté. Depuis plus de 10 ans, nous créons des styles exceptionnels au cœur du Royaume-Uni.
+                            Excellence in the service of your beauty. For over 10 years, we've been creating exceptional styles in the heart of the UK.
                         </p>
                         <div className="flex space-x-4">
                             {['Instagram', 'Facebook', 'TikTok', 'Pinterest'].map((social) => (
@@ -36,35 +36,35 @@ const Footer = () => {
 
                     {/* Opening Hours */}
                     <div>
-                        <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-widest">Horaires d'ouverture</h3>
+                        <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-widest">Opening Hours</h3>
                         <ul className="space-y-3">
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Lundi</span>
-                                <span className="text-red-900">Fermé</span>
+                                <span className="text-gray-500 capitalize">Monday</span>
+                                <span className="text-red-900">Closed</span>
                             </li>
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Mardi</span>
-                                <span className="text-gray-300">9h30 - 18h00</span>
+                                <span className="text-gray-500 capitalize">Tuesday</span>
+                                <span className="text-gray-300">9:30 AM - 6:00 PM</span>
                             </li>
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Mercredi</span>
-                                <span className="text-gray-300">9h30 - 18h00</span>
+                                <span className="text-gray-500 capitalize">Wednesday</span>
+                                <span className="text-gray-300">9:30 AM - 6:00 PM</span>
                             </li>
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Jeudi</span>
-                                <span className="text-gray-300">9h30 - 18h00</span>
+                                <span className="text-gray-500 capitalize">Thursday</span>
+                                <span className="text-gray-300">9:30 AM - 6:00 PM</span>
                             </li>
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Vendredi</span>
-                                <span className="text-gray-300">9h30 - 19h00</span>
+                                <span className="text-gray-500 capitalize">Friday</span>
+                                <span className="text-gray-300">9:30 AM - 7:00 PM</span>
                             </li>
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Samedi</span>
-                                <span className="text-gray-300">9h30 - 19h00</span>
+                                <span className="text-gray-500 capitalize">Saturday</span>
+                                <span className="text-gray-300">9:30 AM - 7:00 PM</span>
                             </li>
                             <li className="flex justify-between text-sm">
-                                <span className="text-gray-500 capitalize">Dimanche</span>
-                                <span className="text-gray-300">10h00 - 16h00</span>
+                                <span className="text-gray-500 capitalize">Sunday</span>
+                                <span className="text-gray-300">10:00 AM - 4:00 PM</span>
                             </li>
                         </ul>
                     </div>
@@ -73,11 +73,11 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-6 text-white uppercase tracking-widest">Navigation</h3>
                         <ul className="space-y-3">
-                            <li><Link href="/#accueil" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Maison</Link></li>
+                            <li><Link href="/#accueil" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Home</Link></li>
                             <li><Link href="/#services" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Services</Link></li>
-                            <li><Link href="/pricing" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Tarification</Link></li>
-                            <li><Link href="/lookbook" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Portefeuille</Link></li>
-                            <li><Link href="/#reservation" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">RÉSERVATION</Link></li>
+                            <li><Link href="/pricing" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Pricing</Link></li>
+                            <li><Link href="/lookbook" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">Lookbook</Link></li>
+                            <li><Link href="/#reservation" className="text-gray-500 text-sm hover:text-[#D4AF37] transition-colors uppercase tracking-wider">BOOKING</Link></li>
                         </ul>
                     </div>
 
@@ -87,7 +87,7 @@ const Footer = () => {
                         <ul className="space-y-4">
                             <li className="flex items-start gap-3">
                                 <span className="text-[#D4AF37]">📍</span>
-                                <span className="text-gray-500 text-sm">68 High Street, Waltham Cross, Royaume-Uni</span>
+                                <span className="text-gray-500 text-sm">68 High Street, Waltham Cross, UK</span>
                             </li>
                             <li className="flex items-center gap-3">
                                 <span className="text-[#D4AF37]">📞</span>
@@ -99,8 +99,8 @@ const Footer = () => {
                             </li>
                             <li className="mt-8">
                                 <div className="glass p-4 rounded-xl border-dashed border border-[#D4AF37]/30">
-                                    <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Modes de paiement</p>
-                                    <p className="text-[10px] text-[#D4AF37] font-bold">Klarna • Afterpay • Affirm • Carte de crédit</p>
+                                    <p className="text-[10px] text-gray-500 uppercase tracking-widest mb-1">Payment Methods</p>
+                                    <p className="text-[10px] text-[#D4AF37] font-bold">Klarna • Afterpay • Affirm • Credit Card</p>
                                 </div>
                             </li>
                         </ul>
@@ -109,7 +109,7 @@ const Footer = () => {
 
                 <div className="pt-8 border-t border-gray-900 flex flex-col md:flex-row justify-between items-center gap-4">
                     <p className="text-gray-600 text-[10px] uppercase tracking-[2px]">
-                        &copy; {new Date().getFullYear()} GLAMOUR STYLE. TOUS DROITS RÉSERVÉS.
+                        &copy; {new Date().getFullYear()} GLAMOUR STYLE. ALL RIGHTS RESERVED.
                     </p>
                     <p className="text-gray-600 text-[10px] uppercase tracking-[2px]">
                         DESIGNED BY <span className="text-gray-400">ANTIGRAVITY LUXE</span>
